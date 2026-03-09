@@ -1,0 +1,346 @@
+<style>
+
+.container {
+    max-width: 1392px; /* Adjust as needed */
+}
+
+/* --- Banner --- */
+.banner {
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+}
+
+.banner-text h1 {
+    color: #d9534f; /* Red color */
+    font-size: 2.5em; /* Large font size */
+    margin-bottom: 0.2em;
+    font-weight: bold;
+    /* Add specific font if needed */
+}
+
+.banner-images {
+    max-width: 100%;
+    height: auto;
+}
+
+.banner-food-img {
+    max-width: 100%;
+}
+
+
+/* --- Headings & Text --- */
+h2 {
+    color: #d9534f; /* Red color */
+    font-size: 1.8em;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+h5 {
+    color: #d9534f; /* Red color */
+    font-size: 1.2em;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+h3 {
+    color: #333;
+    font-size: 1.4em;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+h4 {
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #222;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 1.5em;
+    padding-left: 10px;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+.info-text {
+    color: #d9534f; /* Red color */
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- Product Sections --- */
+.product-section {
+    margin-bottom: 40px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 25px; /* Space between items */
+}
+
+.product-item {
+    border: 1.5px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 285px;
+    display: block;
+    margin: 0 auto 10px auto; /* Center image */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.product-item a {
+    text-decoration: none;
+    color: inherit; /* Inherit text color */
+}
+
+.product-item p {
+    font-size: 0.9em;
+    color: #555;
+    min-height: 40px; /* Give some consistent space for description */
+}
+
+/* --- Occasion Section --- */
+.occasion-section h2 {
+    margin-bottom: 25px;
+}
+
+.carousel-note {
+    font-size: 0.7em;
+    font-weight: normal;
+    color: #666;
+    vertical-align: middle;
+}
+
+.occasion-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+}
+
+.occasion-item {
+    text-align: center;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+
+.occasion-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.occasion-item p {
+    font-size: 0.9em;
+    color: #444;
+}
+
+
+footer-container {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #444;
+}
+
+.heart {
+    color: #d9534f; /* Red heart */
+    font-size: 1.2em;
+}
+
+/* --- Basic Responsiveness (Example) --- */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+    .occasion-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* 1 column on small screens */
+    }
+     .occasion-grid {
+        grid-template-columns: 1fr; /* 1 column */
+    }
+     h2 {
+        font-size: 1.5em;
+     }
+     h3 {
+        font-size: 1.2em;
+     }
+}
+
+</style>
+
+
+<div class="container">
+        <div class="banner">
+            <div class="banner-images">
+                <img src="https://cloud.servicebund.de/f/c716180c3a5e41eeabae/?dl=1" alt="Fingerfood Arrangement" class="banner-food-img">
+            </div>
+        </div>
+            <section class="intro-section">
+                <h2>FINGERFOOD-HÄPPCHEN - IDEAL FÜR BUFFET, CATERING & SEKTEMPFANG</h2>
+
+                <section class="occasion-section">
+                <h5>Geeignet für jeden Anlass: <span class="carousel-note"></span></h5>
+                <div class="occasion-grid"> 
+                    <div class="occasion-item">
+                        <img src="https://cloud.servicebund.de/f/e52933eaef214f43848d/?dl=1" alt="Frühstücksbuffet">
+                        <p>Süßer Genuss für's Frühstücksbuffet</p>
+                    </div>
+                    <div class="occasion-item">
+                        <img src="https://cloud.servicebund.de/f/0ce80aefd79c42d8bb4f/?dl=1" alt="Sektempfang">
+                        <p>Für den Sektempfang - Die perfekte Begleitung für prickelnde Momente</p>
+                    </div>
+                    <div class="occasion-item">
+                        <img src="https://cloud.servicebund.de/f/032dfab01f4649c7bd3f/?dl=1" alt="Snack">
+                        <p>Süßer Snack - Zum Mitnehmen oder direkt genießen</p>
+                    </div>
+                    <div class="occasion-item">
+                        <img src="https://cloud.servicebund.de/f/20ac46b01cb04131aa79/?dl=1" alt="Festtags-Canapé">
+                        <p>Festtags-Canapé - Genussvoll feiern mit Stil</p>
+                    </div>
+                </div>
+            </section>
+
+                <h3>Warum Fingerfood von Pan?</h3>
+                <p>
+                    Unsere tiefgekühlten Premium-Häppchen vereinen Qualität, Geschmack und Convenience. Perfekt für Buffets,
+                    Sektempfänge oder als stilvolle Begleitung zum Aperitif oder Cocktail. Hochwertige Zutaten – sorgfältig
+                    ausgewählt für besten Geschmack
+                </p>
+                <ul>
+                    <li>Hochwertige Zutaten – sorgfältig ausgewählt für besten Geschmack</li>
+                    <li>Herzhaft & süß – für jeden Anlass das passende Fingerfood</li>
+                    <li>Schnell & einfach – direkt servierfertig nach dem Backen, gelingsichere goldige Backfarbe</li>
+                    <li>Vielfältig & raffiniert - verschiedenste Sorten aus der mediterranen und alpinen Kulinarik</li>
+                    <li>Perfekt für Catering, Tagungen & Events sowie Bistros und Cocktail-Bars</li>
+                </ul>
+            </section>
+
+            <section class="product-section">
+                <h5>Unsere Auswahl</h5>
+                <h3>Mediterrane Häppchen:</h3>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <a href="/product/081765">
+                           <img src="https://cloud.servicebund.de/f/8b0f400eeeb54d52a521/?dl=1" alt="MiniMix herzhaft">
+                           <h4>MiniMix herzhaft, 1,2kg</h4>
+                           <p>3 Sorten: Spinat-Ricotta, Schinken-Käse, Tomate-Mozzarella</p>
+                        </a>
+                    </div>
+                    <div class="product-item">
+                         <a href="/product/058510"> 
+                            <img src="https://cloud.servicebund.de/f/4dfe7fc1e4f14343a83b/?dl=1" alt="MiniMix alpin.mediterran">
+                            <h4>MiniMix alpin.mediterran, 4x1kg</h4>
+                            <p>6 Sorten: Olive, Paprika, Rosmarin, Speck, Spinat, Würstel</p>
+                         </a>
+                    </div>
+                    <div class="product-item">
+                         <a href="/product/295393"> 
+                            <img src="https://cloud.servicebund.de/f/d822b8df9e3746efb4c6/?dl=1" alt="Pizzette mit Tomate & Mozzarella">
+                            <h4>Pizzette mit Tomate & Mozzarella, 4x1kg</h4>
+                            <p>Pizza, die auf der Zunge zergeht</p>
+                         </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <h3>Premium-Häppchen:</h3>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <a href="/product/301808">
+                            <img src="https://cloud.servicebund.de/f/f2bb75fd13ad40b99bb5/?dl=1" alt="Pizzette PREMIUM">
+                            <h4>Pizzette PREMIUM, 4x1kg</h4>
+                            <p>Runde Pizzette, mit konzentrierter Butter verfeinert</p>
+                        </a>
+                    </div>
+                    <div class="product-item">
+                        <a href="/product/301811">
+                            <img src="https://cloud.servicebund.de/f/cc40a75a037f4a23a62f/?dl=1" alt="MiniMix PREMIUM">
+                            <h4>MiniMix PREMIUM, 4x1kg</h4>
+                            <p>6 Sorten: Pesto, Paprika, Käse, Schinken, Olive, Würstel. Mit konzentrierter Butter verfeinert</p>
+                        </a>
+                    </div>
+                    <div class="product-item">
+                        <a href="/product/295396">
+                            <img src="https://cloud.servicebund.de/f/f1089978b7234294aa5d/?dl=1" alt="Blätterteighäppchen mit Trüffel">
+                            <h4>Blätterteighäppchen mit Trüffel, 4x1kg</h4>
+                            <p>Mit edler Creme aus Mascarpone, Trüffel und Pilzen. Nur SAISONAL erhältlich.</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <h3>Süße Häppchen:</h3>
+                <div class="product-grid">
+                    <div class="product-item">
+                        <a href="/product/081747">
+                            <img src="https://cloud.servicebund.de/f/a811db3991c4472282e2/?dl=1" alt="MiniMix süß">
+                            <h4>MiniMix süß, 1,2kg</h4>
+                            <p>3 Sorten: Apfel, Kakao, Waldfrüchte</p>
+                        </a>
+                    </div>
+                    <div class="product-item">
+                        <a href="/product/306413">
+                            <img src="https://cloud.servicebund.de/f/fbe553b1b7f14e2bad36/?dl=1" alt="Apfel-Strudel Mini">
+                            <h4>Apfel-Strudel Mini, 50x80g</h4>
+                            <p>Mit frischen Apfelwürfeln, knusprigem Blätterteig und feiner Zuckerkruste</p>
+                        </a>
+                    </div>
+                    <div class="product-item">
+                        <a href="/product/014106">
+                            <img src="https://cloud.servicebund.de/f/874b123d95cf4da8ab16/?dl=1" alt="Aprikosen-Strudel Mini">
+                            <h4>Aprikosen-Strudel Mini, 50x80g</h4>
+                            <p>Mit duftender Aprikosenfüllung, knusprigem Blätterteig und feiner Zuckerkruste</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        <footer-container>
+            <p>Genuss, der begeistert – für besondere Momente! <span class="heart">♥</span></p>
+        </footer-container>
+</div> <!-- /container -->
+
+

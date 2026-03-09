@@ -1,0 +1,337 @@
+<style>
+  .flexbox1 {
+    width: 100%;
+    display: flex;
+    height: 236px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background-image: url("https://cloud.servicebund.de/f/8ea2a2e5b6ed4dbaa2dd/?dl=1");
+    background-size: cover;
+  }
+
+  #box1 {
+    position: relative;
+    top: 35%;
+    left: 5%;
+  }
+
+  #überschrift_faq_1 {
+    font-size: 2.5rem;
+    font-family: "ShadowsIntoLight", sans-serif;
+    color: white;
+    margin: 0;
+    text-align: center;
+  }
+
+  .fullwidth {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  #flexbox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .box_2_white, .box_2 {
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .box_2_white {
+    background: white;
+    padding: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .box_2 {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .bild_2 {
+    width: 100%;
+    height: 90%; /* Reduced height */
+    background: white;
+    border-radius: 8px;
+  }
+
+  .bild_2 div {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 8px;
+    height: 100%;
+  }
+
+  .caption {
+    text-align: center;
+    font-size: 0.75em;
+    color: #555;
+    margin-top: 5px;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul li::before {
+    content: "\25AA";
+    color: #76b82a;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+  }
+
+  #eins { background-image: url("https://cloud.servicebund.de/f/b9cc01fdd2274860abd3/?dl=1"); }
+  #zwei { background-image: url("https://cloud.servicebund.de/f/68b927ec644b412180bf/?dl=1"); }
+  #drei { background-image: url("https://cloud.servicebund.de/f/2b548a5b2a1440759642/?dl=1"); }
+  #vier { background-image: url("https://cloud.servicebund.de/f/88f748a71d09439ba6b2/?dl=1"); }
+  #fünf { background-image: url("https://cloud.servicebund.de/f/e134cf50f9f54f17bf74/?dl=1"); }
+  #sechs { background-image: url("https://cloud.servicebund.de/f/f4f626cb7305409e96b9/?dl=1"); }
+  #sieben { background-image: url("https://cloud.servicebund.de/f/b552fc0cb0724ca7b0b3/?dl=1"); }
+
+p.box_2_white {
+  font-size: 1.2em;
+  color: #20231C;
+  margin: 10px 0;
+  text-align: justify; /* Align text to both margins */
+}
+
+.box_2_white ul {
+  padding-left: 20px; /* Ensure proper indentation */
+  text-align: justify; /* Align list items to both sides */
+  margin-bottom: 20px; /* Add spacing below lists */
+}
+
+.box_2_white li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+h1, p {
+  text-align: left; /* Ensure headers and paragraphs are left-aligned */
+  margin: 10px 0; /* Adjust spacing */
+}
+
+  .button-container {
+    margin-top: 24px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .button1 {
+    background-color: #76b82a;
+    border: 2px solid white;
+    color: white;
+    padding: 2% 4%;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.4s;
+    font-family: nunito, sans-serif;
+  }
+
+  .button1:hover {
+    cursor: pointer;
+  }
+
+  @media (min-width: 980px) {
+    #flexbox {
+      flex-direction: row;
+    }
+
+    .box_2_white, .box_2 {
+      width: 50%;
+      height: 569px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .box_2 {
+      max-height: 250px;
+    }
+  }
+</style>
+
+<div class="flexbox1">
+  <div id="box1">
+    <p id="überschrift_faq_1"></p>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2_white">
+    <h1>Schaumweine</h1>
+    <h3><b>Eigenschaften</b></h3>
+    <ul>
+      <li>Ideale Aperitifs, um einen wundervollen Abend zu eröffnen</li>
+      <li>Leicht, frisch mit einer Vielzahl an Aromen, die gut zu Vorspeisen und Gebäck passen</li>
+    </ul>
+    <h3><b>Speisenbegleitung</b></h3>
+    <p><b>Junge Schaumweine</b> sind hervorragend zu Canapés, Blätterteiggebäck, Croissants und Blinis geeignet, während <b>gereifte Varianten</b> sich perfekt mit Käseplatten und Paté kombinieren lassen. Diese Weine bieten unterschiedliche Facetten, um sowohl frische als auch komplexe Geschmackserlebnisse zu begleiten.</p>
+    <div class="button-container">
+        <a class="button1" href="https://nussbaumer.servicebund.com/category/530511">Zur Warengruppe</a>
+    </div>
+  </div>
+
+  <div class="box_2">
+    <div class="bild_2">
+      <div id="eins" aria-label="Canapés mit Tomate, Salat, Schinken"></div>
+    </div>
+    <p class="caption">© Irina Zaitseva - unsplash.com, juicy_fish, Uniconlabs, Freepik, monkik</p>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2">
+    <div class="bild_2">
+      <div id="zwei" aria-label="Sommerlicher Quinoa-Salat mit Garnelen"></div>
+    </div>
+    <p class="caption">© Service-Bund/Stephanie Syfus, Freepik, juicy_fish, Those Icons, monkik</p>
+  </div>
+
+  <div class="box_2_white">
+    <h1>Leichte Weißweine</h1>
+    <h3><b>Eigenschaften</b></h3>
+    <ul>
+      <li>Frische und fruchtige Aromen von grünen Äpfeln, Zitronen, Holunderblüten und Gräsern</li>
+      <li>Sie werden hauptsächlich im Stahltank ausgebaut, wodurch sie eine feine Kohlensäure und eine spritzige Frische erhalten</li>
+      <li>Für den sofortigen Genuss gedacht, kurze Lagerfähigkeit</li>
+    </ul>
+    <h3><b>Speisenbegleitung</b></h3>
+    <p>Leichte Weißweine sind ideal als Begleiter zu frischen Salaten, Garnelen-Cocktails, Ceviche, Austern und leicht gegrilltem Gemüse. Sie ergänzen leichte Sommergerichte wunderbar und sorgen für eine erfrischende Note.</p>
+    <div class="button-container">
+        <a class="button1" href="https://nussbaumer.servicebund.com/category/530508">Zur Warengruppe</a>
+    </div>
+  </div>
+</div>
+<div class="fullwidth" id="flexbox">
+  <div class="box_2_white">
+    <h1>Kräftige Weißweine</h1>
+    <p><b>Eigenschaften</b></p>
+    <ul>
+      <li>Höherer Extrakt- und Alkoholgehalt</li>
+      <li>Reiche Palette komplexer Aromen wie Mango, Vanille, Tabak, Karamell und Butter</li>
+      <li>Ausbau oft im großen Holzfass oder Barrique mit facettenreicher Struktur und hervorragender Lagerfähigkeit</li>
+    </ul>
+    <p><b>Speisenbegleitung</b></p>
+    <p>Sie passen hervorragend zu herzhaften Gerichten wie Risotto, kräftigen Fischgerichten wie Hummer und Muscheln sowie gegrilltem Fisch. Auch Fleischgerichte wie Kalbsschnitzel und Geflügelgerichte werden durch die tiefen und vielschichtigen Aromen dieser Weine perfekt ergänzt.</p>
+    <div class="button-container">
+     <a class="button1" href="https://nussbaumer.servicebund.com/category/530509">Zur Warengruppe</a>
+    </div>
+  </div>
+  <div class="box_2">
+    <div class="bild_2">
+      <div id="drei" aria-label="Gekochte Miesmuscheln"></div>
+    </div>
+    <p class="caption">© RitaE - pixabay.com, monkik, Freepik, juicy_fish, Those Icons, Marpina</p>
+  </div>
+    </div>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2">
+    <div class="bild_2">
+      <div id="vier" aria-label="Salat mit Feta und Oliven"></div> 
+    <p class="caption">© pixabay.com, Freepik, Those Icons, monkik, Marpina</p>
+  </div>
+    </div>
+
+  <div class="box_2_white">
+    <h1>Roséweine</h1>
+    <p><b>Eigenschaften</b></p>
+    <ul>
+      <li>Aromen von Erdbeere, Rhabarber und Granatapfel</li>
+      <li>Vielseitig und eignen sich hervorragend als Essensbegleiter</li>
+      <li>Werden häufig mit betonten Primäraromen abgefüllt</li>
+    </ul>
+    <p><b>Speisenbegleitung</b></p>
+    <p>Sie sind bestens geeignet für leichte Sommergerichte, knackige Salate, Pasta Primavera, Gemüsepasta sowie rustikale Eintöpfe, Ratatouille sowie gebratenes Fleisch und gegrilltes Hähnchen. Ihre angenehme Fruchtigkeit und Frische machen sie zu idealen Begleitern für eine breite Palette an Gerichten.</p>
+    <div class="button-container">
+     <a class="button1" href="https://nussbaumer.servicebund.com/category/530510">Zur Warengruppe</a>
+    </div>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2_white">
+    <h1>Leichte Rotweine</h1>
+    <p><b>Eigenschaften</b></p>
+    <ul>
+      <li>Fruchtige Aromen wie Kirschen, Waldbeeren und Holundersaft</li>
+      <li>Ausbau hauptsächlich im Stahltank, geringer Anteil an Holzfasslagerung, was ihnen einen leichten Gerbstoffanteil verleiht</li>
+    </ul>
+    <p><b>Speisenbegleitung</b></p>
+    <p>Diese unkomplizierten Weine sind ideal für leichte Mahlzeiten wie Hühnerfrikassee, rustikale Wurstplatten, Margherita- und Funghi-Pizza sowie einfache Pasta-Gerichte wie Spaghetti Bolognese und Penne Arrabbiata. Sie bieten eine ausgewogene Fruchtigkeit, die diese Gerichte wunderbar ergänzt.</p>
+    <div class="button-container">
+     <a class="button1" href="https://nussbaumer.servicebund.com/category/530506">Zur Warengruppe</a>
+    </div>
+  </div>
+  <div class="box_2">
+    <div class="bild_2">
+      <div id="fünf" aria-label="Pizza Margherita"></div>
+    <p class="caption">© Nadya Filatova - unsplash.com, Freepik, juicy_fish, Those, Icons, monkik, Chanut-is-Industries, Marpina</p>
+  </div>
+    </div>
+  </div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2">
+    <div class="bild_2">
+      <div id="sechs" aria-label="Gänsebraten mit Rotkohl und Kartoffelstampf"></div>
+          </div>
+    <p class="caption">© pixabay.com, Freepik, juicy_fish, Those Icons, monkik, Marpina</p>
+  </div>
+
+  <div class="box_2_white">
+    <h1>Kräftige Rotweine</h1>
+    <p><b>Eigenschaften</b></p>
+    <ul>
+      <li>Konzentrierte und dichte Aromen, die durch den Ausbau im Holzfass eine tiefe Komplexität gewinnen</li>
+      <li>Typische Aromen umfassen Zedernholz, Brombeeren, Cassis, Rauch, Tabak, Schokolade und Veilchen</li>
+      <li>Alkoholreich mit einer hohe Lagerfähigkeit, was ihnen eine beeindruckende Struktur verleiht</li>
+    </ul>
+    <p><b>Speisenbegleitung</b></p>
+    <p>Sie sind ideal für kräftige Fleischgerichte wie Rinderbraten und Lammkeule sowie für Schmorgerichte wie Ossobuco und Coq au Vin. Kräftige Rotweine harmonieren auch hervorragend mit reduzierten Jus, etwa einem Steak mit Portwein-Jus oder einem Kalbsbraten mit Rotweinsoße.</p>
+    <div class="button-container">
+     <a class="button1" href="https://nussbaumer.servicebund.com/category/530507">Zur Warengruppe</a>
+    </div>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2_white">
+    <h1>Süßweine</h1>
+    <p><b>Eigenschaften</b></p>
+    <ul>
+      <li>Variieren stark in ihren Aromen und Süßegraden</li>
+      <li>Reichen von leichten, blumigen bis hin zu schweren, fruchtigen Noten</li>
+    </ul>
+    <p><b>Speisenbegleitung</b></p>
+    <p>Diese Weine passen hervorragend zu Desserts wie Obstkuchen und Schokoladentorte sowie zu Käse wie Blauschimmelkäse und Brie. Sie sind auch perfekte Begleiter zu Patés und Gebäck wie Mandeltörtchen sowie zu Gerichten mit süß-sauren Aromen, besonders in der asiatischen Küche, wie süß-saurer Tofu und Mango-Curry. Die Vielfalt der Süßweine ermöglicht es, eine breite Palette an Geschmäckern zu ergänzen und hervorzuheben.</p>
+    <div class="button-container">
+     <a class="button1" href="https://nussbaumer.servicebund.com/category/530512">Zur Warengruppe</a>
+    </div>
+  </div>
+  <div class="box_2">
+    <div class="bild_2">
+      <div id="sieben" aria-label="Butterkuchen mit Erdbeerragout und Pistaziensahne"></div>
+          </div>
+    <p class="caption">© Stephanie Syfus für Service-Bund, Freepik, monkik, Uniconlabs</p>
+  </div>
+</div>

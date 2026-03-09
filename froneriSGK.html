@@ -1,0 +1,252 @@
+<style>
+  /* --- Global & Layout --- */
+  .fullwidth {
+    width: 100%;
+    height: auto;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: 12px -12px;
+  }
+
+  /* --- Banner Section --- */
+  .fullwidth_banner {
+    width: 100%;
+    height: 360px;
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  #banner {
+    width: 100%;
+    background: #efefef url("https://cloud.servicebund.de/f/d88f05f8f67b440cb040/?dl=1") no-repeat 0% 40%;
+    background-size: cover;
+    border-radius: 8px;
+    position: relative;
+  }
+
+#logo {
+    position: absolute;
+    bottom: 0%; /* Adds a small gap from the bottom, matching your original margin */
+    right: 0%;  /* Adds a small gap from the right */
+    width: 30%;
+    height: auto;
+}
+  /* --- Box/Card Section --- */
+  .box {
+    width: 33.3333%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+  }
+
+  .box:hover {
+    transform: scale(1.03);
+    z-index: 2;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .box a {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    color: inherit;
+  }
+
+  .logo {
+    width: auto;
+    height: 50px; /* Adjusted to fit better within card */
+    float: right;
+    margin: 10px;
+  }
+
+  /* --- Images & Backgrounds --- */
+  .bild {
+    width: 100%;
+    height: 232px;
+    background-color: white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px 4px 0 0;
+  }
+
+  #eins { background-image: url("https://cloud.servicebund.de/f/b1cdad49d84640039e30/?dl=1"); background-position: 0% 0%; }
+  #zwei { background-image: url("https://cloud.servicebund.de/f/b9627438064b4afca528/?dl=1"); background-position: 0% 59%; }
+  #drei { background-image: url("https://cloud.servicebund.de/f/3032c0662449414ba996/?dl=1"); background-position: 50% 50%; }
+  #vier { background-image: url("https://cloud.servicebund.de/f/29046bbf97a64c6f89b0/?dl=1"); background-position: 50% 50%; }
+  #fünf { background-image: url("https://cloud.servicebund.de/f/66a9267051b74256aae8/?dl=1"); background-position: 0% 7%; }
+  #sechs { background-image: url("https://cloud.servicebund.de/f/6360fd0b711248758b1b/?dl=1"); background-position: 0% 72%; }
+  #sieben { background-image: url("https://cloud.servicebund.de/f/cdb4c3764fdc4245adef/?dl=1"); background-position: 50% 50%; }
+  #acht { background-image: url("https://cloud.servicebund.de/f/563d736c6d3e4f3da0ba/?dl=1"); background-position: 0% 81%; }
+  #neun { background-image: url("https://cloud.servicebund.de/f/6edeb6c009c645948c38/?dl=1"); background-position: 0% 42%; }
+  #zehn { background-image: url("https://cloud.servicebund.de/f/1d7a92d239af4a9ea502/?dl=1"); background-position: 4% 42%; }
+  #elf { background-image: url("https://cloud.servicebund.de/f/27d4b877890f4fbc93fd/?dl=1"); background-position: 0% 42%; }
+  #zwölf { background-image: url("https://cloud.servicebund.de/f/10b8ff47f01c495a8e2f/?dl=1"); background-position: 0% 42%; }
+
+
+  /* --- Typography --- */
+  p.überschrift_warengruppe {
+    margin: 3% 3% 1%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 0 3% 3%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 980px) {
+    .fullwidth_banner {
+      height: auto;
+      min-height: 200px;
+      width: calc(100% + 24px);
+      margin-left: -12px;
+    }
+
+    #flexbox {
+      flex-direction: column;
+    }
+
+    .box {
+      width: calc(100% - 24px);
+      margin: 10px auto;
+    }
+    #logo {
+        width: 40%; /* Scales up on tablet */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #logo {
+        width: 50%; /* Largest on phone */
+        bottom: 5px; /* Optional: tiny bit of breathing room on small screens */
+        right: 5px;
+    }
+}
+</style>
+
+<div class="fullwidth_banner">
+  <div id="banner">
+  <img id="logo" src="https://cloud.servicebund.de/f/d47624662d5c403ab6d2/?dl=1">
+</div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?searchTerm=nui&mtm_campaign=Produkte_Nuii&mtm_source=Schöller">
+      <div class="bild" id="eins"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/86e5d68682084153b3e2/?dl=1">
+      <p class="überschrift_warengruppe">Nuii</p>
+      <p class="text_warengruppe">Genussvolles Geschmackserlebnis für alle Abenteuer.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?searchTerm=milka&mtm_campaign=Produkte_Milka&mtm_source=Schöller#manucaturer=FRONERI+Ice+Cream+Deutschland+GmbH">
+      <div class="bild" id="zwei"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/3e37d975ae4847d393df/?dl=1">
+      <p class="überschrift_warengruppe">Milka</p>
+      <p class="text_warengruppe">Weil zartes besser schmeckt.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?searchTerm=oreo&mtm_campaign=Produkte_Oreo&mtm_source=Schöller#manucaturer=FRONERI+Ice+Cream+Deutschland+GmbH">
+      <div class="bild" id="drei"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/32dbc3e514914ca28ff3/?dl=1">
+      <p class="überschrift_warengruppe">Oreo</p>
+      <p class="text_warengruppe">Cremiges Eis mit original OREO Keksstückchen.</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?searchTerm=pirulo&mtm_campaign=Produkte_Pirulo&mtm_source=Schöller">
+      <div class="bild" id="vier"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/5f7e13324f314acbaa26/?dl=1">
+      <p class="überschrift_warengruppe">Pirulo</p>
+      <p class="text_warengruppe">Der fruchtige Eissnack für alle !</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=270364,268480,133642,133046&mtm_campaign=Produkte%20Kitkat%26Extreme&mtm_source=Schöller">
+      <div class="bild" id="fünf"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/8ad38c435eaf4294a234/?dl=1">
+      <p class="überschrift_warengruppe">Extrême</p>
+      <p class="text_warengruppe">Take it to Extreme.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?searchTerm=Biscoff">
+      <div class="bild" id="sechs"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/d60509421e514632a07e/?dl=1">
+      <p class="überschrift_warengruppe">Lotus ? Biscoff</p>
+      <p class="text_warengruppe">?</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?searchTerm=Schöller">
+      <div class="bild" id="sieben"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/f0cbd0a10ba744728c32/?dl=1">
+      <p class="überschrift_warengruppe">Schöller</p>
+      <p class="text_warengruppe">Die Traditionsmarke für Familien</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?searchTerm=Mövenpick">
+      <div class="bild" id="acht"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/ee94bd6227f444da882a/?dl=1">
+      <p class="überschrift_warengruppe">Mövenpick</p>
+      <p class="text_warengruppe">Einfach.Mehr.Genuss.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?searchTerm=Antica">
+      <div class="bild" id="neun"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/f13359e615fd4a50a04a/?dl=1">
+      <p class="überschrift_warengruppe">Antica Gelateria del Corso</p>
+      <p class="text_warengruppe">Eisgenuss wie in Italien.</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?searchTerm=Mälzer">
+      <div class="bild" id="zehn"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/ef000d885d884ca489fb/?dl=1">
+      <p class="überschrift_warengruppe">Mälzer & Fu </p>
+      <p class="text_warengruppe">?</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?searchTerm=Kleingebäck">
+      <div class="bild" id="elf"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/d6b4676d72ad425e9283/?dl=1">
+      <p class="überschrift_warengruppe">Kleingebäck</p>
+      <p class="text_warengruppe">?</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?searchTerm=Froneri%20Backwaren&mtm_campaign=Produkte_Backwaren&mtm_source=Schöller">
+      <div class="bild" id="zwölf"></div>
+      <img class="logo" src="https://cloud.servicebund.de/f/72bbad580c11457d9421/?dl=1">
+      <p class="überschrift_warengruppe">Froneri Backwaren</p>
+      <p class="text_warengruppe">Einfach.Mehr.Genuss.</p>
+    </a>
+  </div>
+</div>

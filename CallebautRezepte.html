@@ -1,0 +1,239 @@
+<style>
+  .fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+    margin-top: 0px;
+
+  }
+
+  .box {
+    width: 33.3333%;
+    height: 320px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+
+
+  .box:hover .bild div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+
+  .box_2:hover .bild_2 div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+
+  #gelb:hover {
+    background: #7fc72e;
+  }
+
+  .bild>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .bild_2>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .box_2 {
+    width: 50%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+  }
+
+  a.box:link,
+  a.box:visited,
+  a.box:hover,
+  a.box:active {
+    text-decoration: none;
+  }
+
+  .box a:link,
+  .box a:visited,
+  .box a:hover,
+  .box a:active {
+    text-decoration: none;
+  }
+
+  .box_2 a:link,
+  .box_2 a:visited,
+  .box_2 a:hover,
+  .box_2 a:active {
+    text-decoration: none;
+  }
+
+  #gelb {
+    display: block;
+    background: #76b82a;
+    position: relative;
+  }
+
+  .bild {
+    width: 100%;
+    height: 232px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+    border: 1px solid #f2f3f1;
+  }
+
+  .bild_2 {
+    width: 100%;
+    height: 230px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+    #eins {
+    background-image: url("https://cloud.servicebund.de/f/9fff438598eb41449a60/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/b56109e93f6740699f24/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #drei {
+    background-image: url("https://cloud.servicebund.de/f/ff1d7450f3934292ae7e/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #vier {
+    background-image: url("https://cloud.servicebund.de/f/b784e61164eb432fb3b6/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font-size: 32px;
+    color: white;
+  }
+
+  p.gesamtsortiment {
+    margin: 0% 24px;
+    font-size: 20px;
+    color: white;
+  }
+
+
+  p.überschrift_warengruppe {
+    margin: 3% 4% 2%;
+    font-size: 20px;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 0 4%;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: right;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  @media (max-width: 980px) {
+    #flexbox {
+      flex-direction: column;
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    .box_2 {
+      width: 100%;
+      height: auto;
+      margin: 10px auto;
+    }
+</style>
+
+<img src="https://cloud.servicebund.de/f/d11bdf0986dc4af89c13/?dl=1" alt="Banner" style="width:100%;height:auto;border-radius:8px;">
+
+<div>
+<h1>Der faszinierende Geschmack Feinster Belgischer Schokoladen</h1>
+<p>Callebaut® verwendet nur feinste Zutaten und stellt seine Feinste Belgische Schokolade seit über 100 Jahren im Herzen Belgiens handwerklich her. Mit Hingabe gefertigt, von Generation zu Generation weitergegeben, auf Callebaut® Schokolade verlassen sich Pâtissiers, Konditoren und Chocolatiers tagtäglich, um ihre Köstlichkeiten zu kreieren. Die Feinste Belgische Schokolade von Callebaut® ist für ihren perfekt ausgewogenen Geschmack und ihre hervorragenden Verarbeitungseigenschaften berühmt. Mehr noch: Die Kakaomasse für alle Callebaut® Feinsten Belgischen Schokoladen wird aus nachverfolgbarem Kakao hergestellt - 100% nachhaltig.</p>
+</div>
+
+<h1>Rezepte</h1>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/landing/CallebautSchokoladenmousse">
+      <div class="bild">
+        <div id="eins"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Weißes Schokoladenmousse</b></p>
+      <p class="text_warengruppe">mit exotischem Fruchtkompott</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/landing/Cheesecake">
+      <div class="bild">
+        <div id="zwei"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Cheesecake</b></p>
+      <p class="text_warengruppe">mit weißer und dunkler Schokolade</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/landing/HimbeerTartelette">
+      <div class="bild">
+        <div id="drei"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Himbeer Tartelette</b></p>
+      <p class="text_warengruppe">Rezept für 5 Stück</p>
+      </a>
+  </div>
+
+  <div class="box">
+    <a href="/landing/SchokoladenMoelleux">
+      <div class="bild">
+        <div id="vier"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Dunkles Schokoladen Moelleux</b></p>
+      <p class="text_warengruppe">Rezept für 10 Stück</p>
+    </div>
+</div>

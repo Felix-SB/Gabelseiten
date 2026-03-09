@@ -1,0 +1,103 @@
+<style>
+  /* Teaser Box Styles */
+  .teaserBox_Feiertagswochen {
+    background-color: #FFFF00; /* Weihnachtsliches Hintergrund */
+    border: 0px solid #FFFFFF !important; /* Keine sichtbare Umrandung */
+    padding: 10px; /* Innenabstand */
+    height: auto !important; /* Automatische Höhe */
+    margin-top: 10px; /* Abstand oben */
+    margin-bottom: 10px; /* Abstand unten */
+    color: #000000; /* Textfarbe Schwarz */
+    border-radius: 7px; /* Abgerundete Ecken */
+    display: flex; /* Flexbox-Layout */
+    align-items: center; /* Vertikale Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    text-align: center; /* Zentrierter Text */
+    position: relative;
+    overflow: hidden; /* Damit der Schnee nicht außerhalb des Teasers geht */
+    background-image: url('https://example.com/your-christmas-background.jpg'); /* Optional: Weihnachts-Hintergrundbild */
+    background-size: cover;
+  }
+
+  /* Blinking Text Animation */
+  .blinker {
+    animation: blinker 4s linear infinite; /* Animation alle 4 Sekunden, unendlich */
+  }
+
+  @keyframes blinker {
+    50% {
+      opacity: 0; /* Text wird in der Mitte unsichtbar */
+    }
+  }
+
+  /* Snowfall Container */
+  .snowfall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* Snowflakes Styling (using custom snowflake image or emoji) */
+  .snowflake {
+    position: absolute;
+    top: -10px;
+    color: #FFF;
+    font-size: 30px; /* Increase the size of the snowflakes */
+    user-select: none;
+    animation: snowfall 15s linear infinite; /* Slow down the animation for smoother effect */
+    opacity: 0.8;
+    animation-timing-function: ease-in-out; /* Smoother transition */
+  }
+
+  /* Snowfall Animation */
+  @keyframes snowfall {
+    0% {
+      top: -10px;
+      opacity: 1;
+      transform: translateX(0); /* No horizontal movement */
+    }
+    100% {
+      top: 100%;
+      opacity: 0.5;
+      transform: translateX(calc(10vw - 10%)); /* Random horizontal movement */
+    }
+  }
+
+  /* Custom Snowfall Speed and Variability */
+  .snowflake:nth-child(odd) {
+    animation-duration: 18s; /* Slower for more fluid motion */
+  }
+
+  .snowflake:nth-child(even) {
+    animation-duration: 20s; /* Even slower */
+  }
+
+  /* Random horizontal position for snowflakes */
+  .snowflake {
+    left: calc(100% * var(--random-x)); /* Random horizontal position */
+  }
+</style>
+<!-- Snowfall Container -->
+<div class="snowfall"><!-- Multiple snowflakes with random x positions -->
+<div class="snowflake" style="--random-x: 0.1;">❄</div>
+<div class="snowflake" style="--random-x: 0.3;">❄</div>
+<div class="snowflake" style="--random-x: 0.5;">❄</div>
+<div class="snowflake" style="--random-x: 0.7;">❄</div>
+<div class="snowflake" style="--random-x: 0.9;">❄</div>
+<div class="snowflake" style="--random-x: 0.2;">❄</div>
+<div class="snowflake" style="--random-x: 0.6;">❄</div>
+<div class="snowflake" style="--random-x: 0.4;">❄</div>
+<div class="snowflake" style="--random-x: 0.8;">❄</div>
+<div class="snowflake" style="--random-x: 0.25;">❄</div>
+<!-- Add more snowflakes as needed --></div>
+<!-- Teaser Box -->
+<div class="teaserBox_Feiertagswochen">
+<h2><span style="font-size: 14pt;"> <strong> <span style="font-family: 'sans-serif', sans-serif;"> <span style="font-size: 14pt;"> Bitte beachten Sie, dass es in der Weihnachtsfeiertagswoche zu Abweichungen bei den Lieferterminen kommen kann. <br>F&uuml;r R&uuml;ckfragen steht Ihnen Ihr Ansprechpartner gerne zur Verf&uuml;gung. <br><span style="color: rgb(224, 62, 45);"> 🎄 <span class="blinker" style="font-size: 16pt;">Wir w&uuml;nschen Ihnen ein frohes und besinnliches Weihnachtsfest</span> 🎄 </span> </span> </span> </strong> </span></h2>
+</div>
+
+
+

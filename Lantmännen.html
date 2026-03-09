@@ -1,0 +1,421 @@
+<style>
+/* General Styles */
+:root {
+    --container-padding: 20px; 
+    --section-gap: 30px;       
+    --section-border-radius: 8px;
+    --section-max-width: 1140px; 
+}
+
+.container {
+    max-width: calc(var(--section-max-width) - 2 * var(--container-padding)); 
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    width: 100%; 
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; 
+}
+
+a {
+    color: #007bff; 
+    text-decoration: none;
+}
+
+
+h1, h2, h3 {
+    margin-top: 0; 
+    margin-bottom: 20px;
+    color: #000;
+}
+
+h1 { font-size: 1.6em; }
+h2 { font-size: 1.4em; }
+h3 { font-size: 1.3em; }
+
+section {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--section-max-width);
+    margin-bottom: var(--section-gap); 
+    border-radius: var(--section-border-radius);
+    overflow: hidden; 
+}
+
+.button1 {
+  background-color: #052c50;
+  border: 2px solid #052c50;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.2em;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+}
+
+.button1:hover {
+  background-color: #76b82a;
+  cursor: pointer;
+}
+
+.intro-section,
+.step, 
+.highlight-section {
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center; 
+}
+
+.disclaimer-section {
+    background-color: white;
+    padding: 30px var(--container-padding);
+}
+.cta-section {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 30px var(--container-padding);
+
+}
+.disclaimer-section p {
+    margin: 0;
+}
+
+.intro-text,
+.step .step-content, 
+.highlight-text {
+    flex: 1; 
+    padding: 30px var(--container-padding); 
+}
+
+
+.intro-images,
+.step-image,
+.step-image-grid, 
+.highlight-image {
+    display: flex; 
+    flex-direction: column; 
+    align-self: stretch; 
+}
+
+.intro-images { flex-basis: 45%; }
+.step-image { flex-basis: 40%; } 
+.step-image-grid { flex-basis: 30%; } 
+.topping-grid { flex-basis: 43%; } 
+.highlight-image { flex-basis: 35%; }
+
+.intro-images > img, 
+.step-image img,
+.highlight-image img,
+.dough-grid img,
+.topping-grid img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    display: block;
+}
+
+.step-1,.step-2,.step-3,.highlight-section {
+    flex-direction: row-reverse;
+}
+
+.step-image-grid {
+    display: grid;
+    gap: 0; 
+    height: 100%; 
+    align-self: stretch; 
+}
+.dough-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+.topping-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dough-grid figure, .topping-grid figure {
+    position: relative;
+    text-align: center;
+    margin: 0; 
+    height: 100%; 
+    overflow: hidden; 
+}
+
+.dough-grid figcaption, .topping-grid figcaption {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(14 33 63);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 1em;
+    white-space: nowrap;
+    z-index: 1; 
+    font-weight: bold;
+}
+
+.step ul {
+    list-style: disc;
+    padding-left: 20px; 
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+.step li {
+    margin-bottom: 8px;
+}
+
+.vegan-note, .topping-note {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 15px;
+}
+
+.contact-section {
+    overflow: visible; 
+    border-radius: 0; 
+    background-color: transparent; 
+}
+
+.contact-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start; 
+}
+
+.contact-details {
+    flex-basis: 50%;
+    align-self: center;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.handwerk-cta {
+    flex-basis: 50%;
+    background-color: #f0f0f0; 
+    padding: 30px var(--container-padding);
+    border-radius: var(--section-border-radius); 
+}
+
+.lantmännen-logo {
+    flex-basis: 35%;
+    align-self: center;
+}
+
+.sbs-logo {
+    flex-basis: 22%;
+}
+
+@media (max-width: 768px) {
+    .intro-section,
+    .step, 
+    .highlight-section {
+        flex-direction: column !important; 
+        align-items: stretch; 
+    }
+
+    .intro-text,
+    .step .step-content,
+    .highlight-text,
+    .intro-images,
+    .step-image,
+    .step-image-grid,
+    .highlight-image {
+        flex-basis: auto; 
+        align-self: auto; 
+    }
+
+    .intro-text,
+    .step .step-content,
+    .highlight-text {
+         padding: 20px var(--container-padding); 
+    }
+
+    .topping-grid {
+         grid-template-columns: repeat(2, 1fr); 
+    }
+    .dough-grid {
+         grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: var(--section-gap); 
+        align-items: stretch; 
+    }
+
+    .contact-details,
+    .handwerk-cta {
+        flex-basis: auto;
+        width: 100%;
+    }
+}
+
+</style>
+
+<section class="intro-section">
+    <div class="intro-text">
+        <h1>DU WILLST KEINEN BUN VON DER STANGE?</h1>
+        <p>Wir backen dir deinen individuellen Burger-Bun. Egal ob groß, klein, süß oder würzig - wir backen, was deinen Kunden schmeckt. <br>
+        <strong>Schreib uns deine Vorstellung und wir kümmern uns darum, deinen perfekten Bun zu erstellen</strong>.</p>
+    </div>
+    <div class="intro-images">
+        <img src="https://cloud.servicebund.de/f/5210d3ed33484df5956b/?dl=1" alt="Collage von Burger Buns und Hot Dogs">
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="container"> 
+        <h2>DEIN INDIVIDUELLER SCHULSTAD BUN</h2>
+        <p>In unserem Werk in Harrislee nahe der dänischen Grenze sind wir spezialisiert auf die Produktion von unseren hochwertigen Schulstad Burger Buns. Wähle aus den Schritten 1 bis 3 die Produkteigenschaften aus, die du benötigst, und wirbacken deinen perfekten Burger.<br>
+        <strong>Gemeinsam verwirklichen wir deine Vision, um deine Kunden mit köstlichen Burgern zuverwöhnen!</strong></p>
+        <div class="link">
+        <a href="mailto:info@schulstadbakerysolutions.de">
+        <button class="button1">Stelle deine Produktanfrage</button>
+        </a>
+        </div>
+    </div>
+    <div class="sbs-logo">
+        <img src="https://cloud.servicebund.de/f/f1f6391b75644c98a7f7/?dl=1">
+    </div>
+</section>
+
+<section class="step step-1">
+    <div class="step-image">
+        <img src="https://cloud.servicebund.de/f/b09130806d4c4afeac2f/?dl=1" alt="Verschiedene Bun Größen gestapelt">
+    </div>
+    <div class="step-content">
+        <h3>Schritt 1: Wähle deine perfekte Bun-Größe*</h3>
+        <p>Dein Burger, deine Entscheidung! Wähle aus unseren verschiedenen Größen und finde die ideale Basis:</p>
+        <ul>
+            <li>Gigant (ca. 145 mm)     → MOQ: 300.000 Buns</li>
+            <li>5 inch (ca. 120 mm)     → MOQ: 450.000 Buns</li>
+            <li>4,5 inch (ca. 110 mm)   → MOQ: 450.000 Buns</li>
+            <li>4 inch (ca. 98 mm)      → MOQ: 700.000 Buns</li>
+            <li>Mini (ca. 65 mm)        → MOQ: 1.500.000 Buns</li>
+            <li>Hot Dog (40g)           → MOQ: 1.000.000 Buns</li>
+        </ul>
+    </div>
+</section>
+
+<section class="disclaimer-section">
+    <div class="container"> 
+        <p>*Bitte beachte, dass die jährliche Mindestbestellmenge (MOQ) variiert. Du planst eine einmalige Aktion? In diesem Fall gelten abweichende Mindestmengen. Du erreichst die Mindestbestellmengen nicht? Kein Problem, sprich uns trotzdem an und wir schauen, ob es einen bestehenden Artikel gibt, der deine Wünsche erfüllt.</p>
+    </div>
+</section>
+
+<section class="step step-2">
+    <div class="step-content">
+        <h3>Schritt 2: Bestimme deine Teigrezeptur</h3>
+        <p>Geschmack und Textur sind entscheidend! Wähle deine Lieblingsvariante:</p>
+        <ul>
+            <li>Softer, süßlicher Brioche Geschmack</li>
+            <li>Würziger Sauerteig</li>
+            <li>Vollmundiger Vollkornteig</li>
+            <li>Klassisch, milder, softer Teig</li>
+        </ul>
+        <p class="vegan-note">*Alle zur Verfügung stehenden Teige sind vegan.</p>
+    </div>
+    <div class="step-image-grid dough-grid">
+        <figure>
+            <img src="https://cloud.servicebund.de/f/a0a3e615fcef4b399bc1/?dl=1" alt="Vollkorn Bun">
+            <figcaption>Vollkorn</figcaption>
+        </figure>
+        <figure>
+            <img src="https://cloud.servicebund.de/f/61966e7fb2824252bef9/?dl=1" alt="Klassischer Bun">
+            <figcaption>Klassisch</figcaption>
+        </figure>
+        <figure>
+            <img src="https://cloud.servicebund.de/f/f79fba02998e47869eca/?dl=1" alt="Brioche Bun">
+            <figcaption>Brioche</figcaption>
+        </figure>
+        <figure>
+            <img src="https://cloud.servicebund.de/f/2ea5808593424041b02a/?dl=1" alt="Sauerteig Bun">
+            <figcaption>Sauerteig</figcaption>
+        </figure>
+    </div>
+</section>
+
+
+<section class="step step-3">
+    <div class="step-image-grid topping-grid">
+        
+        <figure><img src="https://cloud.servicebund.de/f/1397554201af4188a719/?dl=1" alt="Ohne Topping"><figcaption>ohne Topping</figcaption></figure>
+        <figure><img src="https://cloud.servicebund.de/f/fc474e670025421ebe1c/?dl=1" alt="Sesam gemischt"><figcaption>Sesam (gemischt)</figcaption></figure>
+        <figure><img src="https://cloud.servicebund.de/f/7551beeb9cd7483a9872/?dl=1" alt="Saaten Topping"><figcaption>Saaten</figcaption></figure>
+        
+        <figure><img src="https://cloud.servicebund.de/f/1f0b5856eab14706af0f/?dl=1" alt="Topping Mischung"><figcaption>Topping-Mischung</figcaption></figure>
+        <figure><img src="https://cloud.servicebund.de/f/791f0d5d186744cf93ce/?dl=1" alt="Glanz Topping"><figcaption>Glanz</figcaption></figure>
+        <figure><img src="https://cloud.servicebund.de/f/9dfb6a933a2a4428ac46/?dl=1" alt="Sesam Topping"><figcaption>Sesam</figcaption></figure>
+        
+        <figure><img src="https://cloud.servicebund.de/f/01f9103849344408874b/?dl=1" alt="Roggenschrot"><figcaption>Roggenschrot</figcaption></figure>
+        <figure><img src="https://cloud.servicebund.de/f/943157985db548a5bc94/?dl=1" alt="Grieß Topping"><figcaption>Grieß</figcaption></figure>
+        <figure><img src="https://cloud.servicebund.de/f/5d65ecb017fb4e4b9d3e/?dl=1" alt="Mehrkorn Topping"><figcaption>Mehrkorn</figcaption></figure>
+    </div>
+    <div class="step-content">
+        <h3>Schritt 3: Wähle dein perfektes Topping</h3>
+        <ul>
+            <li>Sesam (hell, dunkel oder gemischt)</li>
+            <li>Saaten-Mischung</li>
+            <li>Grieß-Bestreuung</li>
+            <li>Roggenschrot</li>
+            <li>Haferflocken</li>
+            <li>Weißer Mohn</li>
+            <li>Sonnenblumenkerne</li>
+            <li>Leinsamen</li>
+            <li>Nigella-Samen (Schwarzkümmel)</li>
+            <li>Glanz (für besonderen Touch)</li>
+        </ul>
+        <p class="topping-note">Alle Toppings in starker oder leichter Bestreuung möglich.</p>
+    </div>
+</section>
+
+<section class="highlight-section">
+    <div class="highlight-text">
+        <h3>Du bist auf der Suche nach einem echten Highlight oder etwas ganz Besonderem für deine Gäste?</h3>
+        <p>Auf Wunsch entwickeln wir für dich individuelle Buns – perfekt abgestimmt auf dein Event oder deine Aktion. Ob Herzform zum Valentinstag oder farbenfrohe Buns zu Ostern – wir setzen kreative Ideen gerne für dich um! Beachte allerdings, dass bei diesen einmaligen Anfragen die Mindestbestellmengen ggf. größer ausfallen.</p>
+    </div>
+    <div class="highlight-image">
+        <img src="https://cloud.servicebund.de/f/8ec26057ae1c4f5eacb4/?dl=1" alt="Herzförmiger Burger Bun">
+    </div>
+</section>
+        
+        <div class="container" style="display: flex; justify-content: center; margin-bottom: 24px;">
+        <a href="mailto:info@schulstadbakerysolutions.de">
+        <button class="button1">Stelle deine Produktanfrage</button>
+        </a>
+        </div>
+
+<section class="contact-section">
+    <div class="container contact-container">
+        <div class="lantmännen-logo">
+            <img src="https://cloud.servicebund.de/f/202386b9fb5c4e48a9bd/?dl=1" alt="Lantmännen Logo">
+        </div>
+        <div class="contact-details">
+            <p>Schulstad Bakery Solutions ist einer Marke von<br><br>
+                Lantmännen Unibake Germany GmbH & Co. KG<br>
+                Linzer Straße 9<br>
+                28359 Bremen<br>
+                Deutschland
+            </p>
+            <p>eMail: <a href="mailto:info@schulstadbakerysolutions.de">info@schulstadbakerysolutions.de</a></p>
+        </div>
+        <div class="handwerk-cta">
+            <h3>Premium-Backwaren für Profis</h3>
+            <p>Lantmännen Unibake bietet mit Schulstad hochwertige, tiefgekühlte Backwaren für den Profi-Bereich. Mit Leidenschaft und skandinavischem Flair werden Burger-Buns, Hot-Dog-Brötchen und kreative Snacks gebacken, die höchsten Qualitätsansprüchen gerecht werden. Als einer der führenden Anbieter in Europa liegtunser Fokus auf Frische und Qualität.</p>
+        </div>
+    </div>
+</section>
+

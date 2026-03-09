@@ -1,0 +1,256 @@
+<style>
+  /* --- Banner Section --- */
+  .fullwidth_banner {
+    height: 350px;
+    width: 100%;
+    display: flex;
+    margin-bottom: 24px;
+  }
+
+  #banner {
+    width: 100%;
+    background: #efefef url("https://cloud.servicebund.de/f/4588b523def1410cab4d/?dl=1") no-repeat 10% 0%;
+    background-size: cover;
+    border-radius: 0 8px 8px 0;
+  }
+
+  #footer {
+    width: 100%;
+    background: #efefef url("https://cloud.servicebund.de/f/85c4b96a6b1f4210bebe/?dl=1") no-repeat 10% 0%;
+    border-radius: 0 8px 8px 0;
+  }
+
+  #headline_box {
+    width: 27%;
+    background: #efefef;
+    border-radius: 8px 0 0 8px;
+  }
+
+  #überschrift {
+    font-size: 32px;
+    color: black;
+    margin: 15px;
+  }
+
+  p#claimer {
+    font-size: 16px;
+    margin: 10px 10px 10px 15px;
+    color: black;
+  }
+
+  /* --- Flexbox & Grid Section --- */
+  .fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: 12px -12px -12px -12px;
+  }
+
+  .box {
+    width: 33.3333%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .box_2 {
+    width: 50%;
+    height: 468px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+  }
+
+  /* --- Links & Interactions --- */
+  a.box, .box a, .box_2 a {
+    text-decoration: none;
+  }
+
+  .box:hover .bild div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+
+  #gelb {
+    display: block;
+    background: #76b82a;
+    position: relative;
+  }
+
+  #gelb:hover {
+    background: #7fc72e;
+  }
+
+  /* --- Images & Backgrounds --- */
+  .bild {
+    width: 100%;
+    height: 232px;
+    background: white;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+
+  .box_2 .bild {
+    height: 320px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .bild > div {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #eins { background-image: url("https://cloud.servicebund.de/f/692b8f40af814729ae51/?dl=1"); }
+  #zwei { background-image: url("https://cloud.servicebund.de/f/0e912b9814f84112935a/?dl=1"); }
+  #drei { background-image: url("https://cloud.servicebund.de/f/9c19c7a27d36437c8c52/?dl=1"); }
+  #vier { background-image: url("https://cloud.servicebund.de/f/53f76ab719f6418ead49/?dl=1"); }
+  #fünf { background-image: url("https://cloud.servicebund.de/f/3307f2469c094762bc6e/?dl=1"); }
+  #sechs { background-image: url("https://cloud.servicebund.de/f/9ca022d6821c41c9a91e/?dl=1"); }
+  #sieben { background-image: url("https://cloud.servicebund.de/f/5f07a7d9cf4d402398fb/?dl=1"); }
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 32px;
+    color: white;
+  }
+
+  p.gesamtsortiment {
+    margin: 0 24px;
+    font-size: 20px;
+    color: white;
+  }
+
+  p.überschrift_warengruppe {
+    margin: 3% 3% 2%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 22px;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 0 3%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  /* --- UI Elements --- */
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* --- Responsive Styles --- */
+  @media (max-width: 980px) {
+    #headline_box {
+      width: calc(100% + 24px);
+      border-radius: 8px;
+    }
+    #headline_box img {
+      margin: 10px 0 !important;
+      width: 15% !important;
+    }
+    #banner { display: none; }
+    .fullwidth_banner {
+      height: auto;
+      width: calc(100% + 24px);
+      margin: 0 auto 24px -12px;
+    }
+  }
+
+  @media (max-width: 920px) {
+    #flexbox { flex-direction: column; }
+    .box, .box_2 {
+      width: 100%;
+      margin: 10px auto;
+      height: auto;
+    }
+    .box_2 .bild {
+      height: 0;
+      padding-top: 46.77%;
+    }
+  }
+</style>
+
+<div class="fullwidth_banner">
+  <div id="headline_box">
+    <div id="überschrift"><b>SELECT TRUE SEAFOOD</b></div>
+    <p id="claimer">In Harmonie mit dem Ozean: Die Marke Mermaid bietet hochwertiges Seafood und Fisch aus kontrollierten Fanggebieten und verantwortungsvollem Farming von persönlich bekannten Produzenten.</p>
+    <img src="https://cloud.servicebund.de/f/4d7c16b73df24ab2afc3/?dl=1" style="width: 80px; height: auto; margin-left: 0px; border-radius: 0px 8px 8px 0px;">
+  </div>
+  <div id="banner"></div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=126595,153993,268589,268684,274200,274202,274204,274205,274206,274208,070433,071521,071542,074829,074830,074831,074832,074839,074841,074858,075499,075531,140767,153995,078733
+&headline=Mermaid Black Tiger Garnelen">
+      <div class="bild"><div id="drei"></div></div>
+      <p class="überschrift_warengruppe"><b>Black Tiger Garnelen</b></p>
+      <p class="text_warengruppe">Die hochwertigen Black Tiger Garnelen aus naturnahem Farming und aus Wildfang in verschiedenen Größen und Verarbeitungsformen</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=103912,104216,126541,126543,075027&headline=Mermaid Black Tiger Garnelenspieße">
+      <div class="bild"><div id="vier"></div></div>
+      <p class="überschrift_warengruppe"><b>Black Tiger Garnelenspieße</b></p>
+      <p class="text_warengruppe">Aus hochwertiger Ware von Mini- bis Butterfly-Spiess.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=121228,297820,297825&headline=Mermaid Fisch">
+      <div class="bild"><div id="fünf"></div></div>
+      <p class="überschrift_warengruppe"><b>Fisch</b></p>
+      <p class="text_warengruppe">Lachs, Saibling und Lachsforelle - Salmoniden aus verantwortungsvoller Aquakultur</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=292555,303903,308815,081509,&headline=Mermaid Spezialitäten">
+      <div class="bild"><div id="eins"></div></div>
+      <p class="überschrift_warengruppe"><b>Spezialitäten</b></p>
+      <p class="text_warengruppe">Ausgesuchter Genuss aus dem Meer - mit gutem Gewissen</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=294414,042238,042242,042250&headline=Mermaid Muscheln">
+      <div class="bild"><div id="zwei"></div></div>
+      <p class="überschrift_warengruppe"><b>Muscheln</b></p>
+      <p class="text_warengruppe">Jakobsmuscheln, Scallops und Miesmuscheln - Fine Dining in Mermaid Qualität</p>
+    </a>
+  </div>
+  <div class="box" id="gelb">
+    <a href="/product/search?partNumbers=103912,104216,121228,126541,126543,126595,153993,268589,268684,274200,274202,274204,274205,274206,274208,292555,294414,297820,297825,303903,308815,042238,042242,042250,070433,071521,071542,074829,074830,074831,074832,074839,074841,074858,075027,075499,075531,081509,140767,153995,078733&headline=Gesamtsortiment Mermaid">
+      <p class="überschrift"><b>Mehr Artikel entdecken?</b></p>
+      <p class="gesamtsortiment">Das gesamte Sortiment von Mermaid finden Sie hier</p>
+      <span id="clickable"><img src="https://cloud.servicebund.de/f/22462448f5af432c8343/?dl=1" id="pfeil"> </span>
+    </a>
+  </div>
+</div>
+
+<div id="footer"></div>

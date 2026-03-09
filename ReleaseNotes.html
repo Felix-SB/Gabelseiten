@@ -1,0 +1,352 @@
+<style>
+
+    .flexbox1 {
+    width: 100%;
+    display: flex;
+    height: 267px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+    background-image: url("https://cloud.servicebund.de/f/9aea915640b74f469959/?dl=1");
+    background-size: cover;
+  }
+
+#box1 {
+  position: relative;
+  width: auto;
+  height: auto;
+  top: 35%;
+  left: 5%;
+}
+
+  #überschrift_faq_1 {
+    font-size: 48px;
+    width: 100%;
+    margin: 0 auto;
+    font-family: ShadowsIntoLight;
+    color: white;
+  }
+
+  .symbole2 {
+    font-size: 13px;
+    height: 100px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  details > summary {
+    background-color: #f2f3f1;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+
+  details > summary > * {
+    display: inline;
+  }
+
+  details > div {
+    border: 2px solid #f2f3f1;
+    margin-top: 0;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+
+  details[open] summary ~ * {
+    animation: sweep .5s ease-in-out;
+  }
+  @keyframes sweep {
+    0%    {opacity: 0; margin-top: -10px}
+    100%  {opacity: 1; margin-top: 0px}
+  }
+
+  ul {
+      list-style: none;
+  }
+
+  ul li::before {
+    content: "\25AA";
+    color: #76b82a;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+    }
+
+</style>
+
+<div class="flexbox1">
+  <div id="box1">
+    <p id="überschrift_faq_1" style="margin: 0px;">Neue Funktionen im Webshop</p>
+  </div>
+</div>
+
+
+<details open>
+    <summary>
+      <h3>Januar 2025</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.24.0</b></p>
+      <p><b>Aus der Region</b></p>
+      <p>Produkte "Aus der Region" werden nun mit einem neuen Icon im Artikelgrid dargestellt:</p><br>
+      <p><img style="width:35%; margin: 0 5px;" src="https://cloud.servicebund.de/f/baaf6638920246a7a947/?dl=1"></p>
+      <p>Die Darstellung im Artikelgrid wurde mit den Attributen „Bio“, „MSC“ und „ASC“ zusammengefasst und erscheint nun als Weltkugel. Bei einem Hover-Over werden die einzelnen Logos angezeigt.</p>
+      <p><img style="width:35%; margin: 0 5px;" src="https://cloud.servicebund.de/f/a708def8a3ba42baadc2/?dl=1"></p>
+      <p><b>Optimierungen</b></p>
+      <P>- Mit der Enter Taste kann nun, nach Eingabe der Menge, zum nächsten Artikel in der Liste gesprungen werden.</P>
+    </div>
+  </details>
+<details>
+
+    <summary>
+      <h3>Oktober 2024</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.23.0</b></p>
+      <p>Die Scanning Funktion wurde so erweitert, dass auch das Scannen von Produkt EANs und das anschließende Hinzufügen zum Warenkorb möglich ist.</p><br>
+      <p>Mengenänderungen bei Artikeln lösen kein Springen der Menge mehr aus.</p>
+    </div>
+  </details>
+
+<details>
+    <summary>
+      <h3>Juli 2024</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.22.0</b></p>
+      <p><b>Scanning von Produkt EANs</b></p>
+      <p>Die Scanning Funktion wurde so erweitert, dass auch das Scannen von Produkt EANs und das anschließende Hinzufügen zum Warenkorb möglich ist.</p><br>
+      <p>Mengenänderungen bei Artikeln lösen kein Springen der Menge mehr aus.</p>
+    </div>
+  </details>
+
+<details>
+    <summary>
+      <h3>April 2024</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.21.0</b></p>
+      <p><b>Offline-Schalter in der Shop-App</b></p>
+      <p>Sollten Sie den Offline-Modus der Shop-App nicht nutzen wollen, befindet sich nun in Einstellungen die Option, diesen zu deaktivieren, bzw. zu aktivieren. Sie erreichen die Einstellungen über das Profil-Icon.</p>
+      <p><img style="width:35%; margin: 0 5px;" src="https://cloud.servicebund.de/f/a9ce85768b414e0b9bc6/?dl=1"></p>
+      <p>Die App ist nun auch während der Synchronisation der Offlinedaten nutzbar. Eine Information am oberen Bildschirmrand zeigt den aktuellen Status der Synchronisation an.</p>
+      <p><img style="width:35%; margin: 0 5px;" src="https://cloud.servicebund.de/f/fa800ab7d45b45b393f8/?dl=1"></p>
+    </div>
+  </details>
+
+<details>
+    <summary>
+      <h3>Februar 2024</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.20.0</b></p>
+      <p><b>Erneut Bestellen</b></p>
+      <p>Über die Bestelldetails können nun mit einem Klick alle Artikel einer Bestellung mit der zuletzt bestellten Menge in den Warenkorb gelegt werden.</p>
+      <p><img style="width:70%; margin: 0 5px;" src="https://cloud.servicebund.de/f/ca1331530bb24276aa25/?dl=1"></p>
+      <p>- Die Scanning-Funktion wurde für für Tablets freigeschaltet</p>
+      <p>- Die Shop-App ist nun für alle Kunden freigegeben. Hilfe bei der Installation gibt es <a href="/landing/PWA">hier</a>.</p>
+      <p><b>Optimierungen</b></p>
+      <p>- Es wurden weitere Optimierungen an der Shop-App vorgenommen, darunter:</p>
+      <ul>
+      <li>Die Offline-Erkennung ist nun schneller</li>
+      <li>Startseitenbanner und Logo sind nun im Offline-Modus vorhanden</li>
+      <li>Funktionen, welche im Offline-Modus nicht aktiv sind werden nun ausgeblendet</li>
+      <li>Die Dauer der Synchronisation von Produkten und Preisen wurde deutlich reduziert, indem nun ein Abgleich der Daten erfolgt und nur die Veränderungen neu geladen werden.</li>
+    </ul>
+      <p>Zusätzlich kann die Synchronisation bei Bedarf abgebrochen werden.</p>
+      <p>- Die Spaltenbreiten auf der Artikeldetailseite wurde angepasst</p>
+
+      <p><b>Fehlerbehebungen</b></p>
+      <p>- Die Statistik PDFs lassen sich wieder öffnen</p>
+      <p>- Die letzte Ebene in der "Breadcrumb"-Navigation ist wieder klickbar:</p>
+      <p><img style="width:25%; margin: 0 5px;" src="https://cloud.servicebund.de/f/76af6fcb3f01448096cf/?dl=1"></p>
+    </div>
+  </details>
+
+
+<details>
+    <summary>
+      <h3>September 2023</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.17.0</b></p>
+      <p><b>Optimierungen</b></p>
+      <p>- Zentraleinkäufer können die Sander-Konfiguratoren nun individuell für die ausgewählten Kundennummern nutzen.</p>
+      <p><b>Fehlerbehebungen</b></p>
+      <p>- Einkaufslisten lassen sich problemlos umbenennen</p>
+      <p>- Gebindeeinheiten lassen sich nun auch, sofern vorhanden, in Miniwarenkorb und Suchflyout verändern</p>
+      <p>- Iphone-Nutzer können nun die Scroll-Funktion im Burgermenü nutzen</p>
+      <p>- Das Userlike-Fenster kann auf mobilen Geräten wieder geschlossen werden</p>
+    </div>
+  </details>
+
+<details>
+    <summary>
+      <h3>Juli 2023</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.16.0</b></p>
+      <p><b>Scanning Funktion</b></p>
+      <p>Wenn Sie den Shop mit ihrem mobilen Gerät nutzen, können Sie nun über die neue Scanning-Funktion Etiketten von Produkten einscannen und diese automatisch Ihrem Warenkorb hinzufügen. Erneutes Scannen erhöht die Menge im Warenkorb um eine Einheit.<br>
+      Bitte beachten Sie, dass dies nur mit generierten Etiketten funktioniert und nicht mit Produkt-EANs.</p>
+      <p><img style="width:25%; margin: 0 5px;" src="https://cloud.servicebund.de/f/e85472e40b7048f0b757/?dl=1"></p> 
+
+      <p><b>Optimierungen:</b></p>
+      <p>- Zentraleinkäufer können nun den Predictive Basket für alle verknüpften Kunden einsehen.</p>
+      <p>- Die Performance der Sander-Konfiguratoren wurde verbessert.</p>
+      <p>- Neue Kennwörter, die folgende Zeichenfolgen enthalten, werden nicht mehr zugelassen: <br>
+      123, qwerty, passwort.</p>
+
+    </div>
+  </details>
+
+<details>
+    <summary>
+      <h3>April 2023</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.15.0</b></p>
+      <p><b>"Angemeldet bleiben":</b></p>
+      <p>Beim Login gibt es nun die Option „Angemeldet bleiben“. Ist diese ausgewählt, so müssen Sie sich nicht erneut im Shop anmelden. Auch dann nicht, wenn das Fenster geschlossen wird und den Shop erneut geöffnet wird. </p>
+      <p><img style="width:25%; margin: 0 5px;" src="https://cloud.servicebund.de/f/fe7d5acdeeef4369b7c1/?dl=1"></p> 
+      <p><b>Erstellen von Listen:</b></p>
+      <p>Über den Favoriten-Stern können nun direkt neue Listen erstellt werden, ohne erst in die Listenverwaltung wechseln zu müssen.</p>
+      <p><img style="width:25%; margin: 0 5px; border-radius:5px;" src="https://cloud.servicebund.de/f/b70066363b134200a8e8/?dl=1"></p> 
+      <p><b>Optimierungen:</b></p>
+      <p>- Große Warenkörbe mit über 100 Artikeln können nun schneller vom Shop verarbeitet werden und die Fehlermeldung für Mengenupdates beim Hinzufügen einzelner Produkte tritt nicht mehr auf.</p>
+      <p>- Werden innerhalb eines Filters mehrere Filteroptionen ausgewählt, so werden alle Optionen mit einem grünen Häkchen gekennzeichnet.</p>
+      <p>- Wird eine Einkaufsliste oder der Ordersatz aufgerufen, so wird ein Navigationshilfe angezeigt, um zur vorherigen Seite zurückzukommen.</p>
+      <p><b>Fehlerbehebungen:</b></p>
+      <p>Preise für Produktvorschläge werden nun wieder angezeigt.</p>
+      <br>
+      <p>Haben Sie Anmerkungen oder Feedback zum Webshop? Schicken Sie uns gerne eine Mail an: <a href="mailto:ecommerce@servicebund.de">ecommerce@servicebund.de</a>.</p>
+
+    </div>
+  </details>
+
+<details>
+    <summary>
+      <h3>März 2023</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.14.0</b></p>
+      <p><b>Optimierte Kategorie Navigation:</b></p>
+      <p>Das Kategorien-Feld bleibt während der Navigation innerhalb einer Artikelauflistung bestehen. Es werden Kategorien, Hauptwarengruppen und Unterwarengruppen aufgeführt, in denen sich Artikel aus der Suche befinden. Diese lassen sich über den Pfeil ein- oder ausklappen. Die aktuell ausgewählte Warengruppe wird unterstrichen. Mit einem Klick auf eine Warengruppe oder Kategorie gelangt man direkt zu den entsprechenden Suchergebnissen. Dadurch ist eine Aufwärts- und Abwärtsnavigation möglich. </p>
+      <p><img style="width:20%; margin: 0 5px; border-radius:5px;" src="https://cloud.servicebund.de/f/a629cefe36cd44a2b9c7/?dl=1"></p> 
+      <p><b>Bearbeiten von Listen:</b></p>
+      <p>In den Einkauflisten kann nun in einen „Bearbeiten“-Modus gewechselt werden. In diesem Modus können Standardmengen verändert werden, Listenbeschreibung und -titel angepasst oder die Liste gelöscht werden. Der Ordersatz und die Etikettenliste können nicht gelöscht werden. Verfügt ein Benutzer über Disponentenrechte, so können im Bearbeitungs-Modus lediglich die Standardmengen angepasst werden. Dadurch wird eine Fehlbedienung verhindert und die Oberfläche wirkt deutlich aufgeräumter.</p>
+      <p><img style="width:55%; margin: 0 5px; border-radius:5px; border:2px solid #f2f3f1;" src="https://cloud.servicebund.de/f/52a56a40417e4489af9c/?dl=1"></p>
+      <p><img style="width:55%; margin: 0 5px; border-radius:5px; border:2px solid #f2f3f1;" src="https://cloud.servicebund.de/f/502b592273f14a4ab89a/?dl=1"></p> 
+      <p><b>Pop Up, sobald Standardmengen in den Warenkorb gelegt wurden:</b></p>
+      <p>Wurden Artikel mit ihrer Standardmenge in den Warenkorb gelegt, so wird ein Pop Up ausgespielt. Auch wenn versucht wird, die Standardmengen ein zweites Mal in den Warenkorb zu legen, erscheint ein Pop Up, welches darauf hinweist, dass sich die Artikel mit ihrer Standardmenge bereits im Warenkorb befinden.</p>
+      <p><b>Optimierungen</b></p> 
+      <p>- Darstellung von Inhalten in der mobilen Version: Startseitenkacheln werden in der mobilen Version so angezeigt, dass der gesamte Text lesbar ist.</p>
+      <p>- Verbessertes Userfeedback bei unvollständigem Registrierungsformular: Wenn Pflichtfelder beim Abschicken der Registrierung nicht ausgefüllt sind, wird eine Fehlermeldung angezeigt und das entsprechende Feld wird rot umrahmt.</p>
+      <p>- Befinden sich im aktuellen Warenkorb Bestellartikel ohne Vorlaufzeit, so wird für diese Artikel kein separates Lieferdatum angezeigt.</p>
+      <p>- Die Übersichtlichkeit der Aktionen wurde durch Schattierungen und einen größeren Abstand zwischen den Aktionen verbessert.</p>
+      <p><b>Fehlerbehebungen:</b></p>
+      <p>- Die Darstellung von Mindestmengen wurde korrigiert.</p>
+      <p>- Die Berichte werden auch dann geladen, wenn sie von einem Zentraleinkäufer aufgerufen werden.</p>
+      <p>- Die Bestelldetails lassen sich wieder drucken.</p>
+      
+    </div>
+  </details>
+
+
+<details>
+    <summary>
+      <h3>Januar 2023</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.13.0</b></p>
+      <p><b>Uhrzeitabhängige Bestellartikel:</b></p>
+      <p>Die Logik von Bestellartikeln mit Bestellvorlauf wurde mit dem Handling für uhrzeitabhängige Bestellartikel verknüpft. Wird ein uhrzeitabhängiger Bestellartikel nach der Wechseluhrzeit bestellt und ist für diesen Artikel eine Wiederbeschaffungszeit hinterlegt, so wird der Artikel in einen neuen Teilwarenkorb gelegt. Wird ein uhrzeitabhängiger Bestellartikel mit Wiederbeschaffungszeit vor der Wechseluhrzeit bestellt, so verhält sich der Artikel im Warenkorb wie ein normaler Lagerartikel. </p>
+      <p><img style="width:55%; margin: 0 5px; border-radius:5px;" src="https://cloud.servicebund.de/f/0bc890a3aad14bdf8962/?dl=1"></p> 
+      <p>Bei Unklarheiten kontaktieren Sie uns bitte direkt.</p>
+      <p><b>Optimierungen:</b></p>
+      <p>- An Ordersatz-Artikeln wird nun ein Ordersatz-Icon ausgespielt.</p>
+       <p><img style="width:45%; margin: 0 5px; border-radius:5px;" src="https://cloud.servicebund.de/f/54ae554cc7f4430898ce/?dl=1"></p> 
+      <p>- Das Wiegeartikel-Icon wird nicht mehr ausgespielt.</p>
+      <p>- Das Direkt-Frisch-Icon wurde aktualisiert</p>
+      <p><img style="width:45%; margin: 0 5px; border-radius:5px;" src="https://cloud.servicebund.de/f/e1a26f6b86bb4d4fb6b3/?dl=1"></p> 
+      <p>- In den persönlichen Informationen wird einheitlich der Begriff „Passwort“ und nicht „Kennwort“ verwendet.</p>
+      <p><b>Fehlerbehebungen:</b></p>
+      <p>- Icons von der Artikeldetailseite werden wieder auf dem Artikelpass angedruckt.</p>
+      <p>- Im Warenkorb wurde eine Fehlermeldung für direkt.frisch Artikel ausgespielt, obwohl die Mindestbestellmenge erfüllt war. Diese Fehlermeldung wird nun nicht mehr ausgespielt.</p>
+      <br>
+      </div>
+  </details>
+
+
+
+<details>
+    <summary>
+      <h3>November 2022</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.12.0</b></p>
+      <p><b>Optimierung von Icons:</b></p>
+      <p>Auf der Artikeldetailseite werden die Hinweise "Geschützte Geografische Angabe (g.g.A)", "Geschützte Ursprungsbezeichnung (g.U.)", "Garantiert traditionelle Spezialität (g.t.S.)" sowie "Ohne Gentechnik" und "Fairtrade" ausgespielt. Wenn der Mauszeiger für kurze Zeit auf dem Icon gelassen wird, erscheint zusätzlich eine Beschreibung des jeweiligen Icons.</p>
+      <p><img style="width:65%; margin: 0 5px; border-radius:5px;" src="https://cloud.servicebund.de/f/2980b99d8a004acdb308/?dl=1"></p>    
+      <p><b>Gültigkeitsprüfung des Lieferdatums:</b></p>
+      <p>Die Gültigkeit des Lieferdatums wird jetzt auch bei Aufruf des Warenkorbes und bei Klick auf "Jetzt Bestellen" geprüft. Bitte beachten Sie daher, dass Bestellungen, welche nach dem offiziellen Bestellschluss eingehen, automatisch das nächstmögliche Lieferdatum erhalten. Sie werden in diesem Fall zusätzlich durch ein Pop-Up über das neue Lieferdatum informiert.</p>
+<p>Bei Unklarheiten kontaktieren Sie uns bitte direkt.</p>
+      <p><img style="width:60%; margin: 0 5px; border-radius:5px;" src="https://cloud.servicebund.de/f/56332d5f44ec4d72bbe4/?dl=1"></p>
+      <p><b>Optimierungen:</b></p>
+      <p>- Dummy-Artikelbilder werden in jeder Warengruppen-Ebene angezeigt.</p>
+      <p>- Auf der Artikeldetailseite wird statt dem deutschen Bio-Siegel das europäische Siegel angezeigt.</p>
+      <p>- Der Bestellverlauf auf der Startseite wird nun direkt nach Abschicken der Bestellung aktualisiert.</p>
+      
+
+    </div>
+  </details>
+
+
+  <details>
+    <summary>
+      <h3>September 2022</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.11.0</b></p>
+      <p><b>Galerieansicht:</b></p>
+      <p>Im Shop kann nun zwischen einer Listenansicht und einer Galerieansicht gewählt werden (siehe gelb markierte Buttons im Screenshot). Die Galerieansicht eignet sich durch die großen Produktabbildungen insbesondere dafür, das Sortiment zu entdecken, während die Listenansicht genutzt werden kann, um schnell an Informationen zu gelangen und eine Bestellung aufzugeben. Die Galerieansicht ist im Gesamtkatalog und über das Burger-Menü nutzbar. Im Warenkorb und den persönlichen Einkaufslisten erscheinen die Artikel nur in der Listenansicht. Die Galerieansicht kann sowohl in der Desktop-Ansicht als auch in der mobilen Ansicht ausgewählt werden. Die ausgewählte Ansicht wird im Rahmen eines Logins gespeichert.</p>
+      <p><img style="width:95%; margin: 0 5px; border-radius:5px;" src="https://cloud.servicebund.de/f/220ac315b2e54c5abeaa/?dl=1"></p>    
+      <p><b>Optimierungen:</b></p>
+      <p>- Dummy-Artikelbilder werden jetzt auch unter iOS ausgespielt</p>
+      <p>- Um den Warenkorb übersichtlicher zu gestalten, wurde das Lieferdatum neben Lager-/Bestellartikel platziert.</p>
+      <br>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <h3>August 2022</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.10.0</b></p>
+      <p><b>Burgermenü:</b></p>
+      <p>Alle Kategorieebenen im Burgermenü lassen sich nun anklicken, sodass mit einem Klick auf den Schriftzug einer Kategorie/Hauptwarengruppe/Unterwarengruppe direkt zur Artikelauflistung gelangt werden kann.</p>    
+      <p><b>Optimierungen:</b></p>
+
+      <p>Ein Fehler beim Aufruf der Eigenmarken-Gabelseite wurde behoben.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>
+      <h3>Juli 2022</h3>
+    </summary>
+    <div>
+      <p>Alle Neuerungen mit dem <b>Release 2.9.0</b></p>
+      <p><b>Filterpersistenz:</b></p>
+      <p>Ausgewählten Filter bleiben für die aktuelle Suche erhalten, wenn nach Auswahl eines Filters über den zurück Button zur Artikelliste zurückkehrt oder Suchergebnisse über die graue Kategoriennavigation minimiert.</p>
+      <p><b>Optimierungen:</b></p>
+      <p>Überarbeitung der Icons auf Artikeldetailseiten, um die Übersichtlichkeit zu erhöhen</p>
+
+    </div>
+  </details>
+</div>

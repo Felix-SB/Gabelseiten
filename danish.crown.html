@@ -1,0 +1,503 @@
+<style>
+
+:root {
+  --main-bg-color: #efefef;
+  --hover-bg-color: #7fc72e;
+  --divider-color: #CBAC5D;
+  --text-color: #20231C;
+  --font-family: 'NunitoSans', sans-serif;
+  --primary-color: #B59734;
+  --secondary-color: #76b82a;
+  --basic-color: black;
+  --font-family-sans: sans-serif;
+  --font-family-heading: 'Shadows Into Light', cursive;
+  --font-size-xlarge: 34px;
+  --font-size-large: 28px;
+  --font-size-medium: 20px;
+  --font-size-small: 16px;
+  --line-height: 1.4;
+  }
+
+.fullwidth {
+  height: auto;
+  width: 100%;
+}
+
+#flexbox {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% + 24px);
+  margin: -12px;
+  margin-top: 0px;
+}
+
+  .überschrift {
+    font-size: var(--font-size-xlarge);
+    color: var(--basic-color);
+    text-transform: none;
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+.box, .box_2, .box_3 {
+  background: var(--main-bg-color);
+  margin: 12px;
+  border-radius: 8px;
+}
+
+.bild {
+  height: 70%;
+  width: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 8px 8px 0 0;
+}
+
+.box {
+  width: 25%;
+  height: 312px;
+}
+
+.box_2 {
+  width: 50%;
+  height: 360px;
+}
+
+.box_3 {
+  width: 33.333%;
+  height: 312px;
+}
+
+.box:hover .bild div, .box_2:hover .bild_2 div, .box_3:hover .bild div {
+  transform: scale(1.2);
+  transition: all .9s;
+}
+
+#gelb:hover {
+  background: var(--hover-bg-color);
+}
+
+.bild > div, .bild_2 > div {
+  height: 100%;
+  width: 100%;
+}
+
+
+.divider {
+  background-color: var(--divider-color);
+  height: 36px;
+  width: 100%;
+  display: flex;
+  margin-top: 12px;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.divider:first-of-type {
+  margin-top: 5px;
+}
+
+.divider p, p.überschrift, p.gesamtsortiment, p.überschrift_warengruppe, p.text_warengruppe {
+  font-family: var(--font-family);
+}
+
+.divider p, p.überschrift {
+  font-size: 32px;
+  color: white;
+  text-align: center;
+  margin-left: 8px;
+}
+
+p.gesamtsortiment {
+  margin: 0 24px;
+  font-size: 20px;
+  color: white;
+}
+
+p.überschrift_warengruppe {
+  margin: 3% 3% 2%;
+  font-size: 20px;
+  color: var(--text-color);
+}
+
+p.text_warengruppe {
+  margin: 0 3%;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+#pfeil {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  right: 24px;
+  bottom: 24px;
+}
+
+#clickable {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+.beschreibung a {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+
+
+.beschreibung {
+  text-align: center;
+  font-size: var(--font-size-medium);
+}
+
+@media (max-width: 980px) {
+  #flexbox {
+    flex-direction: column;
+  }
+
+  .box, .box_2, .box_3 {
+    width: 100%;
+    margin: 10px auto;
+    height: auto;
+  }
+}
+
+
+
+</style>
+
+<img src="https://cloud.servicebund.de/f/d7a798d3909d48068840/?dl=1" alt="High Convenience á la carte" class="fullwidth">
+
+  <div class="fullwidth">
+    <div class="überschrift">
+      <p><b>Alle Gerichte aus dem Programm á la Carte</b></p>
+    </div>
+  <div class="beschreibung">
+    <p>Bei jedem Gericht finden Sie Zutaten, Zubereitungsanleitungen und Servier-Vorschläge.</p>
+    <p>Wie es funktioniert und die allgemeinen Zubereitungsanleitungen finden Sie hier</p>
+    <p><a href="/landing/Sander_ALC_HowTo">So geht's</a></p>
+  </div>
+
+</div>
+
+<div class="divider">
+  <p>Vorspeisen</p>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Curry-Zitronengras-Suppe">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/cc58c2bc2c104a3ea2f3/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Curry-Zitronengras-Suppe</b></p>
+      <p class="text_warengruppe">mit Brot & Öl</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Vegane Gulaschsuppe">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/602261c4e5de4a2d9501/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Vegane Gulaschsuppe</b></p>
+      <p class="text_warengruppe">mit Brot & Öl</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Rinderkraftbrühe">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/568962083e73406189fe/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Rinderkraftbrühe</b></p>
+      <p class="text_warengruppe">mit Brot & Öl</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Tomatensuppe">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/ce07d9df75404c90a64d/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Tomatensuppe</b></p>
+      <p class="text_warengruppe">mit Brot & Öl</p>
+    </a>
+  </div>
+</div>
+
+  <div class="divider">
+    <p>Hauptspeisen</p>
+  </div>
+
+  <div class="fullwidth" id="flexbox">
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Veganes Auberginencurry mit Shiitakepilzen, Balsamico & Langkornreis">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/7e6e3bd8cad5453e96db/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Veganes Auberginencurry</b></p>
+      <p class="text_warengruppe">Shiitakepilze mit Balsamico & Langkornreis</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Vegane Currywurst mit Kartoffelrösti">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/61315c1fae2343a58cf4/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Vegane Currywurst</b></p>
+      <p class="text_warengruppe">Kartoffelrösti</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Vegane Königsberger Klopse
+mit Kartoffeln & Möhrenbündchen">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/ed28c3bfc201433886e1/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Vegane Königsberger Klopse</b></p>
+      <p class="text_warengruppe">Kartoffeln & Möhrenbündchen</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Vegane Polpette al Sugo">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/c19209cf87214dc59bfa/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Vegane Polpette al Sugo</b></p>
+      <p class="text_warengruppe">Spaghetti</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Rinderfrikadelle">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/655d8558a0e24f258ec0/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Rinderfrikadelle</b></p>
+      <p class="text_warengruppe">Kartoffelrösti & Salat</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Königsberger Klopse mit Blumenkohl-Romanesco-Gemüse & Kartoffeln">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/627a384461da4b878694/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Königsberger Klopse</b></p>
+      <p class="text_warengruppe">Blumenkohl-Romanesco-Gemüse & Kartoffeln</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="BIO Rindergulasch nach Wiener Art mit Sommergemüse & Kartoffeln">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/752e917973584926932f/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>BIO Rindergulasch</b></p>
+      <p class="text_warengruppe">Sommergemüse & Kartoffeln</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="PUTENMEDAILLONS TOMATE-BASILIKUM">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/8e362209fe7e447aa95b/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Putenmedaillons</b></p>
+      <p class="text_warengruppe">Blattspinat & Zartweizenrisotto</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Hühnchenbrustgeschnetzeltes">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/a0afcaae10f2487790f4/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Hühnchenbrustgeschnetzeltes</b></p>
+      <p class="text_warengruppe">Sommergemüse & Langkornreis</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Indian Butter Chicken">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/bd1a0384cb7b4728a0c4/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Indian Butter Chicken</b></p>
+      <p class="text_warengruppe">Langkornreis & Zuckerschoten mit Sesam und Erdnuss</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Kalbsbraten in eigener Jus">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/ce2abed7d1a84e3aa863/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Kalbsbraten in eigener Jus</b></p>
+      <p class="text_warengruppe">Apfelrotkohl & Kartoffelgratin</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Kalbsrahmgeschnetzeltes">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/9739edad98784e4dbca1/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Kalbsrahmgeschnetzeltes</b></p>
+      <p class="text_warengruppe">Blumenkohl-Romanesco-Gemüse & Spätzle</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Schweinemedaillons in Champignonrahm">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/34c6a39bcecc4e599ec6/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Schweinemedaillons in Champignonrahm</b></p>
+      <p class="text_warengruppe">Kartoffelgratin & Sommergemüse</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Rheinischer Sauerbraten">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/57a6bc97a8bd4ac59924/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Rheinischer Sauerbraten</b></p>
+      <p class="text_warengruppe">Rotkohl & Kartoffelklöße</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Rindfleisch in Meerrettichsauce">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/25053fd3f3c247d9921f/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Rindfleisch in Meerrettichsauce</b></p>
+      <p class="text_warengruppe">Rahmwirsing & Kartoffeln</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Geschmorter Zwiebelrostbraten">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/9235f376cd734a959cdd/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Geschmorter Zwiebelrostbraten</b></p>
+      <p class="text_warengruppe">Bohnenbündchen & Spätzle</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Bœuf „Stroganoff“">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/60aae72d7edc4bdea2e4/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Bœuf „Stroganoff“</b></p>
+      <p class="text_warengruppe">Sommergemüse & Schupfnudeln</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Rindergulasch nach ungarischer Art">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/df1d5f525ab540e9aa94/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Rindergulasch</b></p>
+      <p class="text_warengruppe">Bohnenbündchen & Kartoffelklöße</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_3">
+   <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="BIO Karotten-Kartoffel-Gemüse">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/13e5082d300d426cb5ad/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>BIO Karotten-Kartoffel-Gemüse</b></p>
+      <p class="text_warengruppe">Bunter Salat</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Rinderroulade">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/3cb7411a45d94cd2846c/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Geschmorte Rinderroulade</b></p>
+      <p class="text_warengruppe">Rahmwirsing & Kartoffelpüree</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Spaghetti Bolognese">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/5f5ca2da30cb470b9c79/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Spaghetti "Bolognese"</b></p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Seelachsragout in Senf-Gemüse-Sauce">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/ddcf41aa311346898d09/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Seelachsragout</b></p>
+      <p class="text_warengruppe">in Senf Gemüse-Sauce mit Kartoffeln</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Bio käsespätzle-Pfanne">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/6d5399fb18694370ad12/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>BIO Käsespätzle-Pfanne</b></p>
+      <p class="text_warengruppe">But gemischter Salat</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Bio Gnocchipfanne">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/9a7ef12737064b67a03b/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Bio Gnocchipfanne</b></p>
+      <p class="text_warengruppe">Kirschtomatengemüse</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Süsskartoffel-Gnocchi">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/f1249c724ac04aa4add1/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Süsskartoffel-Gnocchi</b></p>
+      <p class="text_warengruppe">Zuckerschoten mit Sesam und Erdnuss</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Vegetarische Süsskartoffel-Gnocchi">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/a1f65378e86647ffa857/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Knöpflepfanne</b></p>
+      <p class="text_warengruppe">Bunt gemischter Blattsalat</p>
+    </a>
+  </div>
+
+  <div class="box_3">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Wirtshaus-Frikadelle">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/9a959cb19ddb4f46b762/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Wirtshaus-Frikadelle</b></p>
+      <p class="text_warengruppe">Rahmwirsing & Kartoffelpüree</p>
+    </a>
+  </div>
+</div>
+
+
+  <div class="divider">
+    <p>Nachspeisen</p>
+  </div>
+
+  <div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Tiramisu">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/74db4c910d5b4dfb9ac3/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Tiramisu</b></p>
+      <p class="text_warengruppe">mit Erdbeeren</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Wirtshaus-Frikadelle">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/dcffeea3c0104835b4d5/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Kokosnuss-Crème-Brûlée</b></p>
+      <p class="text_warengruppe">mit Blaubeeren</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Apfel-Crumble">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/3671263d8c2b434180d4/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Apfel-Crumble</b></p>
+      <p class="text_warengruppe">Vanillecreme & Himbeeren</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=109322,085753,081141&headline=Geschmorter%20Zwiebelrostbraten" aria-label="Zitronen-Thymian-Creme">
+      <div class="bild" style="background-image: url('https://cloud.servicebund.de/f/e2a2b8cd3e254fc4afa9/?dl=1');"></div>
+      <p class="überschrift_warengruppe"><b>Zitronen-Thymian-Creme</b></p>
+      <p class="text_warengruppe">mit Beeren</p>
+    </a>
+  </div>
+</div>

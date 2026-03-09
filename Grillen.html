@@ -1,0 +1,312 @@
+<style>
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Layout Containers --- */
+        .full-width-container {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            width: calc(100% + 24px);
+            margin: -12px;
+        }
+
+        /* --- Banner Section --- */
+        .banner {
+            display: flex;
+        }
+
+        .banner-text-column {
+            width: 23.71%;
+            background: #efefef;
+            border-radius: 8px 0px 0px 8px;
+            padding: 25px 15px; /* Added more padding for potentially longer text */
+            box-sizing: border-box;
+            display: flex; /* To help center content if needed */
+            flex-direction: column;
+            justify-content: center; /* Vertically center text */
+        }
+
+        .banner-image-column {
+            width: 76.29%;
+            /* UPDATED IMAGE */
+            background-image: url("https://cloud.servicebund.de/f/a844af4dfcd24c718882/?dl=1");
+            background-color: #efefef;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center; /* Adjusted position */
+            border-radius: 0px 8px 8px 0px;
+            height: 360px;
+        }
+
+        .banner-heading {
+            font-size: 32px;
+            color: black;
+            margin: 0 0 15px 0;
+            font-weight: bold;
+        }
+
+        .banner-text {
+            font-size: 16px;
+            margin: 0;
+            color: black;
+            font-weight: normal; /* Removed bold from original */
+            line-height: 1.5; /* Improve readability */
+        }
+
+        /* --- Card Component --- */
+        .card,
+        .card--half {
+            background: #efefef;
+            margin: 12px;
+            border-radius: 8px;
+            height: 360px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .card {
+            width: calc(33.3333% - 24px);
+        }
+
+        .card--half {
+            width: calc(50% - 24px);
+        }
+
+        .card-image-container {
+            width: 100%;
+            height: 230px;
+            background: white;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .card-image {
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center; /* Default position */
+            transition: transform 0.9s ease;
+        }
+
+        .card:hover .card-image,
+        .card--half:hover .card-image {
+            transform: scale(1.2);
+        }
+
+        /* Specific background images - UPDATED */
+        .card-image--fleisch { /* Renamed from burger */
+            background-image: url("https://cloud.servicebund.de/f/909e2c57f08b4db49e9d/?dl=1");
+        }
+
+        .card-image--beilagen { /* Renamed from workbook */
+            background-image: url("https://cloud.servicebund.de/f/d99d155a54bd48d29ed3/?dl=1");
+        }
+
+        .card-image--getraenke { /* New class for drinks */
+             background-image: url("https://cloud.servicebund.de/f/4970c60d4f044f169fc3/?dl=1");
+        }
+
+        .card-image--saucen { /* Renamed from sides */
+            background-image: url("https://cloud.servicebund.de/f/2ef78979e82a49289773/?dl=1");
+        }
+
+        .card-content {
+            padding: 16px;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            margin: 0 0 8px 0;
+            font-size: 22px;
+            font-weight: bold;
+            color: #20231C;
+        }
+
+        .card-text {
+            margin: 0;
+            font-size: 16px;
+            color: #20231C;
+            line-height: 1.4;
+        }
+
+        /* --- Highlight Card Variation --- */
+        .card--highlight {
+            background: #76b82a;
+            color: white;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .card--highlight:hover {
+            background: #7fc72e;
+        }
+
+        .card-highlight-title {
+            margin: 0 0 16px 0;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .card-highlight-text {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .card-highlight-arrow {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            right: 24px;
+            bottom: 24px;
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 980px) {
+            .banner {
+                flex-direction: column;
+            }
+
+            .banner-text-column {
+                width: 100%;
+                border-radius: 8px;
+                height: auto;
+                padding: 20px; /* Adjust padding for smaller screens */
+                text-align: center; /* Center text when stacked */
+            }
+
+            .banner-image-column {
+                display: none;
+            }
+
+            .flex-row {
+                 /* Keep negative margins for gutter effect even when wrapping */
+                 /* margin: -12px; */
+                 /* margin-bottom: 12px; */
+            }
+
+            .card,
+            .card--half {
+                width: calc(100% - 24px);
+                height: auto;
+                margin: 12px auto;
+            }
+
+             #banner-container.full-width-container {
+                 width: 100%;
+                 margin: 0 0 24px 0;
+             }
+        }
+
+    </style>
+
+    <!-- Banner Section -->
+    <div class="full-width-container banner" id="banner-container">
+        <div class="banner-text-column">
+            <h1 class="banner-heading">Zeit zum Grillen</h1>
+            <!-- UPDATED TEXT -->
+            <p class="banner-text">Für Viele beginnt der Sommer offiziell mit dem Angrillen! Grillen ist mehr als nur eine Mahlzeit im Freien – es ist ein Fest der Gemeinschaft, der Freude und des guten Essens. Auch in der Gastronomie ist Grillen ein Highlight, das Gäste begeistert und für volle Terrassen sorgt. Mit unseren hochwertigen und vielseitigen Artikeln bieten Sie Ihren Gästen unvergessliche kulinarische Erlebnisse.</p>
+        </div>
+        <div class="banner-image-column"></div>
+    </div>
+
+    <!-- First Row of Cards (2 Halves) -->
+    <div class="full-width-container">
+        <div class="flex-row">
+            <!-- UPDATED CARD 1: Fleisch -->
+            <div class="card--half">
+                <!-- UPDATED LINK -->
+                <a href="/product/search?partNumbers=178489,178492,265204,131623,011524,014866,106150,019427,088266&headline=Fleisch">
+                    <div class="card-image-container">
+                        <!-- UPDATED IMAGE CLASS -->
+                        <div class="card-image card-image--fleisch"></div>
+                    </div>
+                    <div class="card-content">
+                        <!-- UPDATED TITLE -->
+                        <h2 class="card-title">Fleisch</h2>
+                        <!-- UPDATED TEXT -->
+                        <p class="card-text">Perfektes Grillvergnügen beginnt mit hochwertigem Fleisch – ob Klassiker oder Außergewöhnlich - Sie entscheiden.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- UPDATED CARD 2: Beilagen & Antipasti -->
+            <div class="card--half">
+                 <!-- UPDATED LINK -->
+                <a href="/product/search?partNumbers=133618,130636,130638,130642,130644,130648,130651,130654,001122,287618,037165,096027,107506&headline=Beilagen+%26+Antipasti">
+                    <div class="card-image-container">
+                         <!-- UPDATED IMAGE CLASS -->
+                        <div class="card-image card-image--beilagen"></div>
+                    </div>
+                    <div class="card-content">
+                         <!-- UPDATED TITLE -->
+                        <h2 class="card-title">Beilagen & Antipasti</h2>
+                         <!-- UPDATED TEXT -->
+                        <p class="card-text">Auch der Tellerrand wird zum Star! Was wäre ein Grillabend ohne die richtigen Beilagen?</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row of Cards (3 Thirds) -->
+    <div class="full-width-container">
+        <div class="flex-row">
+            <!-- UPDATED CARD 3: Getränke (Replaced Iframe) -->
+            <div class="card">
+                 <!-- UPDATED LINK -->
+                <a href="/product/search?partNumbers=304886,297503,297504,296235,296789,296361&headline=Getr%C3%A4nke">
+                    <div class="card-image-container">
+                         <!-- ADDED IMAGE CLASS -->
+                        <div class="card-image card-image--getraenke"></div>
+                    </div>
+                    <div class="card-content">
+                         <!-- ADDED TITLE -->
+                        <h2 class="card-title">Getränke</h2>
+                         <!-- ADDED TEXT -->
+                        <p class="card-text">Sommerlicher Genuss auch im Glas: Genießen Sie Aperitivo und erlesene Weine, die Ihre Grillgerichte perfekt abrunden.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- UPDATED CARD 4: Saucen / Dips / Gewürze -->
+            <div class="card">
+                 <!-- UPDATED LINK -->
+                <a href="/product/search?partNumbers=101381,131619,112569,101973,064964,052513,052505,052504,130356&headline=Saucen+%26+Dips">
+                    <div class="card-image-container">
+                         <!-- UPDATED IMAGE CLASS -->
+                        <div class="card-image card-image--saucen"></div>
+                    </div>
+                    <div class="card-content">
+                         <!-- UPDATED TITLE -->
+                        <h2 class="card-title">Saucen / Dips / Gewürze</h2>
+                         <!-- UPDATED TEXT -->
+                        <p class="card-text">Der feine Unterschied: Verleihen Sie Ihrem Grillmenu das gewisse Etwas mit unseren köstlichen Saucen und Dips für jeden Geschmack.</p>
+                    </div>
+                </a>
+            </div>
+            <!-- UPDATED CARD 5: Highlight Card -->
+            <div class="card card--highlight">
+                <!-- UPDATED LINK - Assuming a category link structure -->
+                <a href="/category/255004">
+                    <div class="card-content">
+                        <h2 class="card-highlight-title">Mehr Artikel entdecken?</h2>
+                         <!-- UPDATED TEXT -->
+                        <p class="card-highlight-text">Das gesamte Fleisch-Sortiment finden Sie hier</p>
+                    </div>
+                    <img src="https://cloud.servicebund.de/f/22462448f5af432c8343/?dl=1" alt="Pfeil Icon" class="card-highlight-arrow">
+                </a>
+            </div>
+        </div>
+    </div>
+

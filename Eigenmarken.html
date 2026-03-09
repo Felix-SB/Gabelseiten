@@ -1,0 +1,204 @@
+<style>
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 360px;
+  background-image: url("https://cloud.servicebund.de/f/68ba6d34d1c642a9b640/?dl=1");
+  background-size: cover;
+  background-position-y: 30%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.centered {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: NunitoSans;
+}
+
+#banner_überschrift {
+  color: #E3000A;
+  font-size: 32px;
+}
+
+#unterüberschrift {
+  color: white;
+  font-size: 14px;
+}
+
+.button1 {
+  background-color: #E3000A;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+}
+
+.button1:hover {
+  background-color: #76b82a;
+  cursor: pointer;
+}
+
+.products {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 12px;
+  margin-top: 24px;
+}
+
+.column {
+  flex: 33.333%;
+  max-width: 33.333%;
+  padding: 0 12px;
+  position: relative;
+}
+
+.column img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+    position: absolute;
+    left: 50%;
+    right: 5%;
+    bottom: 5%;
+    background-color: rgb(0 0 0 / 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .overlay p {
+    color: white;
+    font-size: 14px;
+  }
+
+  .zitat {
+  background-image: urL(https://cloud.servicebund.de/f/4a8f2fd03dcf43da9628/?dl=1);
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 5% 20%;
+  }
+
+  .zitat p {
+  text-align: center;
+  }
+
+  #flexbox {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically on small screens */
+
+          }
+
+@media (max-width:767px) {
+  .products {
+    flex-direction: column;
+    margin-top: 12px;
+  }
+  .column {
+    flex: 100%;
+    max-width: 100%;
+    padding: 12px 0;
+  }
+  .zitat {
+    background-image: none;
+    padding: 5%;
+  }
+  .overlay {
+    position: absolute;
+    left: 50%;
+    right: 5%;
+    bottom: 17%;
+  }
+}
+
+@media (max-width: 425px) {
+    .zitat {
+    background-image: none;
+    padding: 0px;
+  }
+}
+
+
+</style>
+
+<div class="banner"></div>
+
+<div class="zitat">
+  <p>Ob Gastronomie, Hotellerie oder Gemeinschaftsverpflegung, der Service-Bund liefert ein auf Ihren Betrieb maßgeschneidertes Angebot. Von anderen setzen sich vor allem unsere Eigenmarken ab, die wir stetig prüfen und weiterentwickeln. Dabei liegt uns besonders die vertrauensvolle und oft von langjährigen Geschäftsbeziehungen geprägte Zusammenarbeit mit den Produzenten am Herzen.</p>
+</div>
+
+<div class="products">
+  <div class="column">
+  <a href="/landing/Rodeo">
+    <img src="https://cloud.servicebund.de/f/9c62ec5915684f2d8ff5/?dl=1" style="width:100%">
+  <div class="overlay">
+    <p>Rodeo</p>
+  </div>
+  </a>
+  </div>
+  <div class="column">
+  <a href="/landing/Mermaid">
+    <img src="https://cloud.servicebund.de/f/cb442094fe184030a1ca/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Mermaid</p>
+  </div>
+    </a>
+  </div>
+  <div class="column">
+  <a href="/landing/Sourcer">
+    <img src="https://cloud.servicebund.de/f/2785744c31a041588101/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Sourcer</p>
+    </div>
+  </a>
+  </div>
+</div>
+
+<div class="products">
+  <div class="column">
+  <a href="/landing/Salvador">
+    <img src="https://cloud.servicebund.de/f/3f71870785494104b238/?dl=1" style="width:100%">
+  <div class="overlay">
+    <p>Salva D'Or</p>
+  </div>
+  </a>
+  </div>
+  <div class="column">
+  <a href="/landing/Completta">
+    <img src="https://cloud.servicebund.de/f/29f51ed106fe45e9a718/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Completta</p>
+  </div>
+    </a>
+  </div>
+  <div class="column">
+  <a href="/product/search?searchTerm=servisa">
+    <img src="https://cloud.servicebund.de/f/2b14e46170504fc88801/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Servisa</p>
+    </div>
+  </a>
+  </div>
+</div>
+
+
+<!-- 
+BurgerCraft: <img src="https://cloud.servicebund.de/f/bee0ef2920b04f60a410/?dl=1" style="width:100%"> 
+-->

@@ -1,0 +1,347 @@
+<style>
+.fullwidth_banner{
+height: auto;
+width: 100%;
+display: flex;
+height: 360px;
+margin-bottom: 24px;
+}
+
+#banner {
+width: 70%;
+background-image: url("https://cloud.servicebund.de/f/8d996d49396245b492d8/?dl=1");
+background-color: #efefef;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: 30% 0%;
+border-radius: 0px 8px 8px 0px;
+}
+
+#headline_box{
+width: 30%;
+background: #efefef;
+border-radius: 8px 0px 0px 8px;
+overflow: auto;
+}
+
+#überschrift{
+font-size: 32px;
+color: black;
+margin: 15px;
+}
+
+p#claimer{
+font-size: 16px;
+margin: 10px;
+margin-left: 15px;
+color: black;
+}
+
+  .fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+    margin-bottom: 12px;
+  }
+
+  .box {
+    width: 33.3333%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    overflow: auto;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2)
+  }
+
+  .box_2 {
+    width: 50%;
+    height: 385px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2)
+  }
+  
+      .box:hover .bild div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+  
+      .box_2:hover .bild_2 div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+  
+  .bild_2 > div{
+    width: 100%;
+    height: 100%;
+  }
+    .bild > div{
+    width: 100%;
+    height: 100%;
+  }
+
+  a.box:link,
+  a.box:visited,
+  a.box:hover,
+  a.box:active {
+    text-decoration: none;
+  }
+
+  .box a:link,
+  .box a:visited,
+  .box a:hover,
+  .box a:active {
+    text-decoration: none;
+  }
+
+  .box_2 a:link,
+  .box_2 a:visited,
+  .box_2 a:hover,
+  .box_2 a:active {
+    text-decoration: none;
+  }
+
+  #gelb {
+    display: block;
+    background: #76b82a;
+    position: relative;
+  }
+  
+      #gelb:hover {
+    background: #7fc72e;
+  }
+
+  .bild {
+    width: 100%;
+    height: 232px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+  
+    .bild_2 {
+    width: 100%;
+    height: 320px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  #eins {
+    background-image: url("https://cloud.servicebund.de/f/4c51c70b9fec4ef4b528/?dl=1");
+    background-size: cover;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+  }
+
+
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/4a8801b84e7c40f49b9c/?dl=1");
+    background-size: cover;
+    background-position: 50% 45%;
+    background-repeat: no-repeat;
+  }
+
+  #zweieinhalb {
+    background-image: url("https://cloud.servicebund.de/f/f5fbd3e93ca84dddafaf/?dl=1");
+    background-size: cover;
+    background-position: 40% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #drei {
+    background-image: url("https://cloud.servicebund.de/f/a7536f6c5ddd4d0ead57/?dl=1");
+    background-size: cover;
+    background-position: 50% 20%;
+    background-repeat: no-repeat;
+  }
+
+  #vier {
+    background-image: url("https://cloud.servicebund.de/f/e0f2e355e3744583aaaf/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #fünf {
+    background-image: url("https://cloud.servicebund.de/f/901390920a5442daa63e/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #sechs {
+    background-image: url("https://cloud.servicebund.de/f/b2dbf90fab6a4dce80aa/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #sieben {
+    background-image: url("https://cloud.servicebund.de/f/745a63373e52422ea7db/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font: Nunito Sans;
+    font-size: 32px;
+    color: white;
+  }
+
+  p.gesamtsortiment {
+    margin: 0% 24px;
+    font-size: 20px;
+    color: white;
+  }
+
+
+  p.überschrift_warengruppe {
+    margin: 3% 3% 2%;
+    font: Nunito Sans;
+    font-size: 20px;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 0 3%;
+    font: Nunito Sans;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: right;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #ambientebanner{
+    height: auto;
+    border-radius: 8px;
+    width: 100%;
+    margin: -12px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+  @media (max-width: 980px) {
+    #flexbox {
+      flex-direction: column;
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    .box_2 {
+      width: 100%;
+      margin: 10px auto;
+    }
+      #headline_box{
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+  }
+  
+  #headline_box img{
+display: none;
+  }
+
+#banner{
+  width: 100%;
+  height: 360px;
+  background-position: center;
+  border-radius: 8px 8px 0 0;
+}
+
+.fullwidth_banner{
+height: auto;
+width: calc(100% + 24px);
+display: flex;
+height: auto;
+margin: -12px;
+margin-bottom: 24px;
+flex-direction: column-reverse;
+}
+
+  #ambientebanner{
+    height: 275px;
+    object-fit: cover;
+  }
+}
+
+</style>
+
+<div class="fullwidth_banner">
+  <div id="headline_box">
+    <div id="überschrift"><b>Sourcer</b></div>
+    <p id="claimer">
+<b>Verzaubernde Genuss-Momente</b><br><br>
+Sourcer steht für ein umfassendes Konzept rund um Kaffee, Tee und Kakao in Bio-Qualität. Produkte, Accessoires, Kaffeemaschinen und Schulungen bieten wir – abgestimmt auf Ihre Bedürfnisse – aus einer Hand. Für Sourcer ist ein ganzheitlicher Nachhaltigkeitsansatz von besonderer Relevanz.
+    </p>
+  </div>
+  <div id="banner">
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2">
+    <a href="/product/search?partNumbers=106189,119572,108448,111230,117457,117459,117456,117458,118907,118908,153870,258881,258023,258880,153871,153873,153874,153875,153877,258882,106191,110232&headline=Sourcer Kaffee, Tee und Kakao">
+      <div class="bild"> <div id="eins"></div></div>
+      <p class="überschrift_warengruppe"><b>Kaffee, Tee und Kakao</b></p>
+      <p class="text_warengruppe">Einzigartige Genussmomente mit unseren Heißgetränkespezialitäten aus nachhaltigem Anbau</p>
+    </a></div>
+
+      <div class="box_2">
+    <a href="https://www.servicebund.de/sortiment/sourcer/sourcer-wild.html">
+      <div class="bild"> <div id="vier"></div></div>
+      <p class="überschrift_warengruppe"><b>Sourcer Wild</b></p>
+      <p class="text_warengruppe">Begeistern Sie Ihre Gäste mit einem ganz besonderen Kaffee – fair, wild gewachsen und handgepflückt – das besonders fruchtige Aroma aus dem Äthiopischen Regenwald</p>
+    </a></div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="mailto:lutz.werner@servicebund-national.de?subject=Sourcer Schulung">
+      <div class="bild"> <div id="drei"></div></div>
+      <p class="überschrift_warengruppe"><b>Schulungen</b></p>
+      <p class="text_warengruppe">Wir unterstützen Sie und ihr Personal mithilfe von Schulungen bei dem erfolgreichen Verkauf von Heißgetränken</p>
+    </a></div>
+  <div class="box">
+    <a href="https://katalog.servicebund.de/books/cwdf/">
+      <div class="bild"> <div id="zwei"></div></div>
+      <p class="überschrift_warengruppe"><b>Geschirr und Point-of-Sale Werbemittel</b></p>
+      <p class="text_warengruppe">Eine interessante Story und die richtige Inszenierung sorgen für eine höhere Zahlungsbereitschaft bei den Gästen</p>
+    </a></div>
+  <div class="box">
+    <a href="https://katalog.servicebund.de/books/cqvc/">
+      <div class="bild"> <div id="zweieinhalb"></div></div>
+      <p class="überschrift_warengruppe"><b>SOURCER Story</b></p>
+      <p class="text_warengruppe">SOURCER ist eine von Grund auf nachhaltige Marke. Erfahren Sie hier wie wir uns mit SOURCER in den Ursprungsländern unserer Produkte engagieren</p>
+    </a></div>
+</div>
+
+<img class="fullwidth" id="ambientebanner" src="https://cloud.servicebund.de/f/515b1199c6224f3e9a37/?dl=1">

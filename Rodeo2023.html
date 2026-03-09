@@ -1,0 +1,338 @@
+<style>
+  .fullwidth_banner {
+    height: auto;
+    width: 100%;
+    display: flex;
+    height: 350px;
+    margin-bottom: 24px;
+  }
+
+  #banner {
+    width: 73%;
+    background-image: url("https://cloud.servicebund.de/f/b4e3d704f88f4f05aa77/?dl=1");
+    background-color: #efefef;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 70% 0%;
+  }
+
+  #headline_box {
+    width: 27%;
+    background: #efefef;
+    border-radius: 8px 0px 0px 8px;
+  }
+
+  #überschrift {
+    font-size: 32px;
+    color: black;
+    margin: 15px;
+  }
+
+  p#claimer {
+    font-size: 16px;
+    margin: 10px;
+    margin-left: 15px;
+    color: black;
+  }
+
+  .fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+    margin-bottom: 12px;
+  }
+
+  #flexbox:last-child {
+    margin-bottom: -12px;
+  }
+
+
+  .box {
+    width: 33.3333%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+  }
+
+  .box:hover .bild div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+
+  #gelb:hover {
+    background: #7fc72e;
+  }
+
+  .bild>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .box_2 {
+    width: 50%;
+    height: 468px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2)
+  }
+
+  a.box:link,
+  a.box:visited,
+  a.box:hover,
+  a.box:active {
+    text-decoration: none;
+  }
+
+  .box a:link,
+  .box a:visited,
+  .box a:hover,
+  .box a:active {
+    text-decoration: none;
+  }
+
+  .box_2 a:link,
+  .box_2 a:visited,
+  .box_2 a:hover,
+  .box_2 a:active {
+    text-decoration: none;
+  }
+
+  #gelb {
+    display: block;
+    background: #76b82a;
+    position: relative;
+  }
+
+  .bild {
+    width: 100%;
+    height: 232px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  .box_2 .bild {
+    width: 100%;
+    height: 320px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+  }
+
+
+  #eins {
+    background-image: url("https://cloud.servicebund.de/f/d48e1bda059140258356/?dl=1");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/41ffc728a6b7422186a7/?dl=1");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  #drei {
+    background-image: url("https://cloud.servicebund.de/f/0afee50b9bb34d5dbe55/?dl=1");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  #vier {
+    background-image: url("https://cloud.servicebund.de/f/d4993651772442fe972e/?dl=1");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+    #fünf {
+    background-image: url("https://cloud.servicebund.de/f/dc9b30368ec74be09fa4/?dl=1");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+    #sechs {
+    background-image: url("https://cloud.servicebund.de/f/49b2b2621b824b73acf8/?dl=1");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font: Nunito Sans;
+    font-size: 32px;
+    color: white;
+  }
+
+  p.gesamtsortiment {
+    margin: 0% 24px;
+    font-size: 20px;
+    color: white;
+  }
+
+
+  p.überschrift_warengruppe {
+    margin: 3% 3% 2%;
+    font: Nunito Sans;
+    font-size: 22px;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 10px 3%;
+    font: Nunito Sans;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: right;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #ambientebanner{
+    height: auto;
+    border-radius: 8px;
+    width: 100%;
+    margin: -12px;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+
+  @media (max-width: 920px) {
+    #flexbox {
+      flex-direction: column;
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    .box_2 {
+      width: 100%;
+      margin: 10px auto;
+      height: auto;
+    }
+
+    .box_2 .bild {
+      width: 100%;
+      height: 250px;
+      background: white;
+      border-radius: 8px 8px 0px 0px;
+
+    }
+    #headline_box{
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    }
+
+    #headline_box img{
+    margin: 10px 0px !important;
+    width: 40px;
+  }
+
+  .fullwidth_banner {
+    width: calc(100% + 24px);
+    display: flex;
+    height: auto;
+    margin: -12px;
+    margin-bottom: 24px;
+    flex-direction: column-reverse;
+}
+
+    #banner {
+    width: 100%;
+    height: 360px;
+    background-position: left;
+    border-radius: 8px 8px 0 0;
+}
+
+  #ambientebanner{
+    width: calc(100% + 24px);
+    height: 275px;
+    object-fit: cover;
+  }
+}
+
+</style>
+<div class="fullwidth_banner">
+<div id="headline_box">
+<div id="&uuml;berschrift"><b>RODEO STEAK</b></div>
+<p id="claimer">Pers&ouml;nlich bekannte Familienbetriebe, hochwertige Fleischrassen, verl&auml;ssliche Zuschnitte, l&uuml;ckenlose R&uuml;ckverfolgbarkeit und Weidehaltung, sowie Grasf&uuml;tterung</p>
+<img src="https://cloud.servicebund.de/f/04efa0411a35413596d0/?dl=1" style="width: 80px; height: auto; margin-left: 10px; border-radius: 0px 8px 8px 0px;"></div>
+<div id="banner"></div>
+</div>
+<div class="fullwidth" id="flexbox">
+<div class="box_2"><a href="/product/search?partNumbers=088266,054223,054227,099462,099467,099461,099450,056009,052563,052564,052566,052565&amp;headline=Rindfleisch%20aus%20Argentinien%20von%20Rodeo">
+<div class="bild">
+<div id="eins"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Argentinisches Rindfleisch</b></p>
+<p class="text_warengruppe">Im Mutterland der Marke und dessen Rodeo Ranch Quality produziert die Familie Solassi f&uuml;r uns.</p>
+</a></div>
+<div class="box_2"><a href="/product/search?partNumbers=063166,063156,063168,063172,056194,056182,056195,056179,056197,056193,124151,124150,124149,124147&amp;headline=Rind-%20und%20Lammfleisch%20aus%20Neuseeland%20von%20Rodeo">
+<div class="bild">
+<div id="vier"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Rind und Lamm aus Neuseeland</b></p>
+<p class="text_warengruppe">Mildes Klima und fruchtbares Weideland sorgen f&uuml;r milden Geschmack und zarte Textur.</p>
+</a></div>
+</div>
+<div class="fullwidth" id="flexbox">
+<div class="box_2"><a href="/product/search?partNumbers=066690,066686,066762,066700&amp;headline=Rindfleisch%20aus%20Uruguay%20von%20Rodeo">
+<div class="bild">
+<div id="zwei"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Rindfleisch aus Uruguay</b></p>
+<p class="text_warengruppe">Beg&uuml;nstigt durch fast identische Bedingungen wie in Argentinien produziert hier Familie Gonzales als unser Partner.</p>
+</a></div>
+<div class="box_2"><a href="/product/search?partNumbers=102835,102839,102840,102845,102846,103460,110278,124117,124118,124119,124120&amp;headline=Rindfleisch%20aus%20Irland%20von%20Rodeo">
+<div class="bild">
+<div id="drei"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Irisches Rindfleisch</b></p>
+<p class="text_warengruppe">Gr&uuml;n, gr&uuml;ner, Irland - viel Weideland bietet perfekte Voraussetzungen f&uuml;r Zucht und Haltung.</p>
+</a></div>
+</div>
+<div class="fullwidth" id="flexbox">
+<div class="box_2"><a href="/product/search?partNumbers=56179,056182,056193,056194,056195,056197">
+<div class="bild">
+<div id="f&uuml;nf"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Lamm</b></p>
+<p class="text_warengruppe">Perfekt gereiftes Frischfleisch von ausgesuchten Weidel&auml;mmern.</p>
+</a></div>
+<div class="box_2"><a href="/product/search?partNumbers=124151,124150,130210,124149">
+<div class="bild">
+<div id="sechs"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Hirsch</b></p>
+<p class="text_warengruppe">Kaum Fett und Cholesterin, daf&uuml;r viel Protein, Zink und ein hoher Eisengehalt.</p>
+</a></div>
+</div>
+<!-- <img class="fullwidth" id="ambientebanner" src="https://cloud.servicebund.de/f/f5bba861473041eda112/?dl=1">  -->

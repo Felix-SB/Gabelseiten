@@ -1,0 +1,266 @@
+<style>
+  .fullwidth_banner {
+    height: auto;
+    width: 100%;
+    display: flex;
+    height: 350px;
+    margin-bottom: 12px;
+  }
+
+  #banner {
+    width: 73%;
+    background-image: url("https://cloud.servicebund.de/f/5372dbedb4d24f4eabb6/?dl=1");
+    background-color: #efefef;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 10% 0%;
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  #headline_box {
+    width: 27%;
+    background: #efefef;
+    border-radius: 8px 0px 0px 8px;
+  }
+
+  #überschrift {
+    font-size: 32px;
+    color: black;
+    margin: 15px;
+  }
+
+  p#claimer {
+    font-size: 16px;
+    margin: 10px;
+    margin-left: 15px;
+    color: black;
+  }
+
+  .fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+    margin-top: 12px;
+  }
+
+  .box {
+    width: 33.3333%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2)
+  }
+
+  .box:hover .bild div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+
+  #gelb:hover {
+    background: #7fc72e;
+  }
+
+  .bild>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .box_2 {
+    width: 50%;
+    height: 430px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2)
+  }
+
+  a.box:link,
+  a.box:visited,
+  a.box:hover,
+  a.box:active {
+    text-decoration: none;
+  }
+
+  .box a:link,
+  .box a:visited,
+  .box a:hover,
+  .box a:active {
+    text-decoration: none;
+  }
+
+  .box_2 a:link,
+  .box_2 a:visited,
+  .box_2 a:hover,
+  .box_2 a:active {
+    text-decoration: none;
+  }
+
+  #gelb {
+    display: block;
+    background: #76b82a;
+    position: relative;
+  }
+
+  .bild {
+    width: 100%;
+    height: 232px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  .box_2 .bild {
+    width: 100%;
+    height: 360px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+  }
+
+
+  #eins {
+    background-image: url("https://cloud.servicebund.de/f/3766489b51b340f2b27d/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/b86fec6b8c6f45cfb798/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font-size: 32px;
+    color: white;
+  }
+
+  p.gesamtsortiment {
+    margin: 0% 24px;
+    font-size: 20px;
+    color: white;
+  }
+
+
+  p.überschrift_warengruppe {
+    margin: 3% 3% 2%;
+    font-size: 22px;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 10px 3%;
+    font-size: 18px;
+    color: #20231C;
+  }
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: right;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+
+  @media (max-width: 920px) {
+    #flexbox {
+      flex-direction: column;
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    .box_2 {
+      width: 100%;
+      margin: 10px auto;
+      height: auto;
+    }
+
+    .box_2 .bild {
+      width: 100%;
+      height: 250px;
+      background: white;
+      border-radius: 8px 8px 0px 0px;
+
+    }
+    #headline_box{
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    }
+
+    #headline_box img{
+    margin: 10px 0px !important;
+    width: 15% !important;
+  }
+  .fullwidth_banner {
+    width: calc(100% + 24px);
+    display: flex;
+    height: auto;
+    margin: -12px;
+    margin-bottom: 24px;
+    flex-direction: column-reverse;
+}
+    #banner {
+    width: 100%;
+    height: 360px;
+    background-position: left;
+    border-radius: 8px 8px 0 0;
+}
+}
+
+</style>
+
+<div class="fullwidth_banner">
+  <div id="headline_box">
+    <div id="überschrift"><b>Nordgastro - Hotel</b></div>
+    <p id="claimer">
+      Bitte beachten Sie, dass die Messe-Preise nur in den folgenden Auslieferzeiträumen gültig sind:<br><br>
+      <b>18.03. - 27.03.2024<br>
+      06.05. - 15.05.2024</b></p>
+    <!-- <img src="" style="width: 120px; height: auto; margin-left: 0px; border-radius: 0px 8px 8px 0px;"> -->
+  </div>
+  <div id="banner">
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2">
+    <a href="/product/search?partNumbers=107264,104034,153874,103594,104035,153875,104235,108135,108136,115096,274057,105557,104237,104047,153877,118907,108448,256778,104268,104048,118908,106189,273759,104049,105559,104029,133579,126391,040457,059942,040280,090290,084367,092475,048611,053904,111230,258023,258881,258882,258880,119411,131943,079456,081199,085417,085422,085418,077476,077495,092733,055160,104231,055159,047453,071084,271841,060542,040749,048021,048019,040456,092731,068130,055158,119260,051826,054263,051825,043446,078683,076818,040289,088626,096596,040294,040581,052334,058123,040903,076889,105560,105562,059944,053321,104233,053256,040664,077015,058949,056009,086894,056197,052565,052566,052563,052564,054227,054223,273763,048056,072645,092718,040075,040106,153873,106191,153871,153870,040751,105591,055162,232403,040205,058584,086840,048182,115142,072267,072269,072266,072268,075499,075027,086224,090343,106382,072830,072827,083305,054108,054109,069463,069464,069461,048390,086219,040184,071521,074839,074841,074832,061056,046728,063441,063437,075923,092553,124152,118553,133581,081545,091531,091270,050944,058593,067355,041191,094125,074271,085754,085758,092340,068496,104032,131283,131240,040452,040151,077398,179101,030345,002082,046611,086167,040948,074830,140912,052028,040690,041508,042306,040619,040094,040535,041091,064515,040227,102192,104190,120535,123494,132068,123496,123492,123493,280300,280304,280302,280289,280294">
+      <div class="bild">
+        <div id="eins"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Eigenmarken & Unilever Foods</b></p>
+    </a></div>
+  <div class="box_2">
+    <a href="/product/search?partNumbers=091120,072954,104593,110484,267592,119131,102814,132433,116973,096836,040560,067834,265016,057214,258628,065687,109120,060345,124908,276720,126568,093156,053735,053736,055749,075634,055750,055751,075633,056112,054199,059841,276256,062867,076224,270875,270877,090638,067277,067262,067260,067802,093148,106080,065844,096047,270909,066201,098852,232738,098866,269619,063443,076706,074455,271833,271237,140229,048810,048814,048825,269099,269101,050455,073586,119774,270612,046422,131620,058838,041363,103626,103624,105102,041370,051991,103673,072999,040268,103680,057564,071626,041362,071562,281151,268536,281328,274657,046184,046185,046182,278610,071325,071327,273133,272420,262090,276362,266738,273136,046194,046201,272066,106091,110539,075528,114263,274394,281135,281136,107276,100745,088088,260305,080394,072497,130090,116211,116215,116217,271101,123796,040774,100745,130090,056640,274547,279548,279551,109157,268224,270285,270287,108861,268222,178606,179032,057120,077455,098800,051454,048610,051063,047283,082776,085377,078611,051262,130651,130634,130636,130648,130654,130638,278240,095909,114836,270607,099748,056666,124128,075122,123214,106178,110531,286241,281718,272676,047535,056976,280366,272502,065040,040182,040780,070510,105774,130594,099265,107457,099267,099268,099269,099270,099272,099273,107458,065101,077827,178525,262132,267702,267706,267710,267719,276290,072571,130263,071695,273897,274072,071689,141052,055684,078651,119583,119997,131163,140888,279303,279305,040741,041747,068831,068832,276188,088324,051650,051651,040269,131167,131157,131165,140889,131161,266239,274171,273913,140609,276184,112095,265019,273602,277897,277912,049293,052504,072865,073110,082469,088442,099714">
+      <div class="bild">
+        <div id="zwei"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Lieferanten A - Z</b></p>
+    </a></div>
+</div>
+

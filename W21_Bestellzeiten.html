@@ -1,0 +1,250 @@
+<style>
+.fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+    margin-top: 12px;
+  }
+
+  .box {
+    width: 33.3333%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+  }
+
+  .box_2 {
+    width: 50%;
+    height: 468px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+  }
+
+
+  .box:hover .bild div {
+    transform: scale(1.2);
+    transition: all .5s;
+  }
+
+  .box_2:hover .bild_2 div {
+    transform: scale(1.1);
+    transition: all .9s;
+  }
+
+  #gelb:hover {
+    background: #7fc72e;
+  }
+
+  .bild>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  a.box:link,
+  a.box:visited,
+  a.box:hover,
+  a.box:active {
+    text-decoration: none;
+  }
+
+  .box a:link,
+  .box a:visited,
+  .box a:hover,
+  .box a:active {
+    text-decoration: none;
+  }
+
+  .box_2 a:link,
+  .box_2 a:visited,
+  .box_2 a:hover,
+  .box_2 a:active {
+    text-decoration: none;
+  }
+
+  #gelb {
+    display: block;
+    background: #89BA13;
+    position: relative;
+  }
+
+  .bild {
+    width: 100%;
+    height: 232px;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  .bild_2 {
+    width: 100%;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  .box_2 .bild_2 div {
+    width: 100%;
+    height: 320px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+  }
+
+
+  #eins {
+    background-image: url("https://cloud.servicebund.de/f/1488fe141e044ae6abfe/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/efe2e85c9ecc484e828b/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #drei {
+    background-image: url("https://cloud.servicebund.de/f/db9ca26ff4824c34a886/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font: Nunito Sans;
+    font-size: 32px;
+    color: white;
+  }
+
+
+  p.überschrift_warengruppe {
+    margin: 3% 3% 2%;
+    font: Nunito Sans;
+    font-size: 22px;
+    color: black;
+  }
+
+  p.text_warengruppe {
+    margin: 0 3%;
+    font: Nunito Sans;
+    font-size: 16px;
+    color: black;
+  }
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: right;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+  @media (max-width: 980px) {
+    #flexbox {
+      flex-direction: column;
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+      height: auto;
+    }
+
+    .box_2 {
+      width: 100%;
+      margin: 10px auto;
+      height: 100%;
+    }
+    
+    .box_2 .bild_2 div {
+      height: 0px;
+      padding-bottom: 46.77%;
+    }
+
+
+    #eins {
+      background-image: url("https://cloud.servicebund.de/f/a9d0badf42ff4bbba2c7/?dl=1");
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+
+    #zwei {
+      background-image: url("https://cloud.servicebund.de/f/923afe86e2424d81b280/?dl=1");
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+    #drei {
+      background-image: url("https://cloud.servicebund.de/f/ee53830c3a944eadb199/?dl=1");
+      background-size: cover;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+    }
+
+  }
+  }
+
+
+</style>
+<div class="fullwidth" dir="ltr" id="flexbox">
+
+<a href="https://www.asc-aqua.org/">
+<div class="box">
+<div class="bild">
+<div id="eins"></div>
+</div>
+
+<p class="überschrift_warengruppe"><b>ASC</b>
+</b></p>
+
+<p class="text_warengruppe">Siegel für verantwortungsvolle Fischzucht.</p>
+</a>
+</div>
+
+<a href="https://www.fairtrade-deutschland.de/siegel/">
+<div class="box">
+<div class="bild">
+<div id="zwei"></div>
+</div>
+
+<p class="überschrift_warengruppe"><b>Fairtrade</b></p>
+<p class="text_warengruppe">Siegel für fairen Handel</p>
+</a>
+</div>
+
+
+
+<a href="https://www.msc.org/de/">
+<div class="box">
+<div class="bild">
+<div id="drei"></div>
+</div>
+
+<p class="überschrift_warengruppe"><b>MSC</b></p>
+<p class="text_warengruppe">Siegel für nachhaltige Fischerei</p>
+</a>
+</div>
+</div>
+
+

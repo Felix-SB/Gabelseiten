@@ -1,0 +1,333 @@
+<style>
+  /* General Styles */
+  .fullwidth_banner {
+    height: auto;
+    width: 100%;
+    display: flex;
+    height: 360px;
+    margin-bottom: 24px;
+  }
+
+  .headline_box {
+    width: 30%;
+    background: #efefef;
+    border-radius: 8px 0px 0px 8px;
+    overflow: auto;
+  }
+
+  #überschrift {
+    font-size: 32px;
+    color: black;
+    margin: 15px;
+  }
+
+  p#claimer {
+    font-size: 16px;
+    margin: 10px 10px 10px 15px;
+    color: black;
+  }
+
+  #banner {
+    width: 70%;
+    background-image: url("https://cloud.servicebund.de/f/dfddd119c93a46c18b8d/?dl=1");
+    background-color: #efefef;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 30% 0%;
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  .fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  .flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+    margin-bottom: 12px;
+  }
+
+  .box {
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 33.3333%;
+    height: 360px;
+    position: relative; /* For positioning child elements if needed */
+  }
+
+  .box:hover .bild div, .box.gelb:hover .bild div {
+    transform: scale(1.2);
+    transition: all 0.9s;
+  }
+
+  .bild, .bild > div {
+    width: 100%;
+    height: 232px; /* Adjusted height for consistency */
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  .bild {
+    height: 232px;
+  }
+
+  .bild > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Background Images */
+  #eins {
+    background-image: url("https://cloud.servicebund.de/f/aed65e3d082349baaadf/?dl=1");
+  }
+
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/568e41cef2d745fc9998/?dl=1");
+    background-position: 40% 0%;
+  }
+
+  #zweieinhalb {
+    background-image: url("https://cloud.servicebund.de/f/3427bf5e137041c2875d/?dl=1");
+    background-position: 40% 0%;
+  }
+
+  #drei {
+    background-image: url("https://cloud.servicebund.de/f/85efe3c4a47e4e89b616/?dl=1");
+  }
+
+  #vier {
+    background-image: url("https://cloud.servicebund.de/f/f2842629bd2a4ed6815d/?dl=1");
+  }
+
+  #fünf {
+    background-image: url("https://cloud.servicebund.de/f/901390920a5442daa63e/?dl=1");
+  }
+
+  #sechs {
+    background-image: url("https://cloud.servicebund.de/f/b2dbf90fab6a4dce80aa/?dl=1");
+  }
+
+  #sieben {
+    background-image: url("https://cloud.servicebund.de/f/745a63373e52422ea7db/?dl=1");
+  }
+
+  #gelb {
+    background: #76b82a;
+    position: relative;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  #gelb:hover {
+    background: #7fc72e;
+  }
+
+  p.überschrift, p.gesamtsortiment {
+    color: white;
+  }
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 32px;
+  }
+
+  p.gesamtsortiment {
+    margin: 0 24px;
+    font-size: 20px;
+  }
+
+  p.überschrift_warengruppe {
+    margin: 3% 3% 2%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 0 3%;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #ambientebanner {
+    height: auto;
+    border-radius: 8px;
+    width: 100%;
+    margin: -12px;
+    margin-left: 0px;
+    margin-top: 12px;
+  }
+
+    a.box:link, a.box:visited, a.box:hover, a.box:active,
+  .box a:link, .box a:visited, .box a:hover, .box a:active,
+  .box_2 a:link, .box_2 a:visited, .box_2 a:hover, .box_2 a:active {
+    text-decoration: none;
+  }
+
+  /* Media Queries */
+  @media (max-width: 980px) {
+    .headline_box {
+      width: 100%;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .headline_box img {
+      display: none;
+    }
+
+    #banner {
+      background-image: url("https://cloud.servicebund.de/f/e5d8aed122f24dc8a3b6/?dl=1");
+      width: 100%;
+      height: 360px;
+      background-position: center;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .fullwidth_banner {
+      flex-direction: column-reverse;
+      width: 100%;
+      margin: 0;
+      margin-bottom: 24px;
+    }
+
+    .flexbox {
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+      margin-bottom: 12px;
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    #ambientebanner {
+      height: 275px;
+      object-fit: cover;
+    }
+  }
+</style>
+
+<!-- Banner Section -->
+<div class="fullwidth_banner">
+  <div class="headline_box">
+    <div id="überschrift"><b>Salva D'Or</b></div>
+    <p id="claimer">
+      <b>Kulinarische Erlebnisse wie im Süden</b><br><br>
+      Mit Salva D’Or können Sie und Ihre Gäste mediterrane Lebensfreude genießen. Dafür suchen wir im gesamten Mittelmeerraum nach den richtigen Produkten und Inspirationen. Das Sortiment spiegelt die kulinarische Vielfalt und die reiche Geschichte der Regionen wider. Jedes Produkt wurde sorgfältig auf unseren Reisen ausgewählt und erzählt eine Geschichte.
+    </p>
+  </div>
+  <div id="banner"></div>
+</div>
+
+<!-- Product Boxes Section -->
+<div class="fullwidth flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=123748,123749,277677,277680,277683,104268,116010,116013,116015,116012,116014,116018&headline=Salva%20D%27Or%20Olivenöle%20und%20Essige">
+      <div class="bild"><div id="eins"></div></div>
+      <p class="überschrift_warengruppe"><b>Exquisite Olivenöle und Essige</b></p>
+      <p class="text_warengruppe">Als unverzichtbare Basiszutaten verfeinern natives Olivenöl Extra und Balsamicoessige vielseitige Speisen.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=065893,065963,065966,065967,102695,102694,100730,065871,111669,111670,111666,111668,111667,098783,098771,088471,088470,090290,119896,098790,099386,098784,068095,119897,98787,119898,99400,119899,119900,098792,098788,119903,047803,076266,098789,098791&headline=Salva%20D%27Or%20Antipasti">
+      <div class="bild"><div id="zwei"></div></div>
+      <p class="überschrift_warengruppe"><b>Authentische Antipasti</b></p>
+      <p class="text_warengruppe">Ob aus dem Glas, als Konserve oder frisch als gemischte Schale – genießen Sie eine Vielfalt dieser Appetizer.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=104158,104159,104157,104160,104161&headline=Salva%20D%27Or%20Wurst-%20und%20Schinkenwaren">
+      <div class="bild"><div id="zweieinhalb"></div></div>
+      <p class="überschrift_warengruppe"><b>Feine Wurst und Schinkenwaren</b></p>
+      <p class="text_warengruppe">Die Suche nach Wurst und Schinken führte uns nach Norditalien, wo diese seit Generation in Perfektion gefertigt werden.</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=111322,111332,104048,104047,104049,109231&headline=Salva D'Or Käse">
+      <div class="bild"><div id="drei"></div></div>
+      <p class="überschrift_warengruppe"><b>Ausgesuchte Käseklassiker</b></p>
+      <p class="text_warengruppe">Als Klassiker des Mittelmeerraums dürfen Mozzarella, Ricotta und Grana Padano im Sortiment nicht fehlen.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=104233,104237,104236,105591,104232,111685,111686,111683,111684,104234,104235,101986,101995,101980,101989,101981,101990,101992,101997,101996,101979,101983,101988,101984,114795,114797,123731,123733,114796,107479,092575,119389,092592,090289,092403,092553,092465,092612,272821,272823,272828,272833,104231&headline=Salva%20D%27Or%20Pasta">
+      <div class="bild"><div id="vier"></div></div>
+      <p class="überschrift_warengruppe"><b>Traditionell hergestellte Pasta</b></p>
+      <p class="text_warengruppe">Pasta, das Herzstück der italienischen Küche, ist nicht nur ein Gericht, sondern eine Leidenschaft.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=104035,104032,104033,104031,104024,104034,104029,103594,111663&headline=Salva%20D%27Or%20Saucen">
+      <div class="bild"><div id="fünf"></div></div>
+      <p class="überschrift_warengruppe"><b>Vielfältige Saucen</b></p>
+      <p class="text_warengruppe">Unsere Saucen zeichnen sich durch ihren authentischen Geschmack und ihr einfaches Handling aus.</p>
+    </a>
+  </div>
+</div>
+
+<div class="fullwidth flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=256591,256601,256599,256592,256593,256594,256600&headline=Salva%20D%27Or%20Fischspezialitäten">
+      <div class="bild"><div id="sechs"></div></div>
+      <p class="überschrift_warengruppe"><b>Köstliche Fischspezialitäten</b></p>
+      <p class="text_warengruppe">Wecken Sie mit Chipirones, Rabas und Tintenfischringen Erinnerungen an den letzten Urlaub im Süden.</p>
+    </a>
+  </div>
+  <div class="box">
+    <a href="/product/search?partNumbers=059544,106382,106385,106452&headline=Salva D'Or Gemüse">
+      <div class="bild"><div id="sieben"></div></div>
+      <p class="überschrift_warengruppe"><b>Sonnenverwöhntes Gemüse</b></p>
+      <p class="text_warengruppe">Authentische Gemüsemischungen für mediterrane Geschmackserlebnisse haben wir in Südspanien entdeckt.</p>
+    </a>
+  </div>
+  <div class="box gelb" style="background-color: #76b82a;">
+    <a href="/product/search?searchTerm=Salva&headline=Salva D'Or Gesamtsortiment">
+      <span id="clickable">
+        <p class="überschrift"><b>Mehr Artikel entdecken?</b><br></p>
+        <p class="gesamtsortiment">Das gesamte Sortiment von Salva D'Or finden Sie hier</p>
+        <img src="https://cloud.servicebund.de/f/22462448f5af432c8343/?dl=1" id="pfeil" alt="Pfeil">
+      </span>
+    </a>
+  </div>
+</div>
+
+<!-- Ambient Banner -->
+<img class="fullwidth" id="ambientebanner" src="https://cloud.servicebund.de/f/e1f35428a2054719a170/?dl=1" alt="Ambient Banner">

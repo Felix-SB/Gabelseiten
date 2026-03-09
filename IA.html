@@ -1,0 +1,203 @@
+<style>
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 360px;
+  background-image: url("https://cloud.servicebund.de/f/fe319518b2ed4011926c/?dl=1");
+  background-size: cover;
+  background-position-y: 30%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.centered {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: NunitoSans;
+}
+
+#banner_überschrift {
+  color: #E3000A;
+  font-size: 32px;
+}
+
+#unterüberschrift {
+  color: white;
+  font-size: 14px;
+}
+
+.button1 {
+  background-color: #E3000A;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  border-radius: 8px;
+}
+
+.button1:hover {
+  background-color: #76b82a;
+  cursor: pointer;
+}
+
+.products {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 12px;
+  margin-top: 24px;
+}
+
+.column {
+  flex: 33.333%;
+  max-width: 33.333%;
+  padding: 0 12px;
+  position: relative;
+}
+
+.column img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+    position: absolute;
+    left: 50%;
+    right: 5%;
+    bottom: 5%;
+    background-color: rgb(0 0 0 / 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .overlay p {
+    color: white;
+    font-size: 14px;
+  }
+
+@media (max-width:600px) {
+  .products {
+    flex-direction: column;
+    margin-top: 12px;
+  }
+  .column {
+    flex: 100%;
+    max-width: 100%;
+    padding: 12px 0;
+  }
+  .zitat {
+    background-image: none;
+  }
+  .overlay {
+    position: absolute;
+    left: 50%;
+    right: 5%;
+    bottom: 17%;
+  }
+}
+ .zitat {
+  background-image: url(https://cloud.servicebund.de/f/c2c96a558b60435e993c/?dl=1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 8px;
+}
+
+.zitat p {
+  padding: 7% 10%;
+  text-align: center;
+}
+
+/*
+@media (max-width: 425px) {
+    .zitat {
+    background-image: none;
+  }
+/*  .zitat p {
+    padding: 0px;
+  }
+}
+*/
+
+</style>
+
+<div class="banner">
+  <div class="centered" id="banner_überschrift">Italia & Amore<br>
+  <a href="/landing/italiaAmoreGeschichte?mtm_campaign=italiaAmore&mtm_kwd=Geschichte&mtm_source=Gabelseite">
+  <button class="button1">Zur Geschichte</button>
+</a>
+  </div>
+</div>
+
+<div class="zitat">
+  <p>italia&amore steht für natürliche, authentische, italienische Qualitätslebensmittel, handwerklich und nach alten Traditionen mit Liebe und Herzblut hergestellt von kleinen Produzenten, die stolz auf ihr Land, ihre Heimat und ihre Kultur sind, für soziale Partnerschaften,
+für unverfälschtes Italien und vor allem für großartige Geschmackserlebnisse. 
+</p>
+</div>
+
+<div class="products">
+  <div class="column">
+  <a href="/product/search?partNumbers=278372,278373,278374,278471,278476,37724,17921,20353,17964,19292&headline= Italia Amore: Fassona Rind&mtm_campaign=italiaAmore&mtm_kwd=Fassona%20Rind">
+    <img src="https://cloud.servicebund.de/f/cfba8d4b927341f3ae48/?dl=1" style="width:100%">
+  <div class="overlay">
+    <p>Fassona Rind</p>
+  </div>
+  </a>
+  </div>
+  <div class="column">
+  <a href="/product/search?partNumbers=278389,278390,278392,278467,278477&headline=Italia Amore: Pasta&mtm_campaign=italiaAmore&mtm_kwd=Pasta">
+    <img src="https://cloud.servicebund.de/f/f1d1bdca24df420f81ac/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Pasta</p>
+  </div>
+    </a>
+  </div>
+  <div class="column">
+  <a href="/product/search?partNumbers=278380,278385,278381,278388,278393,278382,278386&headline= Italia Amore: Feinkost&mtm_campaign=italiaAmore&mtm_kwd=Feinkost">
+    <img src="https://cloud.servicebund.de/f/725f1053a4da4171b7e5/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Feinkost</p>
+    </div>
+  </a>
+  </div>
+</div>
+
+<div class="products">
+  <div class="column">
+  <a href="/product/search?partNumbers=278375,278466,278377,278469,278376&headline=Italia Amore: Käse und Wurst&mtm_campaign=italiaAmore&mtm_kwd=K%C3%A4seWurst">
+    <img src="https://cloud.servicebund.de/f/c4d76c4aa9a5463b9639/?dl=1" style="width:100%">
+  <div class="overlay">
+    <p>Käse und Wurst</p>
+  </div>
+  </a>
+  </div>
+  <div class="column">
+  <a href="/product/search?partNumbers=278378,278379,278387&headline=Italia Amore: Pizza und mehr&mtm_campaign=italiaAmore&mtm_kwd=Pizza">
+    <img src="https://cloud.servicebund.de/f/0f5d1a2cace043c5aa43/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Pizza und mehr</p>
+  </div>
+    </a>
+  </div>
+  <div class="column">
+  <a href="/product/search?partNumbers=278139,278150,278149,278151,278145,37571,37572,37670,278137&headline=Italia Amore: Wein&mtm_campaign=italiaAmore&mtm_kwd=Wein">
+    <img src="https://cloud.servicebund.de/f/1dbbaee68d704291a640/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Wein</p>
+    </div>
+  </a>
+  </div>
+</div>

@@ -1,0 +1,202 @@
+<style>
+  /* --- Layout & Grid --- */
+  .fullwidth {
+    width: 100%;
+    height: auto;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* Allows cards to wrap into rows */
+    width: calc(100% + 24px);
+    margin: 12px -12px;
+  }
+
+  .box {
+    width: calc(33.333% - 24px); /* Subtract margins for perfect 3-column fit */
+    min-height: 380px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+
+  /* Makes the entire area inside the box clickable */
+  .box a {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .box:hover {
+    background: #f5f5f5; /* Subtle highlight on hover */
+  }
+
+  /* --- Images & Hover Effect --- */
+  .bild {
+    width: 100%;
+    height: 232px;
+    background-color: #ddd; /* Fallback color */
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    transition: transform 0.6s ease;
+  }
+
+  .box:hover .bild {
+    transform: scale(1.05);
+  }
+
+  /* --- Background Image IDs --- */
+  #eins { background-image: url("https://cloud.servicebund.de/f/64cb7ac20a0d41e3aedc/?dl=1"); }
+  #zwei { background-image: url("https://cloud.servicebund.de/f/ce453ac08c8a4dc1842f/?dl=1"); }
+  #drei { background-image: url("https://cloud.servicebund.de/f/df513335b6574348a8e0/?dl=1"); }
+  #vier { background-image: url("https://cloud.servicebund.de/f/ac7343d28c9a4c5e8876/?dl=1"); }
+  #fünf { background-image: url("https://cloud.servicebund.de/f/0ae83d788e9d47eda2d9/?dl=1"); }
+  #sechs { background-image: url("https://cloud.servicebund.de/f/158432afdaf24c4eaff8/?dl=1"); }
+  #sieben { background-image: url("https://cloud.servicebund.de/f/ba46a63e80c94d4aa087/?dl=1"); }
+  #acht { background-image: url("https://cloud.servicebund.de/f/a983fdae674a425cb77e/?dl=1"); }
+  #neun { background-image: url("https://cloud.servicebund.de/f/16ccc7c4fe22498290b3/?dl=1"); }
+  #zehn { background-image: url("https://cloud.servicebund.de/f/a2531a07587440a596ee/?dl=1"); }
+  #elf { background-image: url("https://cloud.servicebund.de/f/8e32b67c6233407386e3/?dl=1"); }
+  #zwölf { background-image: url("https://cloud.servicebund.de/f/a4b0dd8d41c34346adc0/?dl=1"); }
+
+
+  /* --- Typography --- */
+  .box p {
+    margin: 12px 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.4;
+  }
+
+  .box strong {
+    font-size: 20px;
+    color: #20231C;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .box p.desc {
+    font-size: 15px;
+    color: #444;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 920px) {
+    .box {
+      width: calc(50% - 24px); /* 2 columns on tablets */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .box {
+      width: calc(100% - 24px); /* 1 column on phones */
+    }
+  }
+</style>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?searchTerm=komplet">
+      <div class="bild" id="eins"></div>
+      <p><strong>Komplet</strong></p>
+      <p class="desc">Aus Gutem das Beste backen. Alles für Bäcker und Konditor.</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?searchTerm=dd gelatop">
+      <div class="bild" id="zwei"></div>
+      <p><strong>Dreidoppel</strong></p>
+      <p class="desc">WILLKOMMEN IN DER WELT VON GELATOP!</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?searchTerm=Aviko">
+      <div class="bild" id="drei"></div>
+      <p><strong>Aviko</strong></p>
+      <p class="desc">Diese Kartoffelprodukte sorgen für Zeiteinsparung - mit höchster Qualität.</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=040094,041090,041620,041445,040535,045175,046471,095117,040535,041686,041687,030175,030895,041091,041508,052028,030175,052027,052028,052031,097923,025624,030895,041552,073220,094141,030705,052035,052029,091134,041552,097841,040467,097841,064518,040467,052029,065660,042306,040619,041518,042306,040619,040357,042339,046474">
+      <div class="bild" id="vier"></div>
+      <p><strong>Unilever Food Solutions</strong></p>
+      <p class="desc">Inspiriert von Köchen für Köche.</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=26277,26278,26279,93078,42180,93079,23592,58903,58924,22355,70353,22728,93477,93068,95937,93074,93476,93073,93072,93075,93482,93176,93081,89066,94521,93084,49884,84254,93174,93173,93170,46970,93083,52443,46966,93172,93171,93086,97684,97683,27436,27400,27403,27402,27401&headline=Sortiment Rauch">
+      <div class="bild" id="fünf"></div>
+      <p><strong>Rauch Getränke</strong></p>
+      <p class="desc">Frucht, Familie und Natur. Seit 1919</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?searchTerm=Erlenb">
+      <div class="bild" id="sechs"></div>
+      <p><strong>Erlenbacher Backwaren</strong></p>
+      <p class="desc">Verführen Sie Ihre Gäste mit Professionalität!</p>
+    </a>
+  </div>
+
+
+  <div class="box">
+    <a href="/product/search?searchTerm=calleb">
+      <div class="bild" id="sieben"></div>
+      <p><strong>Callebaut</strong></p>
+      <p class="desc">Seit über 100 Jahren die Heimat feinster belgischer Schokolade.</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?searchTerm=Stenger">
+      <div class="bild" id="acht"></div>
+      <p><strong>Stenger Waffeln</strong></p>
+      <p class="desc">JASPERT WAFFELN! Das Original für Eisdielen seit 1927!</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=07558,98410,22607,27519,90667,98412,13667,45799,83400,98831,16101,98425,79727,11976,73522,97612,76655,13739,45979,90584,07562,44960,76652,87948,18961,13752,73503,27259,46782&headline=Sortiment von Sahnemolkerei Wiesehoff">
+      <div class="bild" id="neun"></div>
+      <p><strong>Wiesehoff Sahnemolkerei</strong></p>
+      <p class="desc">Aus der Region, für die Region.</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?searchTerm=Frischli">
+      <div class="bild" id="zehn"></div>
+      <p><strong>Frischli</strong></p>
+      <p class="desc">Milch und mehr.</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?searchTerm=schöller">
+      <div class="bild" id="elf"></div>
+      <p><strong>Froneri - Schöller</strong></p>
+      <p class="desc">Buntes Kindereis oder fruchtige Verführer - für jeden das passende Eis.</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?searchTerm=Coca Cola">
+      <div class="bild" id="zwölf"></div>
+      <p><strong>Coca Cola</strong></p>
+      <p class="desc"></p>
+    </a>
+  </div>
+
+
+</div>

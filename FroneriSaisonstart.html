@@ -1,0 +1,180 @@
+<style>
+  .fullwidth_banner {
+    height: auto;
+    width: 100%;
+    display: flex;
+    margin-bottom: 12px;
+    justify-content: center;
+  }
+
+  .fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+  }
+
+  .box {
+    width: 33.3333%;
+    height: 295px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2)
+  }
+
+  .box_fullwidth {
+    width: 100%;
+    height: 295px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2)
+  }
+
+  .box:hover .bild div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+
+  .bild>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  a:link {
+    text-decoration: none;
+  }
+
+  a:visited {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  a:active {
+    text-decoration: none;
+  }
+
+  a.box:link,
+  a.box:visited,
+  a.box:hover,
+  a.box:active {
+    text-decoration: none;
+  }
+
+  .bild {
+    width: 100%;
+    height: 232px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/ecbcffe8053d46c0a395/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #drei {
+    background-image: url("https://cloud.servicebund.de/f/cd3dc8d9179048cc877e/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #vier {
+    background-image: url("https://cloud.servicebund.de/f/c29e7691f2ae452da81b/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #fünf {
+    background-image: url("https://cloud.servicebund.de/f/ded2dc986b2f47cf8b5d/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  p.überschrift_warengruppe {
+    margin-left: 12px;
+    font-size: 22px;
+    color: #20231C;
+  }
+
+  .hinweistext {
+    margin-top: 24px;
+    background: #efefef;
+    border: 5px solid #76B82A;
+    border-radius: 8px;
+  }
+
+  p.hinweistext {
+    text-align: center;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  @media (max-width: 920px) {
+    #flexbox {
+      flex-direction: column;
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    .fullwidth_banner {
+      width: calc(100% + 24px);
+      display: flex;
+      height: auto;
+      margin: -12px;
+      margin-bottom: 24px;
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+  }
+</style>
+
+<div class="fullwidth">
+<div class="box_fullwidth"><a href="/product/search?partNumbers=133113,268478,314452,231260">
+<div class="bild">
+<div id="zwei"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Impulseis</b></p>
+</a></div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+<div class="box"><a href="/product/search?partNumbers=133084,133102,133108,133098,268481,133106,299080,133114">
+<div class="bild">
+<div id="drei"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Nestle-Sch&ouml;ller</b></p>
+</a></div>
+<div class="box"><a href="/product/search?partNumbers=107678,107679,107680,119584,107681,133093,133124,133042,133086,133089,133101,133041,314514,133105,133091">
+<div class="bild">
+<div id="vier"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>M&ouml;venpick</b></p>
+</a></div>
+<div class="box"><a href="/product/search?partNumbers=133069,133070,133068,133072,133078,231264,133076,133063;133082,133067;133074;133067;133077,133073,133062,231266,133065,133075,133071">
+<div class="bild">
+<div id="f&uuml;nf"></div>
+</div>
+<p class="&uuml;berschrift_warengruppe"><b>Antica Gelateria del Corso</b></p>
+</a></div>
+</div>
+<!-- <div class="hinweistext">
+<p style="text-align: center;">Bitte hinterlassen Sie wie gewohnt einen <b>Bestellkommentar</b>, wenn Sie an einer der Aktionen teilnehmen m&ouml;chten.</p>
+</div> -->

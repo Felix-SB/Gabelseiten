@@ -1,0 +1,192 @@
+<style>
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 360px;
+  background-image: url("https://cloud.servicebund.de/f/14d57317e37347a98412/?dl=1");
+  background-size: cover;
+  background-position-y: 30%;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#banner_überschrift {
+  color: #E3000A;
+  font-size: 32px;
+}
+
+#unterüberschrift {
+  color: white;
+  font-size: 14px;
+}
+
+.button1 {
+  background-color: #E3000A;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.button1:hover {
+  background-color: #76b82a;
+  cursor: pointer;
+
+}
+
+.hirsch {
+  background-image: urL(https://cloud.servicebund.de/f/d2fe6106ff284a45834c/?dl=1);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 5% 10%;
+
+}
+
+.products {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 12px;
+  margin-top: 36px;
+}
+
+.column {
+  flex: 33.333%;
+  max-width: 33.333%;
+  padding: 0 12px;
+  position: relative;
+}
+
+.column img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0px 8px 48px rgba(32,35,28,0.25);
+}
+
+.overlay {
+    position: absolute;
+    left: 50%;
+    right: 5%;
+    bottom: 5%;
+    background-color: rgb(0 0 0 / 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+  }
+
+  .overlay p {
+    color: white;
+    font-size: 14px;
+  }
+
+@media (max-width:600px) {
+  .products {
+    flex-direction: column;
+  }
+  .column {
+    flex: 100%;
+    max-width: 100%;
+    padding: 12px 0;
+  }
+  .zitat {
+    background-image: none;
+  }
+  .overlay {
+    position: absolute;
+    left: 50%;
+    right: 5%;
+    bottom: 10%;
+  }
+  .hirsch {
+    background-image: none;
+  }
+}
+
+.zitat {
+  background-image: url(https://cloud.servicebund.de/f/4a94d8b741d04941ae30/?dl=1);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.zitat p {
+  padding: 11% 25%;
+}
+
+@media (max-width: 425px) {
+    .zitat {
+    background-image: none;
+  }
+  .zitat p {
+    padding: 0px;
+  }
+}
+
+</style>
+
+<div class="banner">
+  <div class="centered" id="banner_überschrift">MEHR TIERWOHL GEHT NICHT
+  <p id="unterüberschrift">Natur. Respekt. Genuss.</p>
+  <a href="/landing/WildesRotkaeppchenGeschichte?mtm_campaign=Gabelseite">
+  <button class="button1">LERNEN SIE UNS KENNEN</button>
+</a>
+  </div>
+</div>
+
+<div class="hirsch">
+  <p>Kennen Sie schon “<b>Wildes Rotkäppchen</b>“? DIE erstklassige Adresse für hochwertiges Wildfleisch aus heimischen Wäldern (Hessen und Thüringen). Der Fachbetrieb von David Straßer liegt in der idyllischen Region Nordhessens, im Herzen der Schwalm und genau zwischen Marburg und Kassel. Dort wird traditionelle Handwerkskunst mit einzigartigen Wildfleischprodukten und regionalen Spezialitäten kombiniert.</p>
+<p>“<b>Wildes Rotkäppchen</b>” steht für Qualität, Leidenschaft und Respekt gegenüber der Natur. 
+Bei uns wird die Hingabe zur Jagd und die Liebe zur Region greifbar. Unsere sorgfältig ausgewählten und von uns selbst verarbeiteten Tiere stammen ausschließlich aus den Jagdrevieren in Hessen und Thüringen. 
+</p>
+</div>
+
+<div class="products">
+  <div class="column">
+  <a href="/product/search?partNumbers=266878,266880,266884,279052,279053,268617,268620&headline=Wildes Rotkäppchen: Reh&mtm_campaign=Reh">
+    <img src="https://cloud.servicebund.de/f/2524754cec3e4587b939/?dl=1" style="width:100%">
+  <div class="overlay">
+    <p>Zu den Reh-Produkten</p>
+  </div>
+  </a>
+  </div>
+  <div class="column">
+  <a href="/product/search?partNumbers=266885,266886&headline=Wildes Rotkäppchen: Hirsch&mtm_campaign=Hirsch">
+    <img src="https://cloud.servicebund.de/f/e99684b137fd4204935d/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Zu den Hirsch-Produkten</p>
+  </div>
+    </a>
+  </div>
+  <div class="column">
+  <a href="/product/search?partNumbers=266872,266874,266875,266889,266891,279108,279098,266893,266894,266894&headline= Wildes Rotkäppchen: Wildschwein&mtm_campaign=Wildschwein">
+    <img src="https://cloud.servicebund.de/f/dc0640b10e7b456ca38a/?dl=1" style="width:100%">
+    <div class="overlay">
+      <p>Zu den Wildschwein-Produkten</p>
+    </div>
+  </a>
+  </div>
+</div>
+
+<div class="zitat">
+  <p><i>"Wildfleisch ist modernes Superfood und hat das Zeug zum Ernährungstrend der Neuzeit. Es ist ernährungsphysiologisch top: ohne übermäßiges Fett und frei von Zusatzstoffen und Medikamenten. Wild ist eiweißreiches Muskelfleisch – ideal für eine moderne proteinreiche Ernährung – ganz ohne schlechtes Gewissen. Wild erfüllt alle Anforderungen für ein modernes weltverträgliches Produkt."</i></p>
+</div>
+
+
+

@@ -1,0 +1,307 @@
+<style>
+  .fullwidth {
+    height: auto;
+    width: 100%;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+    margin-top: 0px;
+
+  }
+
+  .box {
+    width: 33.3333%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+  }
+
+
+  .box:hover .bild div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+
+  .box_2:hover .bild_2 div {
+    transform: scale(1.2);
+    transition: all .9s;
+  }
+
+  #gelb:hover {
+    background: #7fc72e;
+  }
+
+  .bild>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .bild_2>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .box_2 {
+    width: 50%;
+    height: 360px;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+  }
+
+  a.box:link,
+  a.box:visited,
+  a.box:hover,
+  a.box:active {
+    text-decoration: none;
+  }
+
+  .box a:link,
+  .box a:visited,
+  .box a:hover,
+  .box a:active {
+    text-decoration: none;
+  }
+
+  .box_2 a:link,
+  .box_2 a:visited,
+  .box_2 a:hover,
+  .box_2 a:active {
+    text-decoration: none;
+  }
+
+  #gelb {
+    display: block;
+    background: #76b82a;
+    position: relative;
+  }
+
+  .bild {
+    width: 100%;
+    height: 232px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  .bild_2 {
+    width: 100%;
+    height: 230px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+    #eins {
+    background-image: url("https://cloud.servicebund.de/f/f0234f4142744184b651/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/99e7fd26e50f4d8dae17/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #drei {
+    background-image: url("https://cloud.servicebund.de/f/c9f04b8fa5094e7d8402/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #vier {
+    background-image: url("https://cloud.servicebund.de/f/c91515d1e2434561ba68/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #fünf {
+    background-image: url("https://cloud.servicebund.de/f/6cc8f429b1e74ca59505/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #sechs{
+    background-image: url("hhttps://cloud.servicebund.de/f/12d55ffc2b9043e09337/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #sieben{
+    background-image: url("https://cloud.servicebund.de/f/fca440a4044a4ab18faf/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #acht{
+    background-image: url("https://cloud.servicebund.de/f/ec96a6f5da354678a131/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font: Nunito Sans;
+    font-size: 32px;
+    color: white;
+  }
+
+  p.gesamtsortiment {
+    margin: 0% 24px;
+    font-size: 20px;
+    color: white;
+  }
+
+
+  p.überschrift_warengruppe {
+    margin: 3% 3% 2%;
+    font: Nunito Sans;
+    font-size: 22px;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 0 3%;
+    font: Nunito Sans;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: right;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  @media (max-width: 980px) {
+    #flexbox {
+      flex-direction: column;
+    }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    .box_2 {
+      width: 100%;
+      height: auto;
+      margin: 10px auto;
+    }
+
+
+
+
+</style>
+
+<img src="https://cloud.servicebund.de/f/ee5bcfec0f9740a6b47e/?dl=1" alt="Mermaid" style="width:100%;height:auto;border-radius:8px;">
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=108984,104151,073595,084110&headline=Gebratene Wildgarnele mit Zitrone und wildem Brokkoli">
+      <div class="bild">
+        <div id="eins"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Rezept 1</b></p>
+      <p class="text_warengruppe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=108984,104151,073595,084110&headline=Gebratene Wildgarnele mit Zitrone und wildem Brokkoli">
+      <div class="bild">
+        <div id="zwei"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Rezept 2</b></p>
+      <p class="text_warengruppe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=108984,104151,073595,084110&headline=Gebratene Wildgarnele mit Zitrone und wildem Brokkoli">
+      <div class="bild">
+        <div id="drei"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Rezept 3</b></p>
+      <p class="text_warengruppe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+      </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=108984,104151,073595,084110&headline=Gebratene Wildgarnele mit Zitrone und wildem Brokkoli">
+      <div class="bild">
+        <div id="vier"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Rezept 4</b></p>
+      <p class="text_warengruppe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+    </div>
+</div>
+
+
+<!-- <div class="fullwidth" id="flexbox">
+<div class="box">
+    <a href="/product/search?partNumbers=258539%2c271617%2c271618%2c080372%2c065210%2c073522%2c027762%2c116899%2c104112%2c102695%2c086399%2c086400&headline=Brizza Grieche">
+      <div class="bild">
+        <div id="fünf"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Brizza "Grieche"</b></p>
+      <p class="text_warengruppe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+</a>
+</div> 
+  <div class="box">
+    <a href="/product/search?partNumbers=258539%2c271617%2c271618%2c080372%2c065316%2c051060%2c257571%2c107251&headline=Brizza Sportsfreund">
+      <div class="bild">
+        <div id="sechs"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Brizza "Sportsfreund"</b></p>
+      <p class="text_warengruppe">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</p>
+    </a></div>
+  <div class="box">
+    <a href="/product/search?partNumbers=258539%2c265270%2c080372%2c065210%2c073522%2c028212%2c257624%2c269439%2c068129%2c020221%2c027762&headline=Gemüsegarten">
+      <div class="bild">
+        <div id="sieben"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Brizza "Gemüsegarten"</b></p>
+      <p class="text_warengruppe">Lässt die Vegetarier-Herzen höher schlagen!</p>
+   </a>
+  </div>
+<div class="box">
+    <a href="/product/search?partNumbers=258539%2c271617%2c271618%2c080372%2c065210%2c073522%2c094433%2c091100%2c084464&headline=Brizza Franke">
+      <div class="bild">
+        <div id="acht"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Brizza "Franke"</b></p>
+      <p class="text_warengruppe">"Allmächdna!" Nie ohne seine Nürnberger Rostbratwürstchen!</p>
+    </a>
+    </div>
+</div> -->
+
+

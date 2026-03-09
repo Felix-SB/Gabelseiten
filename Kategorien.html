@@ -1,0 +1,111 @@
+<style> 
+  body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  #flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .box {
+    width: calc((100% - 40px) / 3); 
+    margin: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .bild {
+    width: 100%;
+    height: 250px; 
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .bild > div {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    opacity: 0.70;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform .5s;
+  }
+
+  .box:hover .bild div {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+
+  .box a {
+    text-decoration: none;
+    display: block;
+  }
+
+  #eins { background-image: url("https://cloud.servicebund.de/f/cdce6b08668d47a8b148/?dl=1"); }
+  #zwei { background-image: url("https://cloud.servicebund.de/f/d7fcd494373344f39056/?dl=1"); }
+  #drei { background-image: url("https://cloud.servicebund.de/f/2f23bf581eaf486798ee/?dl=1"); }
+  #vier { background-image: url("https://cloud.servicebund.de/f/d7ec4946191a4ddc833c/?dl=1"); }
+  #fuenf { background-image: url("https://cloud.servicebund.de/f/8fdb08e17a79434aace2/?dl=1"); }
+  #sechs { background-image: url("https://cloud.servicebund.de/f/5b15822f510d4edbbb06/?dl=1"); }
+
+  @media (max-width: 980px) {
+    #flexbox {
+      gap: 15px;
+    }
+
+    .box {
+      width: 100%;
+    }
+    
+    .bild {
+      height: 220px;
+    }
+  }
+</style>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box">
+    <a href="/product/search?partNumbers=106191,094775,132757,153870,066676,080565,299541,073504,078348,062385,050264,072814,085422,072808,078870,036803,058920,056212,081377,085417,111230,081199,040239,047516,047984,047985,047986,051825,053326,053329,055162,059944,080579,085412,085418,086840,086845,088626,096596,047988,258023,153873,153874,271841,273759,070322,041895,090832,281057,043784,055158,055159,055160,055161,071325,086766,092360&amp;headline=Frühstück">
+      <div class="bild"><div id="eins"></div></div>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=140912,140913,305867,046872,056285,056292,056796,075662,231667,231673,087340,056856,101362,111155,111133,075677,282248,105855,282249,101363,101364,095769,086420,046876&amp;headline=Fingerfood">
+      <div class="bild"><div id="zwei"></div></div>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=067878,289170,070531,085758,099748,057181,273456,281718,122590,057561,071628,100701&amp;headline=Vegetarische Artikel">
+      <div class="bild"><div id="drei"></div></div>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=117551,272676,272171,045444,131014,289048,287893,122591,122594,289434,289430,289145,231230,289405,300820,300824,300822,300817,300825,300819,300827,299554,087392,079140,092340,081262&amp;headline=Vegane Artikel">
+      <div class="bild"><div id="vier"></div></div>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=295488,010019,010046,010213,010214,003012,030192,030194,030218,030220,030224,030225,030226,003033,003101,003111,003112,003115,003119,003120,003122,003123,003124,003126,003138,003486,003509,003591,010239,010250,010332,010482,010556,011201,011204,011302,011303,019443,267047,268236,003010,021400,021405,030025,021001,021004,021024,296355,021059,277652,294977,294983,295029,295034,295036,295037,295038,295040,295041,295042,295417,295042,295417,010246,010245,010247,010241,085492,003855,003850,009035,009030,009032,154100,123852,124671,265209,265869,123865,130672,139243,123881,262034,123885,123849,123851,124219,126142,123868,010277,123874,123875,123879,266836,123848,123853&amp;headline=Regionale Artikel">
+      <div class="bild"><div id="fuenf"></div></div>
+    </a>
+  </div>
+
+  <div class="box">
+    <a href="/product/search?partNumbers=010245,010246,010247,124720,124091,287777,107876,097109,102762,010241,289056&amp;headline=BIO">
+      <div class="bild"><div id="sechs"></div></div>
+    </a>
+  </div>
+</div>

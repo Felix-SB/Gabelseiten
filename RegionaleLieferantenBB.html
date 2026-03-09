@@ -1,0 +1,372 @@
+<style>
+
+  .banner {
+  width: 100%;
+  height: auto;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#banner_überschrift {
+  color: #E3000A;
+  font-size: 32px;
+}
+
+#unterüberschrift {
+  color: white;
+  font-size: 14px;
+}
+
+.button1 {
+  background-color: #E3000A;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.button1:hover {
+  background-color: #76b82a;
+  cursor: pointer;
+}
+
+.hirsch {
+  background-image: urL(https://cloud.servicebund.de/f/d2fe6106ff284a45834c/?dl=1);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 5% 10%;
+}
+
+#gelb {
+  display: block;
+  background: #76b82a;
+  position: relative;
+  border-radius: 8px;
+  height: 120px;
+  margin: 1%;
+}
+
+    #gelb:hover {
+  background: #7fc72e;
+}
+
+  #clickable {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+#gelb a {
+  text-decoration: none;
+}
+
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: right;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font: Nunito Sans;
+    font-size: 32px;
+    color: white;
+  }
+
+  p.gesamtsortiment {
+    margin: 0% 24px;
+    font-size: 20px;
+    color: white;
+  }
+.products {
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 12px;
+  margin-top: 24px;
+}
+
+.column {
+  flex: 33.333%;
+  max-width: 33.333%;
+  padding: 0 12px;
+  position: relative;
+}
+
+.column2 {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 12px;
+  position: relative;
+}
+
+.column2 img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0px 8px 48px rgba(32,35,28,0.25);
+}
+
+.column img {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0px 8px 48px rgba(32,35,28,0.25);
+}
+
+.overlayContainer {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  }
+
+.overlayContainer .content {
+  position: absolute;
+  bottom: 8px;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  padding: 5%;
+  border-radius: 8px;
+  max-height: 65%;
+}
+
+.youtube {
+  height: 100%;
+}
+
+.overlay p {
+}
+
+.zitat {
+  background-image: url(https://cloud.servicebund.de/f/10231c216eb243adba7e/?dl=1);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.zitat p {
+  padding-left: 35%;
+  padding-right: 20%;
+  padding-top: 8%;
+  padding-bottom: 12%;
+}
+
+@media (max-width:941px) {
+  .products {
+    flex-direction: column;
+  }
+  .column {
+    flex: 100%;
+    max-width: 100%;
+    padding: 12px 0;
+  }
+    .column2 {
+    flex: 100%;
+    max-width: 100%;
+    padding: 12px 0;
+  }
+  .zitat {
+    background-image: none;
+  }
+
+  .zitat p {
+    padding: 10%;
+  }
+  .overlay {
+
+  }
+  .hirsch {
+    background-image: none;
+  }
+}
+
+
+@media (max-width: 425px) {
+    .zitat {
+    background-image: none;
+  }
+  .zitat p {
+    padding: 0px;
+  }
+  .content p {
+    display: none;
+  }
+}
+
+</style>
+<p><img src="https://cloud.servicebund.de/f/39d3a0239abe444b908b/?dl=1" class="banner" style="border-radius: 8px;"></p>
+<div>
+<h1 style="text-align: center;">Regionale Lieferanten &ndash; weil wir heute schon an Morgen denken!</h1>
+</div>
+<p>In einem Familienunternehmen, wie unserem, ist Nachhaltigkeit eine Selbstverst&auml;ndlichkeit. Die Unternehmensf&uuml;hrung hat immer die n&auml;chste Generation im Blick. Dazu geh&ouml;rt eben nicht nur der wirtschaftliche Erfolg einer Firma, sondern auch der Respekt vor den &ouml;kologischen Ressourcen sowie das Wohl der Mitarbeiter. Diese wichtigen Aspekte versuchen wir in unserem t&auml;glichen Gesch&auml;ft zu ber&uuml;cksichtigen und fortlaufend zu verbessern. Auf dieser Seite finden Sie eine &Uuml;bersicht unserer regionalen Lieferanten im unmittelbaren Umfeld zu unseren Standorten.</p>
+<p><img src="https://cloud.servicebund.de/f/9ecc8e166dbb4c7689d7/?dl=1" style="width: 100%; border-radius: 8px;"></p>
+<div class="products">
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=000495,007276,010044,010311,010312,010523,010524,010680,010707,010710,011006,011018,011019,011021,011069,011080,011123,011126,011873,011874,012058,012347,012349,014875,015427,017104,017107,017991,020323,020666,020715,024587,024588,033572,033573,033575,033576,034589,035555,035757,035758,035759,035777,035783,036000,036336,036338,036351,036500,036501,036502,037004,037005,037006,037121,037122,037182,037183,037184,037185,037200,037202,037203,037467,037471,037515,037542,037611,037613,037623,037624,037625,037626,037736,038083,038100,038125,038343,039387,039393,042147,042533,044592,044692,045054,045371,045372,045373,045374,045457,045589,045634,045720,045723,045828,045831,045917,048241,048320,048578,048596,048749,049129,049150,049355,049359,052120,052122,052309,052316,052347,052378,052882,056120,065745,065759,065832,067784,071450,084063,084388,089310,089527,094621,102427,104095,232981,262149,268173,272473,272731,273465,275578,275603,275604,275606,275607,282383"><img src="https://cloud.servicebund.de/f/eec36b938ef8454b9046/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>A: Becker oHG in B&uuml;ttelborn</h3>
+<p>K&uuml;chenfertiges Gem&uuml;se und eigens angebautes Gem&uuml;se beziehen wir vom Familienbetrieb Becker.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=000495,007276,010044,010311,010312,010523,010524,010680,010707,010710,011006,011018,011019,011021,011069,011080,011123,011126,011873,011874,012058,012347,012349,014875,015427,017104,017107,017991,020323,020666,020715,024587,024588,033572,033573,033575,033576,034589,035555,035757,035758,035759,035777,035783,036000,036336,036338,036351,036500,036501,036502,037004,037005,037006,037121,037122,037182,037183,037184,037185,037200,037202,037203,037467,037471,037515,037542,037611,037613,037623,037624,037625,037626,037736,038083,038100,038125,038343,039387,039393,042147,042533,044592,044692,045054,045371,045372,045373,045374,045457,045589,045634,045720,045723,045828,045831,045917,047777,048007,048241,048320,048578,048596,048749,049129,049150,049355,049359,052120,052122,052309,052316,052347,052378,052882,056120,060340,062681,062748,065692,065710,065716,065719,065720,065723,065725,065730,065745,065759,065773,065801,065822,065832,065845,065846,067784,071450,084063,084388,087678,089310,089527,094621,102427,103514,104095,232981,262149,268173,272473,272731,273465,275578,275603,275604,275606,275607,282383"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=012804,061323,061465,066013,037506"><img src="https://cloud.servicebund.de/f/e8eab1448cb040f48628/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>B: Gem&uuml;sebau Ewald in Trebur</h3>
+<p>Saisonales Gem&uuml;se, viele Salate und sogar auch Obst steht morgens noch auf den Feldern und ist abends schon bei uns.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=012804,020319,020908,061323,061358,061465,065981,065984,066013,081078,037506"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=020762,021004,021006,021008,021009,021010,021011,021013,021015,021017,021019,021020,021022,021024,021025,021027,021028,035025,035026,035027,035028,035029,257145,259787,260251,260281,274572"><img src="https://cloud.servicebund.de/f/44dc346028e0483ab622/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>C: Hamm in Griesheim</h3>
+<p>Familienmetzgerei Hamm produziert Fleisch und Wurstwaren direkt um die Ecke von B&uuml;ttelborn.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=020762,021004,021006,021008,021009,021010,021011,021013,021015,021017,021019,021020,021022,021024,021025,021027,021028,035025,035026,035027,035028,035029,257145,259787,260251,260281,274572"> </a></div>
+</div>
+<div class="products">
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=020401,000403"><img src="https://cloud.servicebund.de/f/a48cefaf9d3b4477beda/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>D: Apfel/Birne in Heidesheim</h3>
+<p>Von diesem lokalen Betrieb beziehen wir in der Saison all unserer &Auml;pfel und Birnen.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=020401,000403"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=002845,010220,012480,012905,013177,014840,016268,016269,016270,016271,016272,016279,016365,016375,016378,016379,016384,016403,020373,020748,021963,035784,036321,036327,037431,037433,037476,038335,038389,061888,065978,065989,072852,083298,085763,085811"><img src="https://cloud.servicebund.de/f/b788772a8f104be8ad12/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>E: Kr&auml;uter B&ouml;ttcher AG in B&uuml;rstadt</h3>
+<p>Die B&ouml;ttcher AG versorgt uns ganzj&auml;hrig mit frischen Kr&auml;utern. Durch die kurzen Wege ist maximale Frische m&ouml;glich.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=002845,010220,012480,012905,013177,014840,016268,016269,016270,016271,016272,016279,016365,016375,016378,016379,016384,016403,020373,020748,021963,035784,036321,036327,037431,037433,037476,038335,038389,061888,065978,065989,072852,083298,085763,085811"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=124613,124614,124615,124617,124619,139519,232784,232787,259342,269972,269974,269977,257948,262688"><img src="https://cloud.servicebund.de/f/aaf8b6e1656242bc9af6/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>F: Pomom GmbH in Aschaffenburg</h3>
+<p>Handverlesene Portions-Pakete f&uuml;r Smoothies und Milkshakes werten ohne gro&szlig;en Aufwand jede Karte auf.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=124613,124614,124615,124617,124619,139519,232784,232787,259342,269972,269974,269977,257948,262688"> </a></div>
+</div>
+<div class="products">
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=036385,037187,061861,036340,037432,037450"><img src="https://cloud.servicebund.de/f/e1d3551710384b17b237/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>G: Bauer Weigandt in B&uuml;ttelborn</h3>
+<p>Felder angrenzend an unser Unternehmensgel&auml;nde &ndash; wer hat das schon? Zwiebeln, Kartoffeln, K&uuml;rbis und Spargel w&auml;chst hier in Sichtweite.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=036385,037187,061861,036340,037432,037450"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=260521,270336"><img src="https://cloud.servicebund.de/f/63c4ca4da7034a229067/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>H: Rhein-Neckar-Pilze GmbH in B&uuml;rstadt</h3>
+<p>Eine der gr&ouml;&szlig;ten Pilzanlagen Europas so nah vor unserer Haust&uuml;r.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=260521,270336"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=020524"><img src="https://cloud.servicebund.de/f/c92c869f89a9411da343/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>I: Flowfood in Kelsterbach</h3>
+<p>Das Cateringunternehmen fand eine Marktl&uuml;cke und f&uuml;llte diese mit dem hochwertigen, trinkfertigen Aperitif Flow-Cocktail der zu vielen Anl&auml;ssen passt.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=020524"> </a></div>
+</div>
+<div class="products">
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=304886"><img src="https://cloud.servicebund.de/f/fd3928c8fb0e421098e6/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>J: LACASCARA Drinks GmbH in Wiesbaden</h3>
+<p>Das innovative Aperitivo-Startup verbindet Genuss auf höchstem Niveau mit sozialer und ökologischer Verantwortung.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=011589,039300,039301,039302"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=015200"><img src="https://cloud.servicebund.de/f/5ffc6980e03e41499af2/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>K: Odenw&auml;lder Kochk&auml;serei in F&uuml;rth</h3>
+<p>Hessische Spezialit&auml;t aus familiengef&uuml;hrter K&auml;serei im hessischen Odenwald &ndash; authentischer geht&rsquo;s kaum.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=015200"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=125124,125125,089128,089129,089133"><img src="https://cloud.servicebund.de/f/661ea35328b04eb0803e/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>L: Weingut Josef Spreitzer in Oestrich-Winkel</h3>
+<p>Im Herzen des Rheingaus gelegen liegt dieses, f&uuml;r den Riesling bekannte, Traditionsweingut.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=125124,125125,089128,089129,089133"> </a></div>
+</div>
+<div class="products">
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=258539"><img src="https://cloud.servicebund.de/f/6a6893be6ea74d4f8525/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>M: Brizza GmbH in Aschaffenburg</h3>
+<p>Im eigenen Wirtshaus entstand die Idee, nun kennt sie fast jeder: die originale Brezelpizza mit handgemachtem Teig.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=258539"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=102810,114703,140850,040008,040100,074268,080965,084016,086162,086163,091058"><img src="https://cloud.servicebund.de/f/4938d4d8e99943f89b0e/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>N: Andros GmbH in Breuberg</h3>
+<p>Globale Kompetenz und doch regional vor Ort: die Andros GmbH produziert unsere Apfelkonserven der Eigenmarke.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=102810,114703,140850,040008,040100,074268,080965,084016,086162,086163,091058"> </a></div>
+<div class="column">
+<div class="overlayContainer"><a href="/product/search?partNumbers=292472"><img src="https://cloud.servicebund.de/f/6c377ae0ed914550b55c/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>O: M&oslash;lk in Frankfurt</h3>
+<p>M&oslash;lk ist eine junge, dynamische und schnell adaptierende pflanzenbasierte Lebensmittelmarke aus dem Herzen Deutschlands.</p>
+</div>
+</a></div>
+<a href="/product/search?partNumbers=292472"> </a></div>
+</div>
+<div id="gelb"><a href="/product/search?partNumbers=000495,007276,010044,010311,010312,010523,010524,010680,010707,010710,011006,011018,011019,011021,011069,011080,011123,011126,011873,011874,012058,012347,012349,014875,015427,017104,017107,017991,020323,020666,020715,024587,024588,033572,033573,033575,033576,034589,035555,035757,035758,035759,035777,035783,036000,036336,036338,036351,036500,036501,036502,037004,037005,037006,037121,037122,037182,037183,037184,037185,037200,037202,037203,037467,037471,037515,037542,037611,037613,037623,037624,037625,037626,037736,038083,038100,038125,038343,039387,039393,042147,042533,044592,044692,045054,045371,045372,045373,045374,045457,045589,045634,045720,045723,045828,045831,045917,047777,048007,048241,048320,048578,048596,048749,049129,049150,049355,049359,052120,052122,052309,052316,052347,052378,052882,056120,060340,062681,062748,065692,065710,065716,065719,065720,065723,065725,065730,065745,065759,065773,065801,065822,065832,065845,065846,067784,071450,084063,084388,087678,089310,089527,094621,102427,103514,104095,232981,262149,268173,272473,272731,273465,275578,275603,275604,275606,275607,282383,061465,037506,020319,020762,021004,021006,021008,021009,021010,021011,021013,021015,021017,021019,021020,021022,021024,021025,021027,021028,035025,035026,035027,035028,035029,257145,259787,260251,260281,274572,020401,000403,002845,010220,012480,012905,013177,014840,016268,016269,016270,016271,016272,016279,016365,016375,016378,016379,016384,016403,020373,020748,021963,035784,036321,036327,037431,037433,037476,038335,038389,061888,065978,065989,072852,083298,085763,085811,124613,124614,124615,124617,124619,139519,232784,232787,259342,269972,269974,269977,257948,262688,036385,037187,061861,036340,037432,037450,260521,270336,020524,011589,039300,039301,039302,292472,015200,125124,125125,089128,089129,089133,258539,102810,114703,140850,040008,040100,074268,080965,084016,086162,086163,091058">
+<p class="&uuml;berschrift"><b>Mehr Artikel entdecken?</b></p>
+<p class="gesamtsortiment">Das gesamte regionale Sortiment finden Sie hier</p>
+<span id="clickable"><img src="https://cloud.servicebund.de/f/22462448f5af432c8343/?dl=1" id="pfeil"> </span></a></div>
+<p><a href="/product/search?partNumbers=000495,007276,010044,010311,010312,010523,010524,010680,010707,010710,011006,011018,011019,011021,011069,011080,011123,011126,011873,011874,012058,012347,012349,014875,015427,017104,017107,017991,020323,020666,020715,024587,024588,033572,033573,033575,033576,034589,035555,035757,035758,035759,035777,035783,036000,036336,036338,036351,036500,036501,036502,037004,037005,037006,037121,037122,037182,037183,037184,037185,037200,037202,037203,037467,037471,037515,037542,037611,037613,037623,037624,037625,037626,037736,038083,038100,038125,038343,039387,039393,042147,042533,044592,044692,045054,045371,045372,045373,045374,045457,045589,045634,045720,045723,045828,045831,045917,048241,048320,048578,048596,048749,049129,049150,049355,049359,052120,052122,052309,052316,052347,052378,052882,056120,062681,065710,065716,065719,065720,065725,065730,065745,065759,065773,065801,065822,065832,067784,071450,084063,084388,087678,089310,089527,094621,102427,104095,232981,262149,268173,272473,272731,273465,275578,275603,275604,275606,275607,282383,061465,037506,020319,020762,021004,021006,021008,021009,021010,021011,021013,021015,021017,021019,021020,021022,021024,021025,021027,021028,035025,035026,035027,035028,035029,257145,259787,260251,260281,274572,020401,000403,002845,010220,012480,012905,013177,014840,016268,016269,016270,016271,016272,016279,016365,016375,016378,016379,016384,016403,020373,020748,021963,035784,036321,036327,037431,037433,037476,038335,038389,061888,065978,065989,072852,083298,085763,085811,124613,124614,124615,124617,124619,139519,232784,232787,259342,269972,269974,269977,257948,262688,036385,037187,061861,036340,037432,037450,260521,270336,020524,011589,039300,039301,039302,292472,015200,125124,125125,089128,089129,089133,258539,102810,114703,140850,040008,040100,074268,080965,084016,086162,086163,091058"> </a></p>
+<div class="zitat">
+<p>Sie wollen sich noch ausf&uuml;hrlicher &uuml;ber unser nachhaltiges Handeln informieren? Gerne stellen wir Ihnen unseren Nachhaltigkeitsbericht und das Service-Bund eigene Video mit dem Thema &bdquo;Unsere Verantwortung regional zu Handeln&ldquo; zur Verf&uuml;gung.</p>
+</div>
+<div class="products">
+<div class="column2">
+<div class="overlayContainer"><a href="https://cloud.servicebund.de/f/0611fcec6c1d4d2084a7/"><img src="https://cloud.servicebund.de/f/93edbc7525d94946b7b4/?dl=1" style="width: 100%;">
+<div class="content">
+<h3>Unser Nachhaltigkeitsbericht</h3>
+</div>
+</a></div>
+<a href="https://cloud.servicebund.de/f/0611fcec6c1d4d2084a7/"> </a></div>
+<div class="column2">
+<div class="youtube"><iframe width="100%" height="100%" style="border-radius: 8px;" src="https://www.youtube.com/embed/DnaEXa-uhi8?si=TXZgynGEP-01-oYJ" title="Nachhaltigkeit und Regionalit&auml;t bei Flach
+" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="allowfullscreen"></iframe></div>
+</div>
+</div>

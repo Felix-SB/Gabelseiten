@@ -1,0 +1,317 @@
+<style>
+  .fullwidth {
+    height: auto;
+    width: 100%;
+    display: flex;
+  }
+
+  #banner {
+    width: 76.29%;
+    background-image: url("https://cloud.servicebund.de/f/ffe88bc15b924df1a606/?dl=1");
+    background-color: #efefef;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    border-radius: 0px 8px 8px 0px;
+    height: 360px;
+  }
+
+  #headline_box {
+    width: 23.71%;
+    background: #efefef;
+    border-radius: 8px 0px 0px 8px;
+  }
+
+  #überschrift {
+    font-size: 32px;
+    color: black;
+    margin: 15px;
+  }
+
+  p#claimer {
+    font-size: 16px;
+    margin: 10px;
+    margin-left: 15px;
+    color: black;
+  }
+
+  #flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% + 24px);
+    margin: -12px;
+    margin-bottom: 12px;
+  }
+
+
+  .box_2:hover .bild_2 div {
+    transform: scale(1.1);
+    transition: all .9s;
+  }
+
+
+  .bild_2>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .box_2 {
+    width: 50%;
+    height: auto;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
+
+
+
+  .box_2 a:link,
+  .box_2 a:visited,
+  .box_2 a:hover,
+  .box_2 a:active {
+    text-decoration: none;
+  }
+
+
+
+
+
+  .bild_2 {
+    width: 100%;
+    height: 270px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  #eins {
+    background-image: url("https://cloud.servicebund.de/f/b3465b12419b46719d12/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+
+  #zwei {
+    background-image: url("https://cloud.servicebund.de/f/10cd5b91c95e4044a1ba/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #drei {
+    background-image: url("https://cloud.servicebund.de/f/5e2d04b3849041dbb46b/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #vier {
+    background-image: url("https://cloud.servicebund.de/f/d4b320312f4e45b79113/?dl=1");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+    #fünf {
+    background-image: url("https://cloud.servicebund.de/f/b2d09ceee42c48a690d5/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+    #sechs {
+    background-image: url("https://cloud.servicebund.de/f/30bc0fd9811f4714880f/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+
+  #youtube {
+    border-radius: 8px;
+  }
+
+  p.überschrift {
+    margin: 17px 24px 16px;
+    font: Nunito Sans;
+    font-size: 32px;
+    color: white;
+  }
+
+  p.gesamtsortiment {
+    margin: 0% 24px;
+    font-size: 20px;
+    color: white;
+  }
+
+
+  p.überschrift_warengruppe {
+    margin: 3% 3% 2%;
+    font: Nunito Sans;
+    font-size: 22px;
+    color: #20231C;
+  }
+
+  p.text_warengruppe {
+    margin: 0 3%;
+    font: Nunito Sans;
+    font-size: 16px;
+    color: #20231C;
+  }
+
+  #pfeil {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    float: right;
+    right: 24px;
+    bottom: 24px;
+  }
+
+  #clickable {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+  }
+
+  #ambientebanner{
+    height: auto;
+    border-radius: 8px;
+    width: 100%;
+    margin: -12px;
+    margin-left: 0px;
+    margin-top: 12px;
+}
+
+  @media (max-width: 980px) {
+    #flexbox {
+      flex-direction: column;
+    }
+
+      #ambientebanner{
+    height: 275px;
+    object-fit: cover;
+  }
+
+    .box {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    .box_2 {
+      width: 100%;
+      height: auto;
+      margin: 10px auto;
+    }
+
+  @media (max-width: 980px) {
+    #headline_box {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    #headline_box img {
+      display: none;
+    }
+
+    #banner {
+      display: none;
+    }
+
+    #Modell1{
+      height: auto;
+      width: calc(100% + 24px);
+      display: flex;
+      height: auto;
+      margin: -12px;
+      margin-bottom: 24px;
+    }
+
+  }
+
+</style>
+<div class="fullwidth" id="Modell1" style="margin-bottom: 24px;">
+  <div id="headline_box">
+    <div id="überschrift"><b>
+      </b></div>
+    <div id="überschrift"><b>Liebe Kunden,</b></div>
+
+ <p id="claimer">
+      <b>bitte reichen Sie Ihre Hauptaufträge (Montag bis Donnerstag bis 18 Uhr / Freitags bis 16 Uhr) ein, damit wir Sie frühzeitig über Fehlmengen informieren und passenende Ersatzartikel anbieten können. Nachbestellungen sind bis 20 Uhr im Onlineshop möglich</b>
+    </p>
+
+    <p id="claimer">
+      <br>
+    </p>
+  </div>
+  <div id="banner">
+  </div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2">
+    <a href="https://xn--kckerling-frische-zzb.de/sortiment/">
+      <div class="bild_2">
+        <div id="eins"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Köckerling</b>
+      <p class="text_warengruppe"> Täglich Bestellung bis 12:30 Uhr - Auslieferung am nächsten Tag</p><br>
+    </a></div>
+  <div class="box_2">
+    <a href="">
+      <div class="bild_2">
+        <div id="zwei"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Sander</b></p>
+      <p class="text_warengruppe">Bestellung Donnerstag bis 10 Uhr - Auslieferung ab Dienstag möglich. Bestellung Montag bis 10 Uhr - Auslieferung ab Donnerstag möglich</p><br>
+    </a></div>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2">
+    <a href="">
+      <div class="bild_2">
+        <div id="drei"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Lindenhof</b></p>
+      <p class="text_warengruppe">Bestellung bis 8 Uhr - Auslieferung ab Mittwoch möglich. Bestellung Montag bis 8 Uhr - Auslieferung ab Freitag möglich
+      </p><br>
+    </a></div>
+  <div class="box_2">
+    <a href="https://www.bauernmolkerei.de/">
+      <div class="bild_2">
+        <div id="vier"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Upland Milch</b></p>
+      <p class="text_warengruppe">Bestellung Freitag bis 9 Uhr - Auslieferung ab Dienstag möglich. Bestellung Mittwoch bis 9 Uhr - Auslieferung ab Freitag möglich<br>
+    </div>
+  </a>
+</div>
+
+<div class="fullwidth" id="flexbox">
+  <div class="box_2">
+    <a href="https://www.edna.de/epages/Edna.sf/">
+      <div class="bild_2">
+        <div id="fünf"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Edna Cross Docking</b></p>
+      <p class="text_warengruppe">Täglich Bestellung bis 12 Uhr - Auslieferung am nächsten Tag</p><br>
+    </a>
+  </div>
+  <div class="box_2">
+    <a href="link">
+      <div class="bild_2">
+        <div id="sechs"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Metzgerei</b></p>
+      <p class="text_warengruppe">Täglich Bestellung bis 12 Uhr - Auslieferung am nächsten Tag</p><br>
+    </a>
+  </div>
+</div>
+
+<img class="fullwidth" id="ambientebanner" src="https://cloud.servicebund.de/f/3f7a869e37ad4f9998bf/?dl=1">
+
