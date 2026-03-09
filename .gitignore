@@ -1,0 +1,28 @@
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build outputs
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Environment variables (Sensitive info!)
+.env
+.env.local
+*.log
+
+# IDE / Editor folders
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# CSS/Sass (Optional: only if you want to ignore compiled CSS)
+# *.css.map
