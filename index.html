@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabelseiten | Project Portal</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --text: #1e293b;
+        }
+        body { 
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            line-height: 1.5;
+            margin: 0;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { margin-bottom: 30px; text-align: center; }
+        h1 { font-size: 2rem; color: #0f172a; margin-bottom: 10px; }
+        
+        /* Search Bar */
+        .search-container {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+            margin-bottom: 30px;
+        }
+        #search {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        #search:focus { border-color: var(--primary); }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .card span {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        .hidden { display: none; }
+        .footer-note { margin-top: 50px; font-size: 0.8rem; color: #94a3b8; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>🍴 Gabelseiten Portal</h1>
+        <p>Quick access to landing pages and tools.</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Search pages (e.g. 'Froneri', 'Rezepte', 'Burger')..." onkeyup="filterPages()">
+    </div>
+
+    <div class="grid" id="pageGrid">
+        <a class="card" href="1000JahreFlach.html"><span>📄</span> 1000 Jahre Flach</a>
+        <a class="card" href="1001JahreFlach.html"><span>📄</span> 1001 Jahre Flach</a>
+        <a class="card" href="11er.html"><span>🍟</span> 11er</a>
+        <a class="card" href="Bast_Messe.html"><span>🏗️</span> Bast Messe</a>
+        <a class="card" href="BetterDesserst_Nussbecher.html"><span>🍦</span> Better Dessert Nussbecher</a>
+        <a class="card" href="Brizza.html"><span>🍕</span> Brizza</a>
+        <a class="card" href="BurgerCraft.html"><span>🍔</span> Burger Craft</a>
+        <a class="card" href="BurgerCraftRezepte.html"><span>📖</span> Burger Craft Rezepte</a>
+        <a class="card" href="CallebautRezepte.html"><span>🍫</span> Callebaut Rezepte</a>
+        <a class="card" href="Cheesecake.html"><span>🍰</span> Cheesecake</a>
+        <a class="card" href="Duni.html"><span>🍽️</span> Duni</a>
+        <a class="card" href="Dunkles%20Schokoladen%20Moelleux.html"><span>🍮</span> Schoko Moelleux</a>
+        <a class="card" href="Eigenmarken.html"><span>🏷️</span> Eigenmarken</a>
+        <a class="card" href="FAQ-en.html"><span>❓</span> FAQ (EN)</a>
+        <a class="card" href="Footer.html"><span>🧱</span> Global Footer</a>
+        <a class="card" href="Friesenkrone.html"><span>🐟</span> Friesenkrone</a>
+        <a class="card" href="FroneriSaisonstart.html"><span>🍦</span> Froneri Saisonstart</a>
+        <a class="card" href="GBZ_Footer.html"><span>🧱</span> GBZ Footer</a>
+        <a class="card" href="Grillen.html"><span>🔥</span> Grillen</a>
+        <a class="card" href="HVH_Impressum.html"><span>⚖️</span> HVH Impressum</a>
+        <a class="card" href="Himbeer%20Tartelette.html"><span>🥧</span> Himbeer Tartelette</a>
+        <a class="card" href="HvH_Contact.html"><span>📞</span> HvH Contact</a>
+        <a class="card" href="IA.html"><span>📊</span> IA</a>
+        <a class="card" href="IAGeschichte.html"><span>📜</span> IA Geschichte</a>
+        <a class="card" href="IndustriemarkenAUN.html"><span>🏭</span> Industriemarken AUN</a>
+        <a class="card" href="Kategorien.html"><span>🗂️</span> Kategorien</a>
+        <a class="card" href="Lantmännen.html"><span>🥐</span> Lantmännen</a>
+        <a class="card" href="Mermaid2026.html"><span>🧜‍♀️</span> Mermaid 2026</a>
+        <a class="card" href="PWA_Anleitung.html"><span>📱</span> PWA Anleitung</a>
+        <a class="card" href="RegionaleLieferantenBB.html"><span>🚜</span> Regionale Lieferanten BB</a>
+        <a class="card" href="Rodeo2023.html"><span>🤠</span> Rodeo 2023</a>
+        <a class="card" href="Salva_D'or_Redesign.html"><span>✨</span> Salva D'or Redesign</a>
+        <a class="card" href="SanderRezepte.html"><span>🍳</span> Sander Rezepte</a>
+        <a class="card" href="Sauguad.html"><span>🐷</span> Sauguad</a>
+        <a class="card" href="Schneeflocken.html"><span>❄️</span> Schneeflocken</a>
+        <a class="card" href="ServischenInteraktiv.html"><span>🙋</span> Servischen Interaktiv</a>
+        <a class="card" href="Sourcer2023.html"><span>🔍</span> Sourcer 2023</a>
+        <a class="card" href="VNK_Wein.html"><span>🍷</span> VNK Wein</a>
+        <a class="card" href="Warenkorb.html"><span>🛒</span> Warenkorb</a>
+        <a class="card" href="WildesRotkaeppchen.html"><span>🍷</span> Wildes Rotkäppchen</a>
+        <a class="card" href="XTREP.html"><span>⚡</span> XTREP</a>
+        <a class="card" href="danish.crown.html"><span>🥩</span> Danish Crown</a>
+    </div>
+
+    <p class="footer-note">Showing all active landing pages.</p>
+</div>
+
+<script>
+    function filterPages() {
+        const input = document.getElementById('search').value.toLowerCase();
+        const cards = document.getElementsByClassName('card');
+        
+        for (let i = 0; i < cards.length; i++) {
+            const title = cards[i].innerText.toLowerCase();
+            if (title.includes(input)) {
+                cards[i].classList.remove('hidden');
+            } else {
+                cards[i].classList.add('hidden');
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
