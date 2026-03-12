@@ -12,6 +12,8 @@ build/
 .env
 .env.local
 *.log
+*.md
+*.xml
 
 # IDE / Editor folders
 .vscode/
