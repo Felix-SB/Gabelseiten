@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced TXT/CSV Validation Tool</title> <!-- Updated Title -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(41, 44, 37);
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            padding: 0px;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 12px;
+        }
+
+        main {
+            display: flex;
+            padding: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .file-input,
+        .dropdown {
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .validate-button,
+        .clear-button {
+            display: inline-block;
+            width: 48%;
+            padding: 10px;
+            font-size: 18px;
+            margin: 5px 1%;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .validate-button {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .validate-button:hover {
+            background-color: #45a049;
+        }
+
+        .clear-button {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .clear-button:hover {
+            background-color: #e53935;
+        }
+
+        .results {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .errors {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 14px;
+            white-space: pre-wrap; /* Keep line breaks */
+            word-wrap: break-word; /* Wrap long lines */
+            overflow-x: auto;
+            max-height: 300px;
+        }
+
+        .file-content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <img src="https://www.servicebund.de/_Resources/Static/Packages/Servicebund.ServicebundDe/Images/logo_sb_service-bund_mitUZ.svg"
+             alt="Service-Bund Logo" class="logo">
+        <h1>Dateien Validation</h1>
+    </header>
+    <main>
+        <select id="fileTypeDropdown" class="dropdown">
+            <option value="KDARTPRS">KDARTPRS.TXT</option>
+            <option value="Kunden">Kunden.TXT</option> <!-- Added Kunden.TXT -->
+            <option value="ARTIKEL_EXT">Artikel_EXT.TXT</option>
+            <option value="csv_rules">LMIV.CSV</option>
+        </select>
+        <input type="file" id="fileInput" accept=".txt, .csv" class="file-input">
+        <button id="validateButton" class="validate-button">Validate</button>
+        <button id="clearButton" class="clear-button">Clear Results</button>
+        <div id="results" class="results">
+            <h2>Validation Results</h2>
+            <pre id="errors" class="errors"></pre>
+        </div>
+    </main>
+</div>
+
+<script>
+    console.log('JavaScript File Loaded');
+
+    const fileTypeDropdown = document.getElementById('fileTypeDropdown');
+    const fileInput = document.getElementById('fileInput');
+    const validateButton = document.getElementById('validateButton');
+    const clearButton = document.getElementById('clearButton');
+    const errors = document.getElementById('errors');
+
+    const rules = {
+        KDARTPRS: {
+            'ÄnderungsKz': {type: 'char', position: 1, length: 1, allowedValues: ['N', 'Ä', 'L']},
+            'KundenNr': {type: 'num', position: 2, length: 7},
+            'ArtikelNr': {type: 'num', position: 9, length: 6},
+            'GueltigVon': {type: 'num', position: 15, length: 8, format: 'JHJJMMTT'}, // Note: format isn't used in current validateField
+            'GueltigBis': {type: 'num', position: 23, length: 8, format: 'JHJJMMTT'}, // Note: format isn't used in current validateField
+            'Verkaufspreis': {type: 'num', position: 31, length: 7, decimal: true, decimalPlaces: 2}, // Assuming 2 decimals based on context
+            'ServisaID': {type: 'num', position: 38, length: 3, cannotBeEmpty: true} // Added cannotBeEmpty
+        },
+        // --- Added Kunden Rules ---
+        Kunden: {
+            'ÄnderungsKz': {type: 'char', position: 1, length: 1, allowedValues: ['N', 'Ä', 'L']},
+            'Kundennummer': {type: 'num', position: 2, length: 7},
+            'Matchcode': {type: 'char', position: 9, length: 10},
+            'Kundenname1': {type: 'char', position: 19, length: 30},
+            'Kundenname2': {type: 'char', position: 49, length: 30},
+            'Kundenname3': {type: 'char', position: 79, length: 30},
+            'Strasse': {type: 'char', position: 109, length: 30},
+            'Nation': {type: 'char', position: 139, length: 3},
+            'PLZ': {type: 'char', position: 142, length: 6},
+            'Ort': {type: 'char', position: 148, length: 24},
+            'Telefon': {type: 'char', position: 172, length: 20},
+            'Fax': {type: 'char', position: 192, length: 20},
+            'Ansprechpartner': {type: 'char', position: 212, length: 30},
+            'Einkäufer': {type: 'char', position: 242, length: 30},
+            'Mehrwertsteuer': {type: 'num', position: 272, length: 1, allowedValues: [0, 1]},
+            'UmsatzsteuerIdentifikationsNr': {type: 'char', position: 273, length: 15},
+            'Mahnstufe': {type: 'num', position: 288, length: 1, allowedValues: [0, 1, 2, 3, 4]},
+            'Liefersperre': {type: 'num', position: 289, length: 1, allowedValues: [0, 1, 2]},
+            'InternerHinweis': {type: 'char', position: 290, length: 20},
+            'Kundenkennziffer': {type: 'num', position: 310, length: 1, allowedValues: [0, 1, 7, 8]},
+            'Kreditlimit': {type: 'num', position: 311, length: 5},
+            'Auftragslimit': {type: 'num', position: 316, length: 5},
+            'Mindestwert': {type: 'num', position: 321, length: 5},
+            'MWUnterschreitung': {type: 'num', position: 326, length: 5},
+            'Mindestroherlös': {type: 'num', position: 331, length: 5},
+            'PreisaufschlagKz': {type: 'num', position: 336, length: 1, allowedValues: [0, 1, 2]},
+            'Preisaufschlagsteuerung': {type: 'num', position: 337, length: 6, dependency: {field: 'PreisaufschlagKz', values: [2]}},
+            'PreisaufschlagPercent': {type: 'num', position: 343, length: 4, decimal: true, decimalPlaces: 2, dependency: {field: 'PreisaufschlagKz', values: [1, 2]}},
+            'Anbruchaufschlag': {type: 'num', position: 347, length: 4, decimal: true, decimalPlaces: 2},
+            'Eurokunde': {type: 'num', position: 351, length: 1, allowedValues: [0, 1]},
+            'BalmBerechtigung': {type: 'num', position: 352, length: 1, allowedValues: [0, 1]},
+            'BalmzulassungsNr': {type: 'num', position: 353, length: 7, dependency: {field: 'BalmBerechtigung', values: [1]}},
+            'VertreterNr': {type: 'num', position: 360, length: 3},
+            'Kontraktkunde': {type: 'num', position: 363, length: 1, allowedValues: [0, 1]},
+            'Bestpreis': {type: 'num', position: 364, length: 1, allowedValues: [0, 1]},
+            'Ordersatz': {type: 'num', position: 365, length: 1, allowedValues: [0, 1, 2]},
+            'Sonderangebote': {type: 'num', position: 366, length: 1, allowedValues: [0, 1]},
+            'AngebotGruppeNr1': {type: 'num', position: 367, length: 2},
+            'AngebotGruppeNr2': {type: 'num', position: 369, length: 2},
+            'Preisgruppe': {type: 'num', position: 371, length: 1, allowedValues: [1, 2, 3, 4, 5]}, // Rule applies to N/Ä records
+            'MengenstaffelKz': {type: 'num', position: 372, length: 1, allowedValues: [0, 1]},
+            'Rueckstandsbildung': {type: 'num', position: 373, length: 1, allowedValues: [0, 1]},
+            'AlternativArtikel': {type: 'num', position: 374, length: 1, allowedValues: [0, 1]},
+            'RabattKz': {type: 'num', position: 375, length: 1, allowedValues: [0, 1, 2, 3, 5, 6]},
+            'Rabatt': {type: 'num', position: 376, length: 4, decimal: true, decimalPlaces: 2, dependency: {field: 'RabattKz', values: [1, 2, 3, 6]}},
+            'SkontoKz': {type: 'num', position: 380, length: 1, allowedValues: [0, 1, 2]},
+            'SkontoTage': {type: 'num', position: 381, length: 2},
+            'Skonto': {type: 'num', position: 383, length: 4, decimal: true, decimalPlaces: 2, dependency: {field: 'SkontoKz', values: [1, 2]}},
+            'BonusKz': {type: 'num', position: 387, length: 1, allowedValues: [0, 1, 2]},
+            'BonusPercent': {type: 'num', position: 388, length: 4, decimal: true, decimalPlaces: 2, dependency: {field: 'BonusKz', values: [1, 2]}},
+            'ServisaKz': {type: 'num', position: 392, length: 1, allowedValues: [0, 1, 2, 3, 4]},
+            'Rechnungstermine': {type: 'char', position: 393, length: 1, allowedValues: ['S', 'W', 'D', 'V', 'M', 'T']}, // Rule applies to N/Ä records
+            'Zahlungsart': {type: 'num', position: 394, length: 1, allowedValues: [0, 1, 8, 9]},
+            'VersandArt': {type: 'char', position: 395, length: 30},
+            'VersandHinweis': {type: 'char', position: 425, length: 30},
+            'Auslieferungstour': {type: 'char', position: 455, length: 30},
+            'RuhetageBesuch': {type: 'char', position: 485, length: 6, regex: /^[01]{6}$/ }, // Added regex
+            'RuhetageAuslieferung': {type: 'char', position: 491, length: 6, regex: /^[01]{6}$/ }, // Added regex
+            'AuftragsbestaetigungPerFax': {type: 'num', position: 497, length: 1, allowedValues: [0, 1, 2]},
+            'InnendienstVerkaeufer': {type: 'num', position: 498, length: 3},
+            'SBNationalKZ': {type: 'num', position: 501, length: 1, allowedValues: [0, 1]},
+            'SBKundenGruppe': {type: 'num', position: 502, length: 3, dependency: {field: 'SBNationalKZ', values: [1]}},
+            'KundenBestellNr': {type: 'num', position: 505, length: 1, allowedValues: [0, 1, 9]}, // Updated
+            'KundenKategorie': {type: 'num', position: 506, length: 1, allowedValues: [0, 1, 3]}, // Updated
+            'LIKundenNr': {type: 'num', position: 507, length: 8},
+            'ZweitKundenNr': {type: 'num', position: 515, length: 7},
+            'ServisaID': {type: 'num', position: 522, length: 3, cannotBeEmpty: true} // Keep cannotBeEmpty, assumes it means "not spaces"
+        },
+        // --- End Kunden Rules ---
+        ARTIKEL_EXT: { // Assuming Tab Separated, No fixed positions/lengths needed here
+            'ÄnderungsKz': {type: 'char', allowedValues: ['N', 'L', 'Ä']},
+            'Artikelnummer': {type: 'num'},
+            'Sortiment-Wgr-Nr': {type: 'num'},
+            'Ersatzartikel': {type: 'num'},
+            'Matchcode': {type: 'char'},
+            'Bezeichnung-1': {type: 'char'},
+            'Bezeichnung-2': {type: 'char'},
+            'Kurzbezeichnung': {type: 'char'},
+            'Stringbezeichnung': {type: 'char'},
+            'Verkaufseinheit': {type: 'char'},
+            'Verrechnungseinheit': {type: 'char'},
+            'Artikel-Gruppe': {type: 'char'},
+            'BesorgDiversKz': {type: 'num', allowedValues: [0, 1, 2]},
+            'Wiegeartikel': {type: 'num', allowedValues: [0, 1]},
+            'Saisonartikel': {type: 'num', allowedValues: [0, 1]},
+            'Saison1-VonTag': {type: 'num'},
+            'Saison1-VonMonat': {type: 'num'},
+            'Saison1-BisTag': {type: 'num'},
+            'Saison1-BisMonat': {type: 'num'},
+            'Saison2-VonTag': {type: 'num'},
+            'Saison2-VonMonat': {type: 'num'},
+            'Saison2-BisTag': {type: 'num'},
+            'Saison2-BisMonat': {type: 'num'},
+            'SperrKz': {type: 'num', allowedValues: [0, 1, 2]},
+            'SperreSeit': {type: 'date'}, // Date type - current check is basic 8 digits
+            'SperreGrund': {type: 'char'},
+            'Mehrwertsteuer-Schlüssel': {type: 'num', allowedValues: ['1', '2']}, // Keep as string if file has '1'/'2'
+            'SozialbutterKz': {type: 'num', allowedValues: [0, 1]},
+            'Ware/Kosten': {type: 'char', allowedValues: ['W', 'K']},
+            'Service-Bund-Eigenmarke': {type: 'num', allowedValues: [0, 1]},
+            'Service-Bund-National-Art': {type: 'num', allowedValues: [0, 1]},
+            'Eigenprodukt vom Mitglied': {type: 'num', allowedValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]},
+            'Kundenordersatzartikel': {type: 'num', allowedValues: [0, 1]},
+            'RabattKz': {type: 'num', allowedValues: [0, 1, 2]},
+            'Rabatt': {type: 'num', decimal: true, dependency: {field: 'RabattKz', values: [2]}},
+            'Mindestverkaufsmenge': {type: 'num', decimal: true},
+            'Hektoliter': {type: 'num'},
+            '1.Lieferant (Hauptlieferant)': {type: 'num'},
+            'Artikel-Nr. bei Lieferant-1': {type: 'char'},
+            'Umschlaganzeige': {type: 'num', allowedValues: [0, 1]},
+            'FettKz': {type: 'num', allowedValues: [0, 7]},
+            'MHD-KZ': {type: 'num', allowedValues: [0, 1]},
+            'MHD-Resttage': {type: 'num', dependency: {field: 'MHD-KZ', values: [1]}},
+            'Artikelnummer_6stellig': {type: 'num'},
+            'Ersatzartikel_6stellig': {type: 'num'},
+            'Preislistenkennzeichen': {type: 'num', allowedValues: [1, 2, 3, 4, 5, 6, 7, 8, 9]},
+            'Tagespreisartikel': {type: 'num', allowedValues: [0, 1]},
+            'Service-Artikel': {type: 'num', allowedValues: [0, 1, 2]},
+            'ServisaID': {type: 'num', cannotBeEmpty: true}, // Added cannotBeEmpty
+            'Direkt.Frisch': {type: 'char', allowedValues: ['DIF', '', 'DFFLA']},
+            'Verkaufshinweis': {type: 'char'},
+            'SkontoKz': {type: 'num', allowedValues: [0, 1]}
+        },
+        csv_rules: { // Assuming Semicolon Separated
+            "Artikelnr": {"type": "num", "cannotBeEmpty": true},
+            "Artikelname": {"type": "char", "cannotBeEmpty": true},
+            "Basis-VPE": {"type": "char", "cannotBeEmpty": true},
+            "Hersteller": {"type": "char"},
+            "EAN": {"type": "char"}, // Often numeric but can be long, treat as char
+            "Hersteller Artikelnr": {"type": "char"},
+            "Virtuelle Einheiten": {"type": "char"},
+            "Warengruppe": {"type": "char", "cannotBeEmpty": true},
+            "Nettogewicht (kg)": {"type": "num", "decimal": true},
+            "Bruttogewicht (kg)": {"type": "num", "decimal": true},
+            "Abtropfgewicht (g)": {"type": "num"},
+            "Tiefe/Breite/Höhe(mm)": {"type": "char"}, // Format like "100/50/20"
+            "Temperaturzone": {"type": "num"},
+            "Restlaufzeit (Tage)": {"type": "num"},
+            "Verkehrsbezeichnung": {"type": "char"},
+            "Zutaten": {"type": "char"},
+            "Bildpfad": {"type": "char"},
+            "Herkunft": {"type": "char"},
+            "Keine dekl. Zusatzstoffe": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Keine dekl. Allergene": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "BLS": {"type": "char"},
+            "Alc. (vol%)": {"type": "num", "decimal": true},
+            "Coffein (mg)": {"type": "num", "decimal": true},
+            "Glutenfrei": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Laktosefrei": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Bio": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Bestellartikel": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Premium": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Preiseinstiegsartikel": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Konvektomat": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Backofen": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Fritteuse": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Warmluftofen": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Pfanne": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "MSC": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Angaben pro": {"type": "char", "allowedValues": ["100g", "100ml", "1l", "100 g", "100 ml", "1 l", ""]}, // Added empty
+            "KJ": {"type": "num"},
+            "Kcal": {"type": "char"}, // Can contain units like 'kcal'
+            "Fett": {"type": "char"}, // Can contain units like 'g'
+            "davon gesättigte Fettsäuren": {"type": "char"}, // Can contain units like 'g'
+            "Kohlenhydrate": {"type": "char"}, // Can contain units like 'g'
+            "davon Zucker": {"type": "char"}, // Can contain units like 'g'
+            "Eiweiß": {"type": "char"}, // Can contain units like 'g'
+            "Salz": {"type": "char"}, // Can contain units like 'g'
+            "Beschreibung": {"type": "char"},
+            "Zubereitung": {"type": "char"},
+            "Eier": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Erdnüsse": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Fisch": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Glutenhaltiges Getreide": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Krebstiere": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Milch": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schwefeldioxid/Sulphite": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Sellerie": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Senf": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Sesamsamen": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Soja": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Lupine": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Weichtiere": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "enthält eine Phenylalaninquelle": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "gewachst": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "geschwärzt": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "geschwefelt": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "kann bei übermäßigem Verzehr abführend wirken": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "konserviert": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "mit Antioxidationsmittel": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "mit Zucker(n) und Süßungsmittel(n)": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "mit Farbstoff": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "mit Geschmacksverstärker": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "mit Phosphat": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "mit Süßungsmittel(n)": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "unter Schutzatmosphäre verpackt": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Kostformen": {"type": "char"},
+            "Hinweise": {"type": "char"},
+            "Artikelpass-Export freigegeben": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Letzte LMIV Änderung": {"type": "char"}, // Could be date-like, but treat as char
+            "Hinweis": {"type": "char"},
+            "Glutenhaltiges Getreide (Weizen)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Glutenhaltiges Getreide (Roggen)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Glutenhaltiges Getreide (Gerste)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Glutenhaltiges Getreide (Hafer)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Glutenhaltiges Getreide (Dinkel)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Glutenhaltiges Getreide (Kamut)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Mandeln)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Haselnüsse)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Walnüsse)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Kaschunüsse)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Pecannüsse)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Paranüsse)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Pistazien)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Macadamianüsse)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Schalenfrüchte (Queenslandnüsse)": {"type": "char", "allowedValues": ["Enthält", "enthält in Spuren", ""]},
+            "Fisch Fanggerät": {"type": "char", "allowedValues": ["", "Wadennetz", "Schleppnetz", "Kiemennetze und vergleichbare Netze", "Umschließungsnetze und Hebenetze", "Haken und Langleinen", "Dredgen", "Reusen und Fallen", "Keine Angabe" ]},
+            "Fisch Herkunft": {"type": "char"},
+            "Fisch Produktionsmethode": {"type": "char", "allowedValues": ["", "Keine Angabe", "gefangen", "aus Binnenfischerei", "in Aquakultur gewonnen"]},
+            "Fisch Lateinisch Name": {"type": "char"},
+            "Fleisch Aufzuchtsort": {"type": "char"},
+            "Fleisch Schlachtort": {"type": "char"},
+            "Fleisch Geburtsort": {"type": "char"},
+            "Fleisch Zerlegungsort": {"type": "char"},
+            "Regional gepflegt": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Produkt": {"type": "char"},
+            "Variante": {"type": "char"},
+            "Conveniencegrad": {"type": "char"},
+            "Kaliber": {"type": "char"},
+            "Marke": {"type": "char"},
+            "Tags": {"type": "char"},
+            "Lief. Kürzel": {"type": "char"},
+            "Vertrieblicher Ursprung": {"type": "char"},
+            "Sonstiger Text": {"type": "char"},
+            "GMO": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Gefahrgutnummer": {"type": "char"},
+            "Beförderungskategorie": {"type": "char"},
+            "Begrenzte Menge": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Gefahrstoffgewicht": {"type": "num", "decimal": true},
+            "Modularer Artikeltext": {"type": "char"},
+            "ASC": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Inaktiv Kennzeichen": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "Inaktiv Datum": {"type": "char"}, // Could be date-like
+            "Hauptlieferant": {"type": "char", "cannotBeEmpty": true},
+            "Eigenmarke": {"type": "char", "allowedValues": ["Ja", "Nein", ""]},
+            "ServisaID": {"type": "num", "cannotBeEmpty": true}
+        }
+    };
+
+    function validateField(value, rule, fieldName) {
+        // Trim the value before validation? Usually yes for non-fixed-width.
+        // For fixed-width, trimming might remove intentional padding.
+        // Let's keep the value as extracted for now, handle trimming based on type if needed.
+        const trimmedValue = value.trim(); // Use trimmed value for emptiness checks
+
+        if (rule.cannotBeEmpty && trimmedValue === "") {
+            return `Field '${fieldName}' cannot be empty.`;
+        }
+
+        // Skip further validation if the field is allowed to be empty and is empty
+        if (trimmedValue === "" && !rule.cannotBeEmpty) {
+            return null;
+        }
+
+        if (rule.type === 'char') {
+            // Use the original 'value' for allowedValues check if padding matters
+            if (rule.allowedValues && !rule.allowedValues.includes(value)) {
+                // If padding doesn't matter, check trimmedValue instead:
+                // if (rule.allowedValues && !rule.allowedValues.includes(trimmedValue)) {
+                return `Invalid value "${value}". Allowed values for '${fieldName}': ${rule.allowedValues.join(', ')}.`;
+            }
+            // Add regex check if defined
+            if (rule.regex && !rule.regex.test(value)) {
+                 return `Value "${value}" in '${fieldName}' does not match the required pattern.`;
+            }
+        } else if (rule.type === 'num') {
+            // For numeric checks, always use the trimmed value
+            const numericString = rule.decimal ? trimmedValue.replace(',', '.') : trimmedValue;
+
+            if (isNaN(parseFloat(numericString)) || !isFinite(numericString)) {
+                 // Check if it's just empty and allowed to be
+                 if (trimmedValue === "" && !rule.cannotBeEmpty) {
+                     return null;
+                 }
+                return `Value "${value}" in '${fieldName}' is not a valid number.`;
+            }
+            // Check allowed values (compare as strings, as file might have '01' vs 1)
+            if (rule.allowedValues && !rule.allowedValues.map(String).includes(trimmedValue)) {
+                return `Invalid value "${value}" in '${fieldName}'. Allowed values: ${rule.allowedValues.join(', ')}.`;
+            }
+            // Optional: Check decimal places if rule.decimalPlaces is set
+            if (rule.decimal && rule.decimalPlaces !== undefined) {
+                const decimalPart = (numericString.split('.')[1] || '');
+                if (decimalPart.length > rule.decimalPlaces) {
+                    return `Value "${value}" in '${fieldName}' has too many decimal places. Max ${rule.decimalPlaces} allowed.`;
+                }
+                 // Could also enforce minimum decimal places if needed
+                 // if (decimalPart.length < rule.decimalPlaces) {
+                 //    return `Value "${value}" in '${fieldName}' requires exactly ${rule.decimalPlaces} decimal places.`;
+                 // }
+            }
+
+        } else if (rule.type === 'date') {
+            // Use trimmed value for date checks
+            if (!/^\d{8}$/.test(trimmedValue)) {
+                return `Date "${value}" in '${fieldName}' is not in YYYYMMDD format (8 digits).`;
+            }
+            // Optional: Add stricter date validity check (e.g., month 1-12, day 1-31)
+            const year = parseInt(trimmedValue.substring(0, 4), 10);
+            const month = parseInt(trimmedValue.substring(4, 6), 10);
+            const day = parseInt(trimmedValue.substring(6, 8), 10);
+            if (month < 1 || month > 12 || day < 1 || day > 31) { // Basic check
+                 return `Date "${value}" in '${fieldName}' appears invalid (Month: ${month}, Day: ${day}).`;
+            }
+            // More robust: const d = new Date(year, month - 1, day); if (d.getFullYear() !== year || d.getMonth() !== month - 1 || d.getDate() !== day) return 'Invalid date';
+
+        }
+        // Removed mustBeEmpty check as cannotBeEmpty covers the inverse logic more commonly needed.
+        // if (rule.mustBeEmpty && trimmedValue !== "") {
+        //     return `Field '${fieldName}' must be empty, but it contains "${value}".`;
+        // }
+
+        return null; // No error
+    }
+
+    function validateRow(rowNumber, row, rules, isTabSeparated, expectedLength = null, isCsv = false) {
+        const errors = [];
+        const originalRow = row; // Keep original for length checks if needed
+
+        if (isCsv) {
+            // CSV: Split by semicolon, check field count
+            const trimmedRow = row.trimEnd(); // Trim trailing whitespace only
+            const fields = trimmedRow.split(';');
+            const expectedFieldCount = Object.keys(rules).length;
+
+            if (fields.length !== expectedFieldCount) {
+                errors.push(`Expected ${expectedFieldCount} fields (columns), but found ${fields.length}. Check semicolons.`);
+                // Don't proceed with field validation if column count is wrong
+                return errors;
+            }
+
+            const rowValues = {}; // Store values for dependency checks
+            fields.forEach((fieldValue, fieldIndex) => {
+                 const fieldName = Object.keys(rules)[fieldIndex];
+                 rowValues[fieldName] = fieldValue.trim(); // Store trimmed value
+            });
+
+            Object.keys(rules).forEach((fieldName, fieldIndex) => {
+                const rule = rules[fieldName];
+                const fieldValue = fields[fieldIndex].trim(); // Use trimmed value for validation
+
+                let dependencyCheckPassed = true;
+                if (rule.dependency) {
+                    const dependencyFieldName = rule.dependency.field;
+                    const dependencyFieldValue = rowValues[dependencyFieldName] || ''; // Get dependency value
+
+                    if (!rule.dependency.values.map(String).includes(dependencyFieldValue)) {
+                        dependencyCheckPassed = false;
+                        // Check if the field contains anything other than spaces or zeros (assuming same padding logic might apply)
+                        if (/[^ 0]/.test(fieldValue)) {
+                             errors.push(`Field '${fieldName}' should likely be empty/zeros because '${dependencyFieldName}' is '${dependencyFieldValue}', not one of [${rule.dependency.values.join(', ')}]. Found: "${fieldValue}".`);
+                        }
+                    }
+                }
+
+                if (dependencyCheckPassed) {
+                    // Validate the trimmed field value for CSV
+                    const error = validateField(fieldValue, rule, fieldName);
+                    if (error) errors.push(`Field '${fieldName}': ${error}`);
+                }
+            });
+
+        } else if (isTabSeparated) {
+            // TSV: Split by tab, check field count
+            const trimmedRow = row.trimEnd(); // Trim trailing whitespace only
+            const fields = trimmedRow.split('\t');
+            const expectedFieldCount = Object.keys(rules).length;
+
+            if (fields.length !== expectedFieldCount) {
+                 errors.push(`Expected ${expectedFieldCount} fields (columns), but found ${fields.length}. Check tabs.`);
+                 // Don't proceed if column count is wrong
+                 return errors;
+            }
+
+            const rowValues = {}; // Store values for dependency checks
+            fields.forEach((fieldValue, fieldIndex) => {
+                 const fieldName = Object.keys(rules)[fieldIndex];
+                 rowValues[fieldName] = fieldValue.trim(); // Store trimmed value
+            });
+
+
+            Object.keys(rules).forEach((fieldName, fieldIndex) => {
+                const rule = rules[fieldName];
+                const fieldValue = fields[fieldIndex].trim(); // Use trimmed value for validation
+
+                let dependencyCheckPassed = true;
+                if (rule.dependency) {
+                    const dependencyFieldName = rule.dependency.field;
+                    const dependencyFieldValue = rowValues[dependencyFieldName] || ''; // Get dependency value
+
+                    if (!rule.dependency.values.map(String).includes(dependencyFieldValue)) {
+                        dependencyCheckPassed = false;
+                        // Check if the field contains anything other than spaces or zeros (assuming same padding logic might apply)
+                        if (/[^ 0]/.test(fieldValue)) {
+                             errors.push(`Field '${fieldName}' should likely be empty/zeros because '${dependencyFieldName}' is '${dependencyFieldValue}', not one of [${rule.dependency.values.join(', ')}]. Found: "${fieldValue}".`);
+                        }
+                    }
+                }
+
+                if (dependencyCheckPassed) {
+                    // Validate the trimmed field value for TSV
+                    const error = validateField(fieldValue, rule, fieldName);
+                    if (error) errors.push(`Field '${fieldName}': ${error}`);
+                }
+            });
+
+        } else { // Fixed-width (KDARTPRS, Kunden)
+            // 1. Check for Tabs (should not exist in fixed-width)
+            if (row.includes('\t')) {
+                errors.push(`Row contains tabs, which are invalid for fixed-width format.`);
+                // Stop validation for this row if tabs are present? Or continue? Let's continue for now.
+            }
+
+            // 2. Length Check (use original row before trimming)
+            if (expectedLength !== null && row.length !== expectedLength) {
+                // Allow one trailing space (common issue)
+                if (!(row.length === expectedLength + 1 && row.endsWith(' '))) {
+                     errors.push(`Row length is incorrect. Expected ${expectedLength}, found ${row.length}.`);
+                     // Stop validation for this row if length is wrong? Probably best.
+                     return errors;
+                }
+                 // If we allow the trailing space, use the trimmed version for field extraction
+                 row = row.trimEnd();
+            }
+
+            // 3. Extract and Validate Fields based on position and length
+            const rowValues = {}; // Store extracted values for dependency checks
+            for (const [fieldName, rule] of Object.entries(rules)) {
+                if (rule.position && rule.length) {
+                    // Extract the raw field value based on position/length
+                    const fieldValue = row.substring(rule.position - 1, rule.position - 1 + rule.length);
+                    rowValues[fieldName] = fieldValue; // Store raw value (validateField will handle trimming if needed)
+                } else {
+                     console.warn(`Rule for field '${fieldName}' is missing position or length for fixed-width validation.`);
+                }
+            }
+
+            // 4. Perform Validation including Dependencies
+             for (const [fieldName, rule] of Object.entries(rules)) {
+                 const fieldValue = rowValues[fieldName]; // Get stored value
+
+                 if (fieldValue === undefined) continue; // Skip if extraction failed
+
+                 let dependencyCheckPassed = true;
+                 if (rule.dependency) {
+                     const dependencyFieldName = rule.dependency.field;
+                     // Use trimmed dependency value for the check itself
+                     const dependencyFieldValue = (rowValues[dependencyFieldName] || '').trim();
+
+                     if (!rule.dependency.values.map(String).includes(dependencyFieldValue)) {
+                         dependencyCheckPassed = false;
+                         // Check if the field contains anything other than spaces or zeros
+                         // Use the raw fieldValue (before trimming) for this check
+                         if (/[^ 0]/.test(fieldValue)) { // <--- MODIFIED CHECK HERE for fixed-width
+                              errors.push(`Field '${fieldName}' should only contain spaces or zeros because '${dependencyFieldName}' is '${dependencyFieldValue}', not one of [${rule.dependency.values.join(', ')}]. Found non-zero/non-space value: "${fieldValue}".`);
+                         }
+                     }
+                 }
+
+                 if (dependencyCheckPassed) {
+                     // Pass the raw extracted value to validateField.
+                     // validateField will decide whether to trim based on type/rules.
+                     const error = validateField(fieldValue, rule, fieldName);
+                     if (error) errors.push(`Field '${fieldName}': ${error}`);
+                 }
+             }
+        }
+        return errors;
+    }
+
+    validateButton.addEventListener('click', () => {
+        errors.textContent = 'Validating...'; // Provide immediate feedback
+        fileInput.disabled = true;
+        validateButton.disabled = true;
+        clearButton.disabled = true;
+        fileTypeDropdown.disabled = true;
+
+        // Use setTimeout to allow the UI to update before heavy processing
+        setTimeout(() => {
+            try { // Wrap main logic in try...finally
+                const file = fileInput.files[0];
+                if (!file) {
+                    errors.textContent = 'Please select a file.';
+                    // No return here, finally block will still execute
+                } else {
+                    const fileType = fileTypeDropdown.value;
+                    const selectedRules = rules[fileType];
+                    if (!selectedRules) {
+                         errors.textContent = `Error: No validation rules defined for selected type '${fileType}'.`;
+                         // No return here, finally block will still execute
+                    } else {
+                        const isTabSeparated = fileType === 'ARTIKEL_EXT';
+                        const isCsv = fileType === 'csv_rules';
+
+                        // --- Determine Expected Length for Fixed-Width ---
+                        let expectedLength = null;
+                        if (fileType === 'KDARTPRS') {
+                            expectedLength = 40;
+                        } else if (fileType === 'Kunden') {
+                            expectedLength = 524; // Calculated length for Kunden.TXT
+                        }
+                        // --- End Expected Length ---
+
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                            try { // Wrap file processing in try...catch
+                                const fileContent = reader.result;
+                                // Use robust line splitting
+                                const rows = fileContent.split(/\r?\n/);
+                                const validationErrors = [];
+
+                                // Remove potential trailing empty line caused by final newline
+                                if (rows.length > 0 && rows[rows.length - 1].trim() === '') {
+                                    rows.pop();
+                                }
+
+                                for (const [rowIndex, row] of rows.entries()) {
+                                    // Skip header row for ARTIKEL_EXT (TSV)
+                                    if (isTabSeparated && rowIndex === 0) {
+                                        continue;
+                                    }
+                                     // Skip header row for LMIV.CSV (CSV) - Assuming first row is header
+                                     if (isCsv && rowIndex === 0) {
+                                        // Optional: Validate header row structure/names here if needed
+                                        continue;
+                                    }
+
+                                    // Skip genuinely empty rows (containing absolutely nothing)
+                                    if (row.length === 0) {
+                                        // validationErrors.push(`Row ${rowIndex + 1}: Skipped empty line.`); // Optional logging
+                                        continue;
+                                    }
+                                     // Check for rows containing only whitespace (might be an error)
+                                     if (row.trim().length === 0) {
+                                         validationErrors.push(`Row ${rowIndex + 1}: Row contains only whitespace.`);
+                                         continue; // Treat as error and skip validation
+                                     }
+
+
+                                    const rowErrors = validateRow(rowIndex + 1, row, selectedRules, isTabSeparated, expectedLength, isCsv);
+                                    if (rowErrors.length > 0) {
+                                        // Combine errors for the row, ensuring field names are included
+                                        const errorString = rowErrors.map(e => e.startsWith('Field') ? e : `Error: ${e}`).join('; ');
+                                        validationErrors.push(`Row ${rowIndex + 1}: ${errorString}`);
+                                    }
+                                }
+                                errors.textContent = validationErrors.length > 0 ? validationErrors.join('\n') : 'Validation Complete: No errors found.';
+                            } catch (parseError) {
+                                 console.error("Error during file processing:", parseError);
+                                 errors.textContent = `Error during file processing: ${parseError.message}`;
+                            } finally {
+                                // Re-enable UI after processing finishes (success or error)
+                                fileInput.disabled = false;
+                                validateButton.disabled = false;
+                                clearButton.disabled = false;
+                                fileTypeDropdown.disabled = false;
+                            }
+                        };
+                        reader.onerror = () => {
+                            errors.textContent = 'Error reading file.';
+                            console.error("FileReader error:", reader.error);
+                            // Re-enable UI even if reading fails
+                            fileInput.disabled = false;
+                            validateButton.disabled = false;
+                            clearButton.disabled = false;
+                            fileTypeDropdown.disabled = false;
+                        };
+                        reader.readAsText(file, 'UTF-8'); // Specify encoding if known (UTF-8 is common, but check file source)
+                        // If files might be ANSI/Windows-1252, you might need more complex encoding detection or user selection.
+                    }
+                }
+            } catch (error) {
+                console.error("Error during validation setup:", error);
+                errors.textContent = `An unexpected error occurred: ${error.message}`;
+            } finally {
+                 // Ensure UI is re-enabled in case of early errors before reader setup
+                 // Check if reader is processing, otherwise enable now
+                 if (!fileInput.files[0] || !rules[fileTypeDropdown.value]) {
+                    fileInput.disabled = false;
+                    validateButton.disabled = false;
+                    clearButton.disabled = false;
+                    fileTypeDropdown.disabled = false;
+                 }
+            }
+        }, 10); // Small timeout allows "Validating..." message to render
+    });
+
+    clearButton.addEventListener('click', () => {
+        errors.textContent = '';
+        fileInput.value = ''; // Clears the selected file in the input
+    });
+
+</script>
+</body>
+</html>
+
+
