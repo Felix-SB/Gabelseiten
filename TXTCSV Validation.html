@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced TXT/CSV Validation Tool</title> <!-- Updated Title -->
+    <title>TXT/CSV Validation Tool</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -126,6 +126,8 @@
         <select id="fileTypeDropdown" class="dropdown">
             <option value="KDARTPRS">KDARTPRS.TXT</option>
             <option value="Kunden">Kunden.TXT</option>
+            <option value="ARTIKEL">Artikel.TXT</option>
+            <option value="MATRIX">Matrix.TXT</option>
             <option value="ARTIKEL_EXT">Artikel_EXT.TXT</option>
             <option value="csv_rules">LMIV.CSV</option>
         </select>
@@ -158,7 +160,6 @@
             'Verkaufspreis': {type: 'num', position: 31, length: 7, decimal: true, decimalPlaces: 2}, // Assuming 2 decimals based on context
             'ServisaID': {type: 'num', position: 38, length: 3, cannotBeEmpty: true} // Added cannotBeEmpty
         },
-        // --- Added Kunden Rules ---
         Kunden: {
             'ÄnderungsKz': {type: 'char', position: 1, length: 1, allowedValues: ['N', 'Ä', 'L']},
             'Kundennummer': {type: 'num', position: 2, length: 7},
@@ -228,7 +229,72 @@
             'ZweitKundenNr': {type: 'num', position: 515, length: 7},
             'ServisaID': {type: 'num', position: 522, length: 3, cannotBeEmpty: true} // Keep cannotBeEmpty, assumes it means "not spaces"
         },
-        // --- End Kunden Rules ---
+        ARTIKEL: {
+            'ÄnderungsKz':              {type: 'char', position: 1,   length: 1,  allowedValues: ['N', 'L', 'Ä']},
+            'Artikelnummer':            {type: 'num',  position: 2,   length: 5},
+            'Sortiment-Wgr-Nr':         {type: 'num',  position: 7,   length: 6},
+            'Ersatzartikel':            {type: 'num',  position: 13,  length: 5},
+            'Matchcode':                {type: 'char', position: 18,  length: 10},
+            'Bezeichnung-1':            {type: 'char', position: 28,  length: 35},
+            'Bezeichnung-2':            {type: 'char', position: 63,  length: 35},
+            'Kurzbezeichnung':          {type: 'char', position: 98,  length: 30},
+            'Stringbezeichnung':        {type: 'char', position: 128, length: 40},
+            'Verkaufseinheit':          {type: 'char', position: 168, length: 15},
+            'Verrechnungseinheit':      {type: 'char', position: 183, length: 3},
+            'Artikel-Gruppe':           {type: 'char', position: 186, length: 2},
+            'BesorgDiversKz':           {type: 'num',  position: 188, length: 1,  allowedValues: [0, 1, 2]},
+            'Wiegeartikel':             {type: 'num',  position: 189, length: 1,  allowedValues: [0, 1]},
+            'Saisonartikel':            {type: 'num',  position: 190, length: 1,  allowedValues: [0, 1]},
+            'Saison1-VonTag':           {type: 'num',  position: 191, length: 2,  dependency: {field: 'Saisonartikel', values: [1]}},
+            'Saison1-VonMonat':         {type: 'num',  position: 193, length: 2,  dependency: {field: 'Saisonartikel', values: [1]}},
+            'Saison1-BisTag':           {type: 'num',  position: 195, length: 2,  dependency: {field: 'Saisonartikel', values: [1]}},
+            'Saison1-BisMonat':         {type: 'num',  position: 197, length: 2,  dependency: {field: 'Saisonartikel', values: [1]}},
+            'Saison2-VonTag':           {type: 'num',  position: 199, length: 2},
+            'Saison2-VonMonat':         {type: 'num',  position: 201, length: 2},
+            'Saison2-BisTag':           {type: 'num',  position: 203, length: 2},
+            'Saison2-BisMonat':         {type: 'num',  position: 205, length: 2},
+            'SperrKz':                  {type: 'num',  position: 207, length: 1,  allowedValues: [0, 1, 2]},
+            'SperreSeit':               {type: 'num',  position: 208, length: 8},
+            'SperreGrund':              {type: 'char', position: 216, length: 30},
+            'Mehrwertsteuer-Schlüssel': {type: 'num',  position: 246, length: 1,  allowedValues: [1, 2]},
+            'SozialbutterKz':           {type: 'num',  position: 247, length: 1,  allowedValues: [0, 1]},
+            'Ware/Kosten':              {type: 'char', position: 248, length: 1,  allowedValues: ['W', 'K']},
+            'Service-Bund-Eigenmarke':  {type: 'num',  position: 249, length: 1,  allowedValues: [0, 1]},
+            'Service-Bund-National-Art':{type: 'num',  position: 250, length: 1,  allowedValues: [0, 1]},
+            'Eigenprodukt vom Mitglied':{type: 'num',  position: 251, length: 1,  allowedValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]},
+            'Kundenordersatzartikel':   {type: 'num',  position: 252, length: 1,  allowedValues: [0, 1]},
+            'RabattKz':                 {type: 'num',  position: 253, length: 1,  allowedValues: [0, 1, 2]},
+            'Rabatt':                   {type: 'num',  position: 254, length: 4,  decimal: true, decimalPlaces: 2, dependency: {field: 'RabattKz', values: [2]}},
+            'Mindestverkaufsmenge':     {type: 'num',  position: 258, length: 5,  decimal: true, decimalPlaces: 2},
+            'Hektoliter':               {type: 'num',  position: 263, length: 6,  decimal: true, decimalPlaces: 3},
+            '1.Lieferant (Hauptlieferant)': {type: 'num', position: 269, length: 5},
+            'Artikel-Nr. bei Lieferant-1':  {type: 'char', position: 274, length: 14},
+            'Umschlaganzeige':          {type: 'num',  position: 288, length: 1,  allowedValues: [0, 1]},
+            'FettKz':                   {type: 'num',  position: 289, length: 1,  allowedValues: [0, 7]},
+            'MHD-KZ':                   {type: 'num',  position: 290, length: 1,  allowedValues: [0, 1]},
+            'MHD-Resttage':             {type: 'num',  position: 291, length: 3,  dependency: {field: 'MHD-KZ', values: [1]}},
+            'Artikelnummer_6stellig':   {type: 'num',  position: 294, length: 6},
+            'Ersatzartikel_6stellig':   {type: 'num',  position: 300, length: 6},
+            'Preislistenkennzeichen':   {type: 'num',  position: 306, length: 1,  allowedValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]},
+            'ServisaID':               {type: 'num',  position: 307, length: 3,  cannotBeEmpty: true}
+        },
+        MATRIX: {
+            'ÄnderungsKz':          {type: 'char', position: 1,  length: 1,  allowedValues: ['N', 'L', 'Ä']},
+            'Artikelnummer':        {type: 'num',  position: 2,  length: 5},
+            'Matrixposition':       {type: 'num',  position: 7,  length: 1},
+            'Gebindetext':          {type: 'char', position: 8,  length: 20},
+            'Kurztext':             {type: 'char', position: 28, length: 3},
+            'UmrFaktor':            {type: 'num',  position: 31, length: 12, decimal: true, decimalPlaces: 6},
+            'Gewicht pro Einheit':  {type: 'num',  position: 43, length: 6,  decimal: true, decimalPlaces: 3},
+            'Abtropfgewicht':       {type: 'num',  position: 49, length: 6,  decimal: true, decimalPlaces: 3},
+            'NormierungsKz':        {type: 'char', position: 55, length: 1,  allowedValues: ['X', ' ']},
+            'BearbeitungsKz':       {type: 'char', position: 56, length: 1,  allowedValues: ['X', 'a', ' ']},
+            'EAN-Nummer':           {type: 'num',  position: 57, length: 13},
+            'Lief-Art-Nr':          {type: 'char', position: 70, length: 14},
+            'Artikelnummer_6stellig':{type: 'num', position: 84, length: 6},
+            'ServisaID':            {type: 'num',  position: 90, length: 3,  cannotBeEmpty: true}
+        },
+        // --- End MATRIX Rules ---
         ARTIKEL_EXT: { // Assuming Tab Separated, No fixed positions/lengths needed here
             'ÄnderungsKz': {type: 'char', allowedValues: ['N', 'L', 'Ä']},
             'Artikelnummer': {type: 'num'},
@@ -671,6 +737,10 @@
                             expectedLength = 40;
                         } else if (fileType === 'Kunden') {
                             expectedLength = 524; // Calculated length for Kunden.TXT
+                        } else if (fileType === 'ARTIKEL') {
+                            expectedLength = 309; // Calculated length for Artikel.TXT
+                        } else if (fileType === 'MATRIX') {
+                            expectedLength = 92; // Calculated length for Matrix.TXT
                         }
                         // --- End Expected Length ---
 
