@@ -1,0 +1,185 @@
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+
+<style>
+    :root {
+        --sb-primary: #76b43d;
+        --sb-text: #1e293b;
+        --sb-text-light: #475569;
+        --sb-bg-muted: rgba(143, 133, 129, 0.1);
+        --sb-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .sb-voice-guide {
+        font-family: 'Roboto', sans-serif;
+        color: var(--sb-text);
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        line-height: 1.5;
+    }
+
+    .sb-voice-guide h1, .sb-voice-guide h2, .sb-voice-guide h3 {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.1;
+        margin-top: 0;
+    }
+
+    /* Hero Section */
+    .sb-hero {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+        align-items: center;
+        margin-bottom: 80px;
+    }
+
+    .sb-hero-text { flex: 1; min-width: 300px; }
+    .sb-hero-text h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 20px; color: #0f172a; }
+    
+    .sb-hero-image { flex: 1; min-width: 300px; position: relative; }
+    .sb-hero-image img { width: 100%; border-radius: 24px; box-shadow: var(--sb-shadow); display: block; }
+
+    .sb-badge {
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        background: rgba(255,255,255,0.95);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        border: 1px solid #f1f5f9;
+    }
+
+    /* Step Cards */
+    .sb-step-card {
+        background: var(--sb-bg-muted);
+        border-radius: 24px;
+        padding: 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .sb-icon-box {
+        background: white;
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .sb-icon-box .material-symbols-outlined {
+        color: var(--sb-primary);
+        font-size: 32px;
+    }
+
+    .sb-step-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; }
+    .sb-step-card p { font-size: 1.1rem; color: var(--sb-text-light); margin: 0; }
+
+    .sb-step-card img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    /* Feedback Area */
+    .sb-feedback {
+        text-align: center;
+        padding: 60px 0;
+        border-top: 1px solid #e2e8f0;
+        margin-top: 60px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .sb-hero-text h1 { font-size: 2.2rem; }
+        .sb-step-card { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+        .sb-step-card img { height: 240px; }
+        .sb-hero { gap: 30px; }
+    }
+</style>
+
+<div class="sb-voice-guide">
+    <section class="sb-hero">
+        <div class="sb-hero-text">
+            <h1>Intelligenter Warenkorb per Sprache</h1>
+            <p style="font-size: 1.25rem; color: var(--sb-text-light); margin-bottom: 20px;">
+                So geht moderner Einkauf heute: einfach aus dem Arbeitsalltag heraus und ohne langes Suchen.
+            </p>
+            <p>Mit der neuen Sprachfunktion im Service-Bund Webshop landet alles, was Sie brauchen, direkt im Warenkorb.</p>
+        </div>
+        <div class="sb-hero-image">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz7xFQ8xpha-CzHlzHoGT02tog453-7PPtbEEC_ozgsNEB9o0vbDr4GLu92AF49deN7ZV49G7-wE-BN19g4vCJ0FSO92ufkjdddeu5KD4r3-TypGiEsRKyDmAQU0e1MCRazB2bnlYuvZlKshFNjiyvorZH7lYBi7I9aBlXHEpkpxzWZbHnH4WJTI-XutddNmGLXM-HBntDnW2lZk7t0crcBVZMl6-5ZNx84jGXNZnjxgUufiqi2mQr_PClrjYh-AZmWbq1dLV2vgw" alt="Sprachsteuerung Visualisierung">
+            <div class="sb-badge">"Ich benötige..."</div>
+        </div>
+    </section>
+
+    <h2 style="font-size: 2rem; margin-bottom: 40px; border-bottom: 1px solid #e2e8f0; padding-bottom: 20px;">
+        Anleitung
+    </h2>
+
+    <div class="sb-step-card">
+        <div>
+            <div class="sb-icon-box"><span class="material-symbols-outlined">add_shopping_cart</span></div>
+            <h3>01. Funktion aktivieren</h3>
+            <p>Klicken Sie auf das Mikrofon-Symbol neben der Suchleiste. Gegebenenfalls müssen Sie den Zugriff auf Ihr Mikrofon im Browser erlauben.</p>
+        </div>
+        <img src="https://cloud.servicebund.de/f/c050f8267c5344a980c6/?dl=1" alt="Schritt 1">
+    </div>
+
+    <div class="sb-step-card">
+        <div>
+            <div class="sb-icon-box"><span class="material-symbols-outlined">playlist_add_check</span></div>
+            <h3>02. Einfach lossprechen</h3>
+            <p>Nutzen Sie natürliche Befehle wie "Zweimal den Apfelsaft von xy" oder "Ein Kilo Mehl". Die KI versteht einfache und kurze Befehle.</p>
+        </div>
+        <img src="https://image2url.com/r2/default/images/1774256329866-97291904-5b93-4048-ab0f-51cd7f4e6125.png" alt="Schritt 2">
+    </div>
+
+    <div class="sb-step-card">
+        <div>
+            <div class="sb-icon-box"><span class="material-symbols-outlined">shopping_cart</span></div>
+            <h3>03. Warenkorb überarbeiten</h3>
+            <p>Nach "Aufnahme beenden" wird die Liste angezeigt. Hier können Sie Gebinde und Mengen bei Bedarf noch einmal manuell anpassen.</p>
+        </div>
+        <img src="https://cloud.servicebund.de/f/b3bc203603564aad8a79/?dl=1" alt="Schritt 3">
+    </div>
+
+    <div class="sb-step-card">
+        <div>
+            <div class="sb-icon-box"><span class="material-symbols-outlined">rule</span></div>
+            <h3>04. Warenkorb kontrollieren</h3>
+            <p>Sollten Sie mit den einzelnen Produkten nicht zufrieden sein, können Sie rechts aus einer Liste mit Alternativen wählen.</p>
+        </div>
+        <img src="https://cdn.phototourl.com/free/2026-03-23-3c30e3aa-2648-4102-a1a2-fd97a47f5111.png" alt="Schritt 4">
+    </div>
+
+    <div class="sb-step-card">
+        <div>
+            <div class="sb-icon-box"><span class="material-symbols-outlined">local_shipping</span></div>
+            <h3>05. Fertig</h3>
+            <p>Ein Klick auf "Zum Warenkorb" leitet Sie direkt zum Warenkorb. Ihre Bestellung bereit zum Abschicken.</p>
+        </div>
+        <img src="https://cloud.servicebund.de/f/f706d02b820f4f1faa1a/?dl=1" alt="Schritt 5">
+    </div>
+
+    <section class="sb-feedback">
+        <p>Haben Sie Anmerkungen oder Verbesserungsvorschläge?</p>
+        <div style="margin-top: 15px;">
+            Wir freuen uns über Rückmeldungen an Ihren Ansprechpartner oder per Mail an:<br>
+            <a href="mailto:ecommerce@servicebund.com" style="color: var(--sb-primary); font-weight: bold; text-decoration: none;">ecommerce@servicebund.com</a>
+        </div>
+    </section>
+</div>
