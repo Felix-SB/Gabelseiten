@@ -1,0 +1,197 @@
+<style>
+    /* Variables for easy customization */
+    :root {
+        --rd-bg-gray: #efefef;
+        --rd-accent-green: #76b82a;
+        --rd-accent-green-hover: #7fc72e;
+        --rd-text-dark: #20231C;
+        --rd-radius: 8px;
+        --rd-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .rd-section {
+        font-family: 'Nunito Sans', sans-serif, Arial;
+        max-width: 1440px;
+        margin: 0 auto;
+        color: var(--rd-text-dark);
+    }
+
+    /* Banner Area */
+    .rd-banner-wrap {
+        display: flex;
+        height: 350px;
+        margin-bottom: 24px;
+        border-radius: var(--rd-radius);
+        overflow: hidden;
+    }
+
+    .rd-headline-box {
+        width: 27%;
+        background: var(--rd-bg-gray);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .rd-headline-box h2 {
+        font-size: 32px;
+        margin: 0 0 15px 0;
+        text-transform: uppercase;
+    }
+
+    .rd-headline-box p {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .rd-main-banner {
+        width: 73%;
+        background-image: url("https://cloud.servicebund.de/f/b4e3d704f88f4f05aa77/?dl=1");
+        background-size: cover;
+        background-position: 70% 0%;
+        background-repeat: no-repeat;
+    }
+
+    /* Grid System */
+    .rd-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        margin-bottom: 24px;
+    }
+
+    .rd-card {
+        flex: 1;
+        min-width: calc(50% - 12px);
+        background: var(--rd-bg-gray);
+        border-radius: var(--rd-radius);
+        box-shadow: var(--rd-shadow);
+        text-decoration: none;
+        color: inherit;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+
+    .rd-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Image container in cards */
+    .rd-card-img {
+        width: 100%;
+        aspect-ratio: 19 / 9;
+        background-size: cover;
+        background-position: center;
+        transition: transform 0.9s ease;
+    }
+
+    .rd-card:hover .rd-card-img {
+        transform: scale(1.1);
+    }
+
+    .rd-card-content {
+        padding: 20px;
+    }
+
+    .rd-card-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .rd-card-text {
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 0;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 920px) {
+        .rd-banner-wrap {
+            flex-direction: column-reverse;
+            height: auto;
+        }
+
+        .rd-headline-box, .rd-main-banner {
+            width: 100%;
+        }
+
+        .rd-main-banner {
+            height: 300px;
+        }
+
+        .rd-card {
+            min-width: 100%;
+        }
+    }
+</style>
+
+<div class="rd-section">
+    <div class="rd-banner-wrap">
+        <div class="rd-headline-box">
+            <h2><b>RODEO STEAK</b></h2>
+            <p>Personally known family farms, premium cattle breeds, reliable cuts, full traceability, pasture farming and grass feeding</p>
+            <img src="https://cloud.servicebund.de/f/04efa0411a35413596d0/?dl=1" style="width: 80px; height: auto;">
+        </div>
+        <div class="rd-main-banner"></div>
+    </div>
+
+
+
+<div class="rd-grid">
+        <a href="/product/search?partNumbers=088266,054223,054227,099462,099467,099461,099450,056009,052563,052564,052566,052565&headline=Beef%20from%20Argentina%20by%20Rodeo" class="rd-card">
+            <div class="rd-card-img" style="background-image: url('https://cloud.servicebund.de/f/504806f970f24606ad38/?dl=1');"></div>
+            <div class="rd-card-content">
+                <span class="rd-card-title">Argentine Beef</span>
+                <p class="rd-card-text">In the home country of the brand and its Rodeo Ranch Quality, the Solassi family produces for us.</p>
+            </div>
+        </a>
+
+        <a href="/product/search?partNumbers=063166,063156,063168,063172,056194,056182,056195,056179,056197,056193,124151,124150,124149,124147&headline=Beef%20and%20Lamb%20from%20New%20Zealand%20by%20Rodeo" class="rd-card">
+            <div class="rd-card-img" style="background-image: url('https://cloud.servicebund.de/f/f343abe41f0d46e2b24d/?dl=1');"></div>
+            <div class="rd-card-content">
+                <span class="rd-card-title">Beef and Lamb from New Zealand</span>
+                <p class="rd-card-text">A mild climate and fertile pastureland provide a mild flavour and tender texture.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="rd-grid">
+        <a href="/product/search?partNumbers=066690,066686,066762,066700&headline=Beef%20from%20Uruguay%20by%20Rodeo" class="rd-card">
+            <div class="rd-card-img" style="background-image: url('https://cloud.servicebund.de/f/68e6593f82a341e9918d/?dl=1');"></div>
+            <div class="rd-card-content">
+                <span class="rd-card-title">Beef from Uruguay</span>
+                <p class="rd-card-text">Benefiting from conditions almost identical to Argentina, the Gonzales family produces here as our partner.</p>
+            </div>
+        </a>
+
+        <a href="/product/search?partNumbers=102835,102839,102840,102845,102846,103460,110278,124117,124118,124119,124120&headline=Irish%20Beef%20by%20Rodeo" class="rd-card">
+            <div class="rd-card-img" style="background-image: url('https://cloud.servicebund.de/f/7c984449c6bb492690a0/?dl=1');"></div>
+            <div class="rd-card-content">
+                <span class="rd-card-title">Irish Beef</span>
+                <p class="rd-card-text">Green, greener, Ireland – vast pastureland provides perfect conditions for breeding and farming.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="rd-grid">
+        <a href="/product/search?partNumbers=56179,056182,056193,056194,056195,056197" class="rd-card">
+            <div class="rd-card-img" style="background-image: url('https://cloud.servicebund.de/f/adcfaab1114441cf831f/?dl=1');"></div>
+            <div class="rd-card-content">
+                <span class="rd-card-title">Lamb</span>
+                <p class="rd-card-text">Perfectly aged fresh meat from selected pasture-raised lambs.</p>
+            </div>
+        </a>
+
+        <a href="/product/search?partNumbers=124151,124150,130210,124149" class="rd-card">
+            <div class="rd-card-img" style="background-image: url('https://cloud.servicebund.de/f/b28a130f037c4cac9299/?dl=1');"></div>
+            <div class="rd-card-content">
+                <span class="rd-card-title">Venison</span>
+                <p class="rd-card-text">Low in fat and cholesterol, but high in protein, zinc and iron.</p>
+            </div>
+        </a>
+    </div>
+</div>
