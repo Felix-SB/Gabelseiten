@@ -18,8 +18,17 @@
     transition: all .9s;
   }
 
+  .box_1:hover .bild_1 div {
+    transform: scale(1.1);
+    transition: all .9s;
+  }
 
   .bild_2>div {
+    height: 100%;
+    width: 100%;
+  }
+
+  .bild_1>div {
     height: 100%;
     width: 100%;
   }
@@ -33,7 +42,14 @@
     box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2);
   }
 
-
+  .box_1 {
+    width: calc(100% - 24px);
+    height: auto;
+    background: #efefef;
+    margin: 12px;
+    border-radius: 8px;
+    box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.2);
+  }
 
   .box_2 a:link,
   .box_2 a:visited,
@@ -42,8 +58,12 @@
     text-decoration: none;
   }
 
-
-
+  .box_1 a:link,
+  .box_1 a:visited,
+  .box_1 a:hover,
+  .box_1 a:active {
+    text-decoration: none;
+  }
 
 
   .bild_2 {
@@ -54,31 +74,46 @@
     overflow: hidden;
   }
 
-  #eins {
-    background-image: url("https://cloud.servicebund.de/f/35040d2ce8994bd8ae6d/?dl=1");
+  .bild_1 {
+    width: 100%;
+    height: 400px;
+    background: white;
+    border-radius: 8px 8px 0px 0px;
+    overflow: hidden;
+  }
+
+  #patties {
+    background-image: url("https://cloud.servicebund.de/f/8660c9a9356d4758a715/?dl=1");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
 
-
-  #zwei {
-    background-image: url("https://cloud.servicebund.de/f/de11508683064c9b8240/?dl=1");
+  #buns {
+    background-image: url("https://cloud.servicebund.de/f/85f7d0d9346445858f32/?dl=1");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
 
-  #drei {
-    background-image: url("https://cloud.servicebund.de/f/85a108f52c5542e4a2f4/?dl=1");
+  #saucen {
+    background-image: url("https://cloud.servicebund.de/f/d0153ced6c374a32bb23/?dl=1");
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
   }
 
-  #vier {
-    background-image: url("https://cloud.servicebund.de/f/2a67608661b942f6b6ac/?dl=1");
+  #toppings {
+    background-image: url("https://cloud.servicebund.de/f/a91a5f53c2e4463e9025/?dl=1");
     background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  #sides {
+    background-image: url("https://cloud.servicebund.de/f/49f74016269e431a9123/?dl=1");
+    background-size: cover;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
   }
 
@@ -169,7 +204,7 @@
     color: black;
   }
 
-    .yt {
+  .yt {
     width: 100%;
     height: 360px;
     background: #efefef;
@@ -185,16 +220,18 @@
       flex-direction: column;
     }
 
-    .box {
-      width: 100%;
-      margin: 10px auto;
-    }
-
     .box_2 {
       width: 100%;
       height: auto;
       margin: 10px auto;
     }
+
+    .box_1 {
+      width: 100%;
+      height: auto;
+      margin: 10px auto;
+    }
+
     #headline_box {
       width: 100%;
       border-radius: 8px;
@@ -208,7 +245,7 @@
       display: none;
     }
 
-    #BurgerCraft{
+    #BurgerCraft {
       height: auto;
       width: calc(100% + 24px);
       display: flex;
@@ -217,83 +254,81 @@
       margin-bottom: 24px;
     }
   }
-    
 
 
 </style>
 
+<!-- Einführungs-Kachel / Banner -->
 <div class="fullwidth" id="BurgerCraft" style="margin-bottom: 24px;">
   <div id="headline_box">
-    <div id="überschrift"><b>
-      </b></div>
+    <div id="überschrift"><b></b></div>
     <div id="überschrift"><b>BurgerCraft</b></div>
-
- <p id="claimer">
-      <b>Made by you!</b>
-    </p>
-
+    <p id="claimer"><b>Made by you!</b></p>
     <p id="claimer">
-      Von Burger-Experten entwickelte Rezepturen zum Nachbauen oder als Inspiration für den eigenen Burger-Traum.<br>
-Alles was Du für deinen Better Burger brauchst findest Du hier bei uns.
+      BurgerCraft steht für Qualität, Handwerklichkeit, Fantasie und Abwechslung. Unsere ausgewählten Produkte legen hierfür den Grundstein.
     </p>
   </div>
-  <div id="banner">
+  <div id="banner"></div>
+</div>
+
+<!-- Reihe 1: Patties (volle Breite) -->
+<div class="fullwidth" id="flexbox">
+  <div class="box_1">
+    <a href="/product/search?partNumbers=81545,85691,311722,126054,308807,226629,119234,108135,108136,118190,280270,118464,118983,305224&headline=Patties">
+      <div class="bild_1">
+        <div id="patties"></div>
+      </div>
+      <p class="überschrift_warengruppe"><b>Der Mittelpunkt jedes Burgers</b></p>
+      <p class="text_warengruppe">Smash, Handmade Optik, vegetarisch oder vegan. Für jeden Geschmack genau das richtige Patty.</p>
+    </a>
   </div>
 </div>
 
+<!-- Reihe 2: Buns + Saucen -->
 <div class="fullwidth" id="flexbox">
   <div class="box_2">
-    <a href="/product/search?partNumbers=44086,46835,46836,46838,46839,46840,46841,046842,046844,046845,052618,054784,055298,057302,057314,057316,058871,061210,061212,61213,061214,061215,063565,069460,069461,069462,069463,069464,070053,070258,071434,073296,091630,099208,108167,116371,116576,116579,105845,131011,131014,131015,061865,072193,072329,072419,116303,056283&headline=Patties">
+    <a href="/product/search?partNumbers=310296,306198,311359,117407,271101&headline=Buns">
       <div class="bild_2">
-        <div id="eins"></div>
+        <div id="buns"></div>
       </div>
-      <p class="überschrift_warengruppe"><b>Patties</b></p>
-      <p class="text_warengruppe">Klassisch, Handmade Optik, vegetarisch oder vegan.<br>Für jeden Geschmack genau das richtige Patty.
-      </p>
-    </a></div>
+      <p class="überschrift_warengruppe"><b>Das Fundament für jeden guten Burger</b></p>
+      <p class="text_warengruppe">Klassisch, rustikal oder innovativ – unsere Auswahl bietet für jeden Anwendungsbereich das passende Produkt.</p>
+    </a>
+  </div>
   <div class="box_2">
-    <a href="/product/search?partNumbers=131076,131077,131880,131882,131883,131885,140434,140437,259827,130090,040774,041211,041788,045982,051081,051083,056640,064837,067273,067448,071165,072497,088088,090601,092916,092945,093240,094310,097964,100745,100766,101824,105373,107276,1108088,110919,110920,111030,112266,115583,115584,115585,116211,116215,116217,123745,123796,130532,178575,071795,071799,101024,116367&headline=Buns">
+    <a href="/product/search?partNumbers=103774,84463,304105,268449,267697,298568,268428,280022,178967,58949,312154,109157&headline=Saucen">
       <div class="bild_2">
-        <div id="zwei"></div>
+        <div id="saucen"></div>
       </div>
-      <p class="überschrift_warengruppe"><b>Buns</b></p>
-      <p class="text_warengruppe">Klassische Brötchen, speziell gewürzt oder in ausgefallener Form.
-      </p>
-    </a></div>
+      <p class="überschrift_warengruppe"><b>Unverwechselbarer Geschmack</b></p>
+      <p class="text_warengruppe">Neben beliebten Klassikern umfasst das Sortiment auch geschmacksintensive Spezialitäten.</p>
+    </a>
+  </div>
 </div>
 
+<!-- Reihe 3: Toppings + Sides -->
 <div class="fullwidth" id="flexbox">
   <div class="box_2">
-    <a href="/product/search?partNumbers=262455,131092,131094,231911,259042,139185,262447,131616,047535,056974,056976,056977,056988,056993,057267,057378,057456,057975,058051,060557,060558,060560,060568,060569,060574,060588,060591,060595,060708,065094,072081,077364,081482,084632,087069,087089,087234,091882,092278,097422,101585,106969,107000,107031,108330,117824,126698,126854,061916,120831,120834,058440,258419,258442,083313,123822,105857,179030,258457,133636,046872,046876,056796,061917,064610,083609,140741,231658,231661,231663,046877,056271,056278,056287,056292,089869&headline=Sides und Beilagen">
+    <a href="/product/search?partNumbers=92475,278245,93891,307921,106147,140378,62433,118202,105722,106668,115018,103312,307432&headline=Toppings">
       <div class="bild_2">
-        <div id="drei"></div>
+        <div id="toppings"></div>
       </div>
-      <p class="überschrift_warengruppe"><b>Sides & Beilagen</b></p>
-      <p class="text_warengruppe">Goldgelbe Pommes, Chicken Wings oder -nuggets und vegetarisch, vegane Alternativen.
-      </p>
-    </a></div>
+      <p class="überschrift_warengruppe"><b>On Top</b></p>
+      <p class="text_warengruppe">Von würzigen Komponenten über frische Akzente bis hin zu herzhaften Klassikern.</p>
+    </a>
+  </div>
   <div class="box_2">
-    <a href="/landing/BurgerCraftRezepte">
+    <a href="/product/search?partNumbers=130896,120002,91882,47535,262598,108502,51454,133579,133580,133581,111064&headline=Sides">
       <div class="bild_2">
-        <div id="vier"></div>
+        <div id="sides"></div>
       </div>
-      <p class="überschrift_warengruppe"><b>Rezepturen</b></p>
-      <p class="text_warengruppe">Von unseren Burger-Gurus entwickelte Rezepte, mit viel Leidenschaft ausgewählte Zutaten und einfach im Handling.
-      Lassen Sie sich inspirieren und verwirklichen Sie ihren Burger-Traum.</p>
-    </div>
-  </a>
+      <p class="überschrift_warengruppe"><b>Die passenden Begleiter</b></p>
+      <p class="text_warengruppe">Ob knusprig, herzhaft oder frisch – hier finden Sie die passenden Beilagen.</p>
+    </a>
+  </div>
 </div>
 
+<!-- Reihe 4: YouTube-Video -->
 <div class="yt">
-    <iframe id="youtube" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/yxyJ5WEeHps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- </div>
-
-
-
-
-
-
-
-
-
-
+  <iframe id="youtube" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/e8t3whdz1kA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
